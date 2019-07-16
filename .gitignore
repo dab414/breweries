@@ -1,7 +1,5 @@
 data/*.csv
 data/old
-yelpStuff/exportData
-yelpStuff/cache
-proposal.pdf
-misc/
+yelpStuff/scrape/exportData
+yelpStuff/scrape/cache
 yelpStuff/analysis/data

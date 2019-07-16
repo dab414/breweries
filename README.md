@@ -23,4 +23,4 @@ Dave
 
 *-- I didn't upload some of the data, so the scripts won't be entirely reproducible if the repo is cloned--*
 
-[Notes](yelpStuff/protection/notes.txt): A little taste of how I think about things and stuff.
+[Notes](yelpStuff/scrape/protection/notes.txt): A little taste of how I think about things and stuff.
