@@ -40,7 +40,7 @@ def generateNullBrewery(brewery):
 
 def searchHtmlToBusinessUrl(result, brewery):
   '''
-  takes as input the regex search string, the html of the search page, and the dict with brewery keys [name, city, street]
+  takes as input the html of the search page, and the dict with brewery keys [name, city, street]
   returns the businessUrl for only the brewery of interest
   '''
 

@@ -14,7 +14,7 @@ This notebook will cover some initial findings from the exploratory data analysi
 
 
 ```{r include = FALSE}
-library(Hmisc)
+#library(Hmisc)
 library(tidyverse)
 library(data.table)
 ```
@@ -33,7 +33,8 @@ yelp %>%
   gather(rating_type, rating, ratings, my_ratings) %>% 
   mutate(rating_type = fct_recode(rating_type, 'Yelp Ratings' = 'ratings', 'My Converted Ratings' = 'my_ratings')) %>% 
   ggplot(aes(x = rating)) + geom_density(fill = 'blue', alpha = .8) + xlab('Ratings') + facet_wrap(~rating_type) + 
-  theme_bw()
+  theme_bw() + 
+  theme(strip.background = element_rect(fill = 'white', color = 'black'))
 ```
 
 We can see that Yelp rounds its ratings to the nearest 0.5, and calculating ratings by hand preserves the variability.
@@ -55,7 +56,7 @@ yelp[, relColumns] <- sapply(yelp[,relColumns], as.numeric)
 ```
 *Step 2:* Run a correlation matrix to assess which variables are associated with Yelp ratings.
 ```{r}
-m1 <- rcorr(as.matrix(yelp[,relColumns]))
+m1 <- Hmisc::rcorr(as.matrix(yelp[,relColumns]))
 ## save out only correlations related to ratings
 rs <- as.data.frame(m1$r)['my_ratings',]
 ps <- as.data.frame(m1$P)['my_ratings',]

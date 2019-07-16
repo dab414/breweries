@@ -179,8 +179,9 @@ def testProxy(proxy):
 
 def makeRequest(params, headers, proxies):
   '''
-  takes as input proxies dict
-  returns 0 if proxy successfully connects to a server, 1 otherwise
+  takes as input brewery dict, headers, and proxies dict
+  executes a Yelp search
+  returns html of search page, and 0 if proxy successfully connects to a server, 1 otherwise
   logic of function from: https://stackoverflow.com/questions/492519/timeout-on-a-function-call
   '''  
   import signal
@@ -201,6 +202,7 @@ def makeRequest(params, headers, proxies):
     else:
        return requests.get('https://www.yelp.com' + params, headers = headers, allow_redirects = False).text
 
+  ## timer for catching requests that are never received
   signal.signal(signal.SIGALRM, handler)
 
   signal.alarm(10)

@@ -8,7 +8,11 @@ output:
 ---
 
 
-This document is intended for the cleaning of data scraped from yelp. The general layout of the data is as follows:  
+This document is intended for the cleaning of data scraped from yelp. 
+
+## The Data
+
+The general layout of the data is as follows:  
 
 
 ```{r include = FALSE}
@@ -27,7 +31,7 @@ yelp <- read.csv('../data/yelpData.csv', stringsAsFactors = FALSE)
 colnames(yelp) <- tolower(colnames(yelp))
 ## drop breweries that couldn't be scraped
 yelp <-yelp[!is.na(yelp$ratings),]
-head(yelp)
+yelp
 ```
 
 ```{r}
@@ -38,6 +42,8 @@ yelp %>%
 ```
 
 *Of the nearly 8,000 breweries on [open brewery db](https://openbrewerydb.org), I was able to successfully scrape 2465 of them on the first pass.*
+
+## Important Variables
 
 Off the bat, I was a little worried because `rating` appears null across the board, but I see that it's redundant with `ratings`, which is present.  Some notes about specific vars:
 
@@ -73,38 +79,46 @@ print(c(s1,s2))
 
 Alright so, for all of these, I'll want to keep only the data before the first `\n`, then I'll want to split the range into two vars for the beginning and the end.
 
-
+Then convert to time, compute the total hours that a brewery is open, reshape it all so that all hours-of-operation information for each brewery is on one row, and join it back with the main data.
 
 ```{r}
-before <- '^\\d+?:\\d+\\s\\w\\w'
-after <- '(\\d+:\\d+\\s\\w\\w)(\\\n.*)?$'
+## Regex to extract time
 simpleTime <- '\\d+:\\d\\d\\s\\w\\w'
-```
 
-```{r}
-
+## keep one row per brewery
 test <- yelp[match(unique(yelp$name), yelp$name),]
+
+## Regex and time conversion to get time data to behave like time data
+
 test <- test %>% 
   select(name, mon, tue, wed, thu, fri, sat, sun) %>% 
   gather(day, times, mon:sun) %>% 
+  ## Separate into open and close times based on the '-'
   separate(times, into=c('open', 'close'), sep='-') %>% 
+  ## match only strings matching time format
   mutate(open = str_extract(open, simpleTime),
          close = str_extract(close, simpleTime))# %>% 
 
-
-
+## Convert to time
 test$open <- strptime(test$open, format = '%I:%M %p')
 test$close <- strptime(test$close, format = '%I:%M %p')
+## Strip out the date, keep only the time
 test$open <- times(sub('.*\\s+', '', test$open))
 test$close <- times(sub('.*\\s+', '', test$close))
-test$totalHours <- as.numeric(abs(test$close - test$open))
 
+## Doing some serious data reshaping to get time information on one line per brewery
 
-yelp <- test %>% 
+## Goal is to spread time open, time closed, and total time to wide vars of the form: day_open/close_TotalTime/Not
+yelp <- x <- test %>% 
+  ## Compute total hours open
   mutate(totalHours = abs(test$close - test$open)) %>% 
+  ## Gather open / close times
   gather(timePeriod, time, open:close) %>% 
-  gather(sumOrTime, value, totalHours, time) %>% 
-  unite(variable, day, timePeriod, sumOrTime) %>% 
+  ## Gather total hours and open / close times
+  gather(TotalOrTime, value, totalHours, time) %>% 
+  ## Combine day, open / close times, total time
+  unite(variable, day, timePeriod, TotalOrTime) %>% 
+  ## Spread across the united variable
   spread(variable, value) %>% 
   inner_join(yelp)
   
@@ -113,6 +127,8 @@ sum(yelp$thu_open_totalHours == yelp$thu_close_totalHours, na.rm = TRUE) == nrow
 
 yelp <- yelp %>% 
   select(-contains('_close_totalhours'))
+
+yelp
 
 ```
 Whew, that was tough.
@@ -172,14 +188,10 @@ Alright that feature should be mostly good to go. Might want to dummy code it ou
 
 
 ## More Info
-Time to deal with the nuanced info vars. The mission will be to try and convert them to long.. but we'll see how it goes.  
+Time to deal with the nuanced info vars. The mission will be to try and convert them to wide.. but we'll see how it goes.  
 
-First we'll want to knock out all the NAs. These are breweries that were unable to be scraped. Then I'll need to get a sense of the degree of variablity in the `moreinfovar` variable.
+I'll need to get a sense of the degree of variablity in the `moreinfovar` variable.
 
-```{r}
-yelp <- yelp %>% 
-  filter(!is.na(moreinfovar))
-```
 
 ```{r}
 summary(factor(yelp$moreinfovar))
@@ -190,7 +202,7 @@ Hmm, yea this is tough. Some of these (e.g., `Has Soy-Free Options` & `Has Keto 
 Here we go:
 
 ```{r}
-## removing all breweries that have duplicate entries for moreinfo var (80 total)
+## Some breweries have redundant entries for moreinfovar (80 total), need to drop these for spread to work 
 badBrews <- yelp %>% 
   group_by(name) %>% 
   summarize(dups = sum(duplicated(moreinfovar))) %>% 
@@ -204,7 +216,7 @@ yelp <- yelp %>%
 
 colnames(yelp) <- tolower(colnames(yelp))
 
-head(yelp)
+yelp
 ```
  
 This seems surprisingly alright. Luckily, most of these features seem to be coded as `Yes` / `No` -- I'll have to think about how to handle the ones that aren't (e.g., `Parking`)  
@@ -216,6 +228,8 @@ The following function computes the proportion of missing data (from most to lea
 
 ```{r}
 summarizeNAs <- function(data) {
+  ## Returns a sorted df where column one is the name of the original column and column two is the proportion of data missing from that column
+  
   holder <- data.frame(colName = character(), propMissing = numeric(), stringsAsFactors = FALSE)
   count <- 0
   for (colIndex in 1:(ncol(data))) {
@@ -250,6 +264,7 @@ Writing a quick mode-imputation function:
 getmode <- function(v) {
    v <- na.omit(v)
    uniqv <- unique(v)
+   ## tabulate takes the integer-valued vector bin and counts the number of times each integer occurs in it.
    uniqv[which.max(tabulate(match(v, uniqv)))]
 }
 
@@ -273,6 +288,7 @@ Quickly dealing with the parking variable:
 
 ```{r}
 yelp <- yelp %>% 
+  ## If there's more than one parking option just label it 'multiple'
   mutate(parking = ifelse(grepl(',', parking), 'multiple', parking))
 ```
 
@@ -291,6 +307,7 @@ yelp <- dummy_cols(yelp, select_columns = colnames(dummyCols), remove_first_dumm
 
 colnames(yelp) <- tolower(colnames(yelp))
 
+## Converting so dummy vars reflect yes value rather than no
 yelp <- yelp %>% 
   mutate(accepts_credit_cards_yes = ifelse(accepts_credit_cards_no == 0, 1, 0),
          bike_parking_yes = ifelse(bike_parking_no == 1, 0, 1),
@@ -301,23 +318,31 @@ yelp <- yelp %>%
 
 ### Deal with Reviews
 
-
-
-
 ```{r}
 yelp <- yelp %>% 
-  mutate(reviews = as.numeric(str_extract(reviews, '\\d+')),
-        my_ratings = (x1_star_count * 1 + x2_star_count * 2 + x3_star_count * 3 + x4_star_count * 4 + x5_star_count * 5) / sum(c(x1_star_count,x2_star_count,x3_star_count,x4_star_count,x5_star_count)))
+  mutate(reviews = as.numeric(str_extract(reviews, '\\d+')))#,
+        #my_ratings = (x1_star_count * 1 + x2_star_count * 2 + x3_star_count * 3 + x4_star_count * 4 + x5_star_count * 5) / sum(c(x1_star_count,x2_star_count,x3_star_count,x4_star_count,x5_star_count)))
 ```
 
 
 ```{r}
+## Had to resort to a for loop to calculate weighted ratings 
 store <- numeric()
 for (row in 1:(nrow(yelp))) {
   store[row] <- with(yelp[row,], (x1_star_count * 1 + x2_star_count * 2 + x3_star_count * 3 + x4_star_count * 4 + x5_star_count * 5) / sum(c(x1_star_count,x2_star_count,x3_star_count,x4_star_count,x5_star_count)))
 }
 
 yelp$my_ratings <- store
+
+yelp %>% 
+  gather(rating_type, rating, ratings, my_ratings) %>% 
+  mutate(rating_type = fct_recode(rating_type, 'Yelp Ratings' = 'ratings', 'My Converted Ratings' = 'my_ratings')) %>% 
+  ggplot(aes(x = rating)) + geom_density(fill = 'blue', alpha = .8) + xlab('Ratings') + facet_wrap(~rating_type) + 
+  theme_bw() +
+  theme(strip.background = element_rect(fill = 'white', color = 'black')) 
+  
+  
+  
 ```
 
 Calculating the weighted scores by hand allows for more variablility.
@@ -325,7 +350,7 @@ Calculating the weighted scores by hand allows for more variablility.
 I think that pretty much wraps it up.
 
 ```{r}
-head(yelp)
+yelp
 ```
 
 ### Merging with some of the original data
