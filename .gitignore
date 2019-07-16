@@ -1,0 +1,7 @@
+data/*.csv
+data/old
+yelpStuff/exportData
+yelpStuff/cache
+proposal.pdf
+misc/
+yelpStuff/analysis/data

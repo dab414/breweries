@@ -1,0 +1,178 @@
+---
+title: "Yelp Exploratory Data Analysis (internal)"
+author: "Dave Braun"
+date: "February 19, 2019"
+output:
+  html_document:
+    df_print: paged
+---
+
+*note to self: don't interpret anything until rerunning with more data*
+
+This notebook is intended for the exploration of the cleaned, scraped Yelp data. The general layout of the data is as follows:
+
+```{r include = FALSE}
+library(Hmisc)
+library(tidyverse)
+library(data.table)
+```
+
+
+```{r}
+yelp <- read.csv('../data/cleanYelp.csv')
+head(yelp)
+```
+
+## Distribution of the dependent variable
+
+```{r}
+yelp %>% 
+  gather(rating_type, rating, ratings, my_ratings) %>% 
+  ggplot(aes(x = rating)) + geom_density(fill = 'blue', alpha = .8) + xlab('Ratings') + facet_wrap(~rating_type)
+```
+
+This is a comparison of the ratings straight from yelp (`ratings`) vs. the ones I calculated via a weighted average (`my_ratings`). We can see that Yelp rounds it's ratings to the nearest 0.5.
+
+
+```{r}
+relColumns <- yelp %>% 
+  select(contains('totalhours'), contains('time'), price_range_moderate:accepts_apple_pay_yes, my_ratings, reviews, breweriesToPpl) %>% 
+  colnames()
+
+yelp[, relColumns] <- sapply(yelp[,relColumns], as.numeric)
+```
+
+```{r}
+m1 <- rcorr(as.matrix(yelp[,relColumns]))
+```
+
+
+```{r}
+rs <- as.data.frame(m1$r)['my_ratings',]
+ps <- as.data.frame(m1$P)['my_ratings',]
+
+critical_ps <- ps %>% 
+  select(-my_ratings) %>% 
+  gather(variable, p_value, fri_open_totalhours:breweriesToPpl) %>% 
+  filter(p_value < .05)
+  
+rs <- rs['my_ratings',] %>% 
+  select(-my_ratings) %>% 
+  gather(variable, r_value, fri_open_totalhours:breweriesToPpl) 
+  
+critical_rs <- rs[rs$variable %in% critical_ps$variable,]
+
+```
+
+```{r}
+m2 <- lm(my_ratings ~ price_range_moderate * caters_yes * parking_street * take_out_yes * accepts_credit_cards * bike_parking_yes * accepts_apple_pay * breweriesToPpl, data = yelp)
+```
+
+### Some exploration:
+
+
+caters X breweries to ppl
+
+
+```{r}
+yelp %>% 
+  ggplot(aes(x = breweriesToPpl, y = my_ratings, group = caters)) + geom_point(aes(color = caters), alpha = .4) + geom_smooth(aes(color = caters), size = 2, method = 'lm')
+```
+
+
+
+take out
+
+```{r}
+yelp %>% 
+  group_by(take_out) %>% 
+  summarize(ratings = mean(my_ratings), se = sd(my_ratings) / sqrt(n())) %>% 
+  ggplot(aes(x = take_out, y = ratings)) + geom_bar(stat='identity', width = .6) + geom_errorbar(aes(ymin = ratings - se, ymax = ratings + se), width = .5) + ylim(0,5)
+```
+
+
+
+parking garage X take out
+
+```{r}
+yelp %>% 
+  filter(parking != 'Valet', parking != 'Validated') %>% 
+  group_by(parking, take_out) %>% 
+  summarize(ratings = mean(my_ratings), se = sd(my_ratings, na.rm = TRUE) / sqrt(n())) %>% 
+ ggplot(aes(x = parking, y = ratings, group = factor(take_out))) + geom_bar(stat = 'identity', aes(fill = factor(take_out)), position = position_dodge(width = .9)) +
+ geom_errorbar(aes(ymin = ratings - se, ymax = ratings + se), position = position_dodge(width = .9), width = .5) + ylim(0,5)
+```
+
+
+price range
+
+```{r}
+yelp %>% 
+  filter(price_range != 'expensive') %>% 
+  group_by(price_range) %>% 
+  summarize(ratings = mean(my_ratings), se = sd(my_ratings) / sqrt(n())) %>% 
+  ggplot(aes(x = price_range, y = ratings)) + geom_bar(stat='identity', width = .6) + geom_errorbar(aes(ymin = ratings - se, ymax = ratings + se), width = .5) + ylim(0,5)
+```
+
+price range x credit cards
+
+```{r}
+yelp %>% 
+  filter(price_range != 'expensive') %>% 
+  group_by(price_range, accepts_credit_cards) %>% 
+  summarize(ratings = mean(my_ratings), se = sd(my_ratings, na.rm = TRUE) / sqrt(n())) %>% 
+ ggplot(aes(x = price_range, y = ratings, group = factor(accepts_credit_cards))) + geom_bar(stat = 'identity', aes(fill = factor(accepts_credit_cards)), position = position_dodge(width = .9)) +
+ geom_errorbar(aes(ymin = ratings - se, ymax = ratings + se), position = position_dodge(width = .9), width = .5) + ylim(0,5)
+```
+
+
+
+caters X accepts apple pay
+
+```{r}
+yelp %>% 
+  group_by(caters, accepts_apple_pay) %>% 
+  summarize(ratings = mean(my_ratings), se = sd(my_ratings) / sqrt(n())) %>% 
+  ggplot(aes(x = factor(caters), y = ratings, group = accepts_apple_pay)) + geom_bar(stat = 'identity', aes(fill = factor(accepts_apple_pay)), position = position_dodge(width = .9)) + 
+  geom_errorbar(aes(ymin = ratings - se, ymax = ratings + se), position = position_dodge(width = .9), width = .5) + ylim(0,5)
+```
+
+
+price range X take out X accepts apple pay
+
+```{r}
+yelp %>% 
+  filter(price_range != 'expensive') %>% 
+  group_by(price_range, take_out, accepts_apple_pay) %>% 
+  summarize(ratings = mean(my_ratings, na.rm = TRUE), se = sd(my_ratings, na.rm = TRUE) / sqrt(n()), count = n()) %>% 
+ ggplot(aes(x = price_range, y = ratings, group = take_out)) + geom_bar(stat = 'identity', aes(fill = factor(take_out)), position = position_dodge(width = .9)) +
+ geom_errorbar(aes(ymin = ratings - se, ymax = ratings + se), position = position_dodge(width = .9), width = .5) + facet_wrap(~accepts_apple_pay) + ylim(0,5)
+```
+
+### Run a model with total hours
+
+```{r}
+m3 <- lm(my_ratings ~ mon_open_totalhours * tue_open_totalhours * wed_open_totalhours * thu_open_totalhours * fri_open_totalhours * sat_open_totalhours * sun_open_totalhours, data = yelp)
+```
+
+
+tue x thu x fri
+
+```{r}
+yelp %>% 
+  mutate(tueMedSplit = ifelse(tue_open_totalhours > median(tue_open_totalhours), 'High Tuesday Hours', 'Low Tuesday Hours'),
+         thuMedSplit = ifelse(thu_open_totalhours > median(thu_open_totalhours), 'High Thursday Hours', 'Low Thursday Hours')) %>% 
+  ggplot(aes(x = fri_open_totalhours, y = my_ratings)) + geom_point(aes(color = thuMedSplit), alpha = .7) + facet_wrap(~tueMedSplit) + 
+  geom_smooth(aes(linetype = thuMedSplit, color = thuMedSplit), method = 'lm', size = 2)
+```
+
+
+
+
+
+
+
+
+
+
+

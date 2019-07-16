@@ -1,0 +1,875 @@
+city,moreInfoVal,moreInfoVar,name,rating,reviews,street
+Edina,NA,NA,Wooden Hill Brewing Company,NA,NA,7421 Bush Lake Road
+Biloxi,NA,NA,Biloxi Brewing Co,NA,NA,186 Bohn St
+Vicksburg,NA,NA,Key City Brewing Co.,NA,NA,1311 Washington St.
+Kiln,NA,NA,"Lazy Magnolia Brewing Co, LLC",NA,NA,7030 Roscoe Turner Rd
+Jackson,NA,NA,Lucky Town Brewing Co,NA,NA,1710 N Mill St
+Meridian,NA,NA,"Threefoot Brewing Company, LLC",NA,NA,4010 23rd Avenue
+Water Valley,NA,NA,Yalobusha Brewing Company,NA,NA,102 S Main St
+Higginsville,NA,NA,Arcadian Moon,NA,NA,19203 Old Highway 40
+Washington,NA,NA,Augusta Brewing Co,NA,NA,109 W Main St
+Kansas City,NA,NA,BKS Artisan Ales,NA,NA,633 E 63rd St
+Kansas City,NA,NA,Border Brewing Company,NA,NA,406 E 18th St
+St. Louis,NA,NA,Brew Hub Taproom,NA,NA,5656 Oakland Avenue
+Kansas City,NA,NA,Brewery Emperial,NA,NA,1829 Oak St
+Columbia,NA,NA,Broadway Brewery,NA,NA,816 E Broadway Ste B
+Columbia,NA,NA,Bur Oak Company,NA,NA,8250 E Trade Center Dr
+Sainte Genevieve,NA,NA,Crown Valley Brewing & Distilling Co,NA,NA,23589 State Route Ww
+Washington,NA,NA,Deep Sleep Brewing Company LLC,NA,NA,6891 Whiskey Creek Rd.
+Blue Springs,NA,NA,East Forty Brewing,NA,NA,
+Saint Charles,NA,NA,Exit 6 Brewery,NA,NA,5055 Highway N Ste 112
+Saint Louis,NA,NA,High Heel Brewing,NA,NA,5656 Oakland
+Pontiac,NA,NA,"Lake Bums BrewCo, LLC.",NA,NA,112 Parrothead Ln
+Valley Park,NA,NA,Mackenzie Brewing Company,NA,NA,
+Saint Louis,NA,NA,Center Ice Brewing Company,NA,NA,3126 Olive St.
+Raytown,NA,NA,Crane Brewing Company,NA,NA,6515 Railroad St
+Saint Louis,NA,NA,Ferguson Brewing Co,NA,NA,418 S Florissant Rd
+Kansas City,NA,NA,Granite City Food & Brewery (#11),NA,NA,8461 NW Prairie View Rd
+Creve Coeur,NA,NA,Granite City Food & Brewery (#29),NA,NA,11411 Olive Blvd
+Berger,NA,NA,Gruhlke's Microbrewery / Bias Vineyards,NA,NA,3166 Highway B
+Neosho,NA,NA,Indian Springs Brewing Company,NA,NA,109 E Main St
+Kansas City,NA,NA,Kansas City Bier Company,NA,NA,310 W 79th St
+Festus,NA,NA,Main And Mill Brewing Company,NA,NA,240 E Main St
+Kansas City,NA,NA,Martin City Brewing Company,NA,NA,410 E 135th St
+O Fallon,NA,NA,Missouri Beer Company,NA,NA,22 W Industrial Dr
+Saint Louis,NA,NA,Modern Brewery,NA,NA,5231 Manchester Ave # E
+Kansas City,NA,NA,Outlaw Cigar / Gunslinger Saloon Brewing,NA,NA,
+West Plains,NA,NA,Ozarks Brewing Company,NA,NA,1872 S. U.S. Hwy. 63
+Willard,NA,NA,Prehistoric Brewing Company,NA,NA,
+Saint Louis,NA,NA,Propagation LLC,NA,NA,
+Saint James,NA,NA,Public House Brewing Co,NA,NA,551 State Route B
+Saint Joseph,NA,NA,River Bluff Brewing,NA,NA,
+Saint Louis,NA,NA,Schlafly Bottleworks,NA,NA,1 Schlafly Plz
+Doe Run,NA,NA,Southern Heritage Brewing Company,NA,NA,
+Kansas City,NA,NA,Stockyards Brewing Company,NA,NA,1600 Genessee St Ste 100
+Saint Robert,NA,NA,Uranus Brewery,NA,NA,
+Stover,NA,NA,"Welpman Springs Brewing Company, LLC.",NA,NA,517 Hatchery Rd
+Springfield,NA,NA,Mother's Brewing Co,NA,NA,215 S Grant Ave
+Liberty,NA,NA,Rock & Run Brewery,NA,NA,110 E Kansas St
+Saint Louis,NA,NA,"Schlafly Beer/The Saint Louis Brewery, LLC",NA,NA,2100 Locust St
+Hermann,NA,NA,Tin Mill Brewing Co,NA,NA,114 Gutenberg St
+O Fallon,NA,NA,Wild Water,NA,NA,9995 Winghaven Blvd
+Clancy,NA,NA,380 Brewing Company,NA,NA,
+Columbia Falls,NA,NA,Backslope Brewing,NA,NA,1107 9th St W (Highway 2)
+Hamilton,NA,NA,Bandit Brewing Co,NA,NA,610 N 1st St Ste 5-228
+Kalispell,NA,NA,Bias Brewing,NA,NA,409 1st Ave E Ste B
+Malta,NA,NA,BLUE RIDGE BREWING,NA,NA,
+Helena,NA,NA,Brewery in Planning - Helena,NA,NA,
+Kalispell,NA,NA,Brewing Academy Of Montana At FVCC,NA,NA,
+Helena,NA,NA,Crooked Furrow Brewing,NA,NA,2801 N Roberts Ave
+Bozeman,NA,NA,Dog Tag Brewing,NA,NA,2042 Stadium Dr Ste 2
+Belgrade,NA,NA,Game Bag Brewing,NA,NA,
+Missoula,NA,NA,GILD BREWING,NA,NA,
+Saint Louis,NA,NA,William K Busch Brewing Co.,NA,NA,8047 Litzsinger Rd
+Belgrade,NA,NA,Bar 3 BBQ and Brewing,NA,NA,100 S Broadway
+Missoula,NA,NA,Bayern Brewing Inc.,NA,NA,1507 Montana St
+Hamilton,NA,NA,Bitter Root Brewing Co,NA,NA,101 Marcus St
+Black Eagle,NA,NA,Black Eagle Brewery,NA,NA,1600 25th Ave NE
+Whitefish,NA,NA,Bonsai Brewing Project,NA,NA,549 Wisconsin Ave
+Glasgow,NA,NA,Busted Knuckle Brewery,NA,NA,303 1st Ave S
+Harlowton,NA,NA,Gally's Brewing Co,NA,NA,30 Central Ave S
+Polson,NA,NA,Glacier Brewing Co,NA,NA,6 10th Ave E
+Eureka,NA,NA,H.A. Brewing Co,NA,NA,2525 Grave Creek Rd
+Bonner,NA,NA,Kettle House Brewing Co.,NA,NA,605 Coldsmoke Ave
+Bonner,NA,NA,Kettlehouse Brewing Co - Bonner Brewery,NA,NA,605 Coldsmoke Ave
+Helena,NA,NA,Lewis & Clark Brewing Co,NA,NA,1517 Dodge Ave
+Lewistown,NA,NA,Lewistown Brewing Co,NA,NA,
+Livingston,NA,NA,Montucky Cold Snacks,NA,NA,123 W Lewis St
+Livingston,NA,NA,"Neptunes Brewery, LLC",NA,NA,119 N L St
+Missoula,NA,NA,OddPitch Brewing Co.,NA,NA,
+Lolo,NA,NA,"Westslope Brewing, LLC",NA,NA,
+Great Falls,NA,NA,Jeremiah Johnson Brewing Company,NA,NA,215 3rd St NW
+Bozeman,NA,NA,Julius Lehrkind Brewing,NA,NA,1717 N Rouse Ave
+Big Sky,NA,NA,Lone Peak Brewery,NA,NA,48 Market Pl
+Bozeman,NA,NA,Mountains Walking,NA,NA,422 N Plum Ave
+Havre,NA,NA,Old Station Brewing Co,NA,NA,140 1st St
+Bozeman,NA,NA,Outlaw Brewing Co,NA,NA,2876 N 27th Ave
+Butte,NA,NA,Quarry Brewing,NA,NA,124 W Broadway St
+Havre,NA,NA,Triple Dog Brewing Company,NA,NA,675 1st St W
+Billings,NA,NA,Uberbrew,NA,NA,2305 Montana Ave
+Stevensville,NA,NA,Wildwood Brewing Co,NA,NA,4018 US Highway 93 N
+Billings,NA,NA,Yellowstone Valley Brewing Co.,NA,NA,2123B 1st Ave N
+Lincoln,NA,NA,Backswing Brewing Co.,NA,NA,500 W South St Ste 8
+Omaha,NA,NA,Barley Boys Brewery,NA,NA,
+Taylor,NA,NA,Bootleg Brewers - Sandhills Brewing Company,NA,NA,45145 829th Rd
+Alliance,NA,NA,Brewery 719,NA,NA,
+Omaha,NA,NA,Brewery In Planning - Omaha,NA,NA,
+Imperial,NA,NA,Hanging Horseshoe Brewing Company,NA,NA,73892 332 Ave
+Omaha,NA,NA,JGR Enterprises Inc,NA,NA,
+Elkhorn,NA,NA,Jukes Ale Works LLC,NA,NA,
+Mc Cook,NA,NA,Loop Brewing Co,NA,NA,404 W A St
+Plattsmouth,NA,NA,Midwest Hop Producers LLC,NA,NA,
+Springfield,NA,NA,Soaring Wings Brewing,NA,NA,17111 S 138th St
+Seward,NA,NA,Bottle Rocket Brewing Co,NA,NA,230 S 5th St
+Atkinson,NA,NA,Brush Creek Brewing Company,NA,NA,102 N Main St
+Norfolk,NA,NA,Divots Brewery,NA,NA,4200 W Norfolk Ave
+Lincoln,NA,NA,Empyrean Brewing Co,NA,NA,729 Q St
+Omaha,NA,NA,Jaipur Restaurant and Brewpub,NA,NA,10922 Elm St
+Wayne,NA,NA,Johnnie Byrd Brewing Company,NA,NA,121 N Pearl St
+La Vista,NA,NA,Nebraska Brewing Co - La Vista,NA,NA,6950 S 108th St
+Hastings,NA,NA,Steeple Brewing Co,NA,NA,717 W 1st St
+Henderson,NA,NA,Barley's Casino and Brewing Co,NA,NA,4500 E Sunset Rd Ste 30
+Reno,NA,NA,Battle BornÂ® Beer,NA,NA,100 N Arlington Ave Ste 100
+Las Vegas,NA,NA,Big Dog's Brewing Co,NA,NA,4547 N Rancho Dr Ste A
+Las Vegas,NA,NA,"Brewery in Planning - Las Vegas, NV",NA,NA,
+Reno,NA,NA,Great Basin Brewing Co - Production Facility,NA,NA,1155 S Rock Blvd Ste 490
+Las Vegas,NA,NA,Immortal Brewing Company,NA,NA,
+Las Vegas,NA,NA,Little Vixen Brewing,NA,NA,
+Las Vegas,NA,NA,Nevadan Brewing Company,NA,NA,
+Reno,NA,NA,Reno Brewery,NA,NA,
+Wells,NA,NA,Ruby Mountain Brewing Co,NA,NA,HC 60 Box 100
+Las Vegas,NA,NA,Sin City Beer Co,NA,NA,3663 Las Vegas Blvd S Ste 504 Miracle Mile Shops
+Reno,NA,NA,StoneyHead Brewing LLC,NA,NA,5301 Longley Ln Ste 84C
+Pinehurst,NA,NA,Pinehurst Resort,NA,NA,
+Omaha,NA,NA,Upstream Brewing Co (#1),NA,NA,514 S 11th St
+Henderson,NA,NA,"Joseph James Brewing Co, Inc",NA,NA,155 N Gibson Rd
+Elko,NA,NA,Matties,NA,NA,2535 Mountain City Hwy
+Laughlin,NA,NA,Pints Brewery and Sports Bar,NA,NA,2100 S Casino Dr
+Reno,NA,NA,The Brew Brothers/Eldorado Hotel and Casino,NA,NA,345 N Virginia St
+Las Vegas,NA,NA,Triple 7 Restaurant & Brewery at Main St Station,NA,NA,200 N Main St Main Street Station Casino
+Reno,NA,NA,Two Bald Guys Beverage Co,NA,NA,18090 Hazelnut Dr
+Salem,NA,NA,Border Brewery/Border Brew Supply,NA,NA,224 N Broadway Ste D14
+Portsmouth,NA,NA,"Brewery in Planning - Portsmouth, NH",NA,NA,
+North Conway,NA,NA,Green Gecko Brewing Co - St. Croix USVI,NA,NA,
+Derry,NA,NA,Kelsen Brewing Company,NA,NA,80 N High St Unit 3
+Nashua,NA,NA,Laughinghouse Brewing,NA,NA,
+Portsmouth,NA,NA,Loaded Question Brewing Co,NA,NA,909 Islington St Ste 12
+Reno,NA,NA,Under the Rose Brewing Company MidTown Location,NA,NA,1041 S Virginia St
+Merrimack,NA,NA,Able Ebenezer Brewing Company,NA,NA,31 Columbia Cir
+Portsmouth,NA,NA,Appalachian Mountain Brewery - Portsmouth,NA,NA,1 Redhook Way
+Wolfeboro,NA,NA,Burnt Timber Brewing,NA,NA,96 Lehner St
+Canterbury,NA,NA,Canterbury Aleworks,NA,NA,305 Baptist Hill Rd
+Henniker,NA,NA,"Henniker Brewing Company, LLC",NA,NA,129 Centervale Rd
+Tilton,NA,NA,Kettlehead Brewing Company,NA,NA,407 W Main St
+Astoria,NA,NA,Reach Break Brewing,NA,NA,1343 Duane St
+Langdon,NA,NA,Monadnock Brewing Company LLC,NA,NA,
+Londonderry,NA,NA,Moonlight Meadery/Hidden Moon Brewing,NA,NA,23 Londonderry Rd Unit 17
+Northwood,NA,NA,Northwoods Brewing Co,NA,NA,
+Salem,NA,NA,Outland Brewing Company,NA,NA,
+Nashua,NA,NA,TaleSpinner Craft Brewery,NA,NA,
+Keene,NA,NA,The Brewers of Nye Hill Farm,NA,NA,250 Middletown Rd
+Newark,NA,NA,Anheuser-Busch Inc â Newark,NA,NA,200 US Highway 1
+Ocean City,NA,NA,Artisan Owl Brewing Company,NA,NA,
+Glassboro,NA,NA,Axe And Arrow Brewery,NA,NA,
+Whitehouse Station,NA,NA,Backman Brewing Company,NA,NA,
+Suncook,NA,NA,Oddball Brewing,NA,NA,6 Glass St
+Croydon,NA,NA,Polyculture Brewing Company,NA,NA,3 Camel Hump Rd
+Portsmouth,NA,NA,Redhook - Cataqua Public House,NA,NA,35 Corporate Dr
+Conway,NA,NA,Sea Dog Brewing Co,NA,NA,1976 White Mountain Hwy #9
+Holderness,NA,NA,Squam Brewing Co,NA,NA,118 Perch Pond Rd
+Plymouth,NA,NA,Sublime Brewing Company,NA,NA,5 Route 25
+Exeter,NA,NA,The Neighborhood Beer Co.,NA,NA,156 Epping Rd
+Winchester,NA,NA,The Outlaw Brewing Company,NA,NA,215 Scotland Rd
+Portsmouth,NA,NA,The Portsmouth Brewery,NA,NA,56 Market St
+Toms River,NA,NA,Artisan's Brewery & Italian Grill,NA,NA,1171 Hooper Ave
+Atco,NA,NA,Atco Brewing LLC,NA,NA,302 White Horse Pike
+Berlin,NA,NA,Berlin Brewing Company,NA,NA,220 S White Horse Pike
+Pompton Lakes,NA,NA,Boak Brewing Co,NA,NA,262 Wanaque Ave Rear
+Asbury,NA,NA,"Brewery in Planning - Asbury, NJ",NA,NA,
+Basking Ridge,NA,NA,Brewery in Planning - Basking Ridge,NA,NA,
+Rutherford,NA,NA,Brewery In Planning - Milwaukee,NA,NA,
+Kingston,NA,NA,"Brewery In Planning- Chandler, AZ.",NA,NA,
+Hoboken,NA,NA,Castle Point Brewery,NA,NA,200 Garden St C/O Red Bridge Homes
+Manasquan,NA,NA,East Fifth Brewing Company,NA,NA,
+Hackensack,NA,NA,Hackensack Brewing Company,NA,NA,
+Ridgefield Park,NA,NA,Bolero Snort Brewery,NA,NA,65 Railroad Ave
+Shamong,NA,NA,Brotherton Brewing Company,NA,NA,340 Forked Neck Rd
+Fairfield,NA,NA,Cricket Hill Brewing Co. Inc.,NA,NA,24 Kulick Rd
+Somerdale,NA,NA,Flying Fish Brewing Co,NA,NA,900 Kennedy Blvd
+Butler,NA,NA,"High Point Brewing Co, Inc.",NA,NA,22 Park Pl
+Morristown,NA,NA,"HistoryQuest, LLC",NA,NA,
+Lakewood,NA,NA,Icarus Brewing Company,NA,NA,1790 Swarthmore Ave Unit 3 Lot 2
+Jersey City,NA,NA,Iron Beard Brewing,NA,NA,
+Tinton Falls,NA,NA,Jughandle Brewing Co LLC,NA,NA,4057 Asbury Ave Ste 6
+Pitman,NA,NA,Kelly Green Brewing Co.,NA,NA,154 S Broadway # 156
+Newton,NA,NA,"Krogh's Brewing, LLC",NA,NA,
+Long Branch,NA,NA,Long Branch Brewery,NA,NA,
+Ocean View,NA,NA,Ludlam Island Brewery,NA,NA,9 Stoney Ct Unit 3
+Haddon Heights,NA,NA,Lunacy Brewing Company,NA,NA,1500 Kings Hwy
+Manahawkin,NA,NA,ManaFirkin,NA,NA,450 East Bay Ave Ste 2
+Cream Ridge,NA,NA,Screamin Hill Brewery,NA,NA,83 Emleys Hill Rd
+Beach Haven,NA,NA,Ship Bottom Brewery,NA,NA,"830 N Bay Ave, Store 23"
+South Orange,NA,NA,Soma Brewing LLC,NA,NA,
+Somers Point,NA,NA,Somers Point Brewing Company,NA,NA,
+Pennington,NA,NA,The Referend Bier Blendery,NA,NA,1595 Reed Rd Unit 2
+Pitman,NA,NA,Human Village Brewing Co.,NA,NA,148 S Broadway
+Ocean,NA,NA,Kane Brewing,NA,NA,1750 Bloomsbury Ave
+Point Pleasant Beach,NA,NA,Last Wave Brewing Co,NA,NA,601 Bay Ave
+Wildwood,NA,NA,Mudhen Brewing Company,NA,NA,127 W Rio Grande Ave
+North Bergen,NA,NA,New Jersey Beer Co,NA,NA,4201 Tonnelle Ave
+Keansburg,NA,NA,"Raritan Bay Brewing, LLC",NA,NA,32 Church Street
+Atlantic City,NA,NA,Tun Tavern Brewery and Restaurant,NA,NA,2 Convention Blvd Ste 3
+Chatham,NA,NA,Twin Elephant Brewing Company,NA,NA,13 Watchung Ave Ste 103
+Marlton,NA,NA,Zed's Beer/Bado Brewing,NA,NA,19 N Maple Ave Unit B
+Albuquerque,NA,NA,Bosque Brewing Co,NA,NA,8900 San Mateo Blvd NE Ste I
+Bernalillo,NA,NA,Bosque Brewing Co - Bosque North,NA,NA,834 W. Highway 550
+Corrales,NA,NA,Casa Vieja LLC,NA,NA,
+Eagle Nest,NA,NA,Comanche Creek Brewing Co,NA,NA,225 Comanche Creek Road
+Santa Fe,NA,NA,Duel Brewing Company,NA,NA,1228 Parkway Dr Ste D
+Hopewell,NA,NA,Troon Brewing,NA,NA,130 Hopewell Rocky Hill Rd # 5
+Mount Holly,NA,NA,Village Idiot Brewing Company,NA,NA,42 High St
+Hammonton,NA,NA,"Vinyl Brewing Company, LLC",NA,NA,300B 12th St
+Santa Fe,NA,NA,"Abbey Brewing Company, LLC",NA,NA,215 W. Alicante Rd
+Cimarron,NA,NA,BlÃ¼ Dragonfly Brewing,NA,NA,301 E 9th St # C
+Albuquerque,NA,NA,Bombs Away Beer Company,NA,NA,9801 Acoma Rd SE
+Mosquero,NA,NA,Callahan West Brewery,NA,NA,20 Main St
+Las Cruces,NA,NA,De La Vegaâs Pecan Grill and Brewery,NA,NA,500 S Telshor Blvd
+Taos,NA,NA,Eskes Brew Pub,NA,NA,106 Des Georges Pl
+Las Cruces,NA,NA,Icebox Brewing LLC,NA,NA,
+Santa Fe,NA,NA,Leaf & Hive,NA,NA,
+Las Cruces,NA,NA,New Mexico State University Department Of Chemical,NA,NA,
+Albuquerque,NA,NA,High and Dry Brewing,NA,NA,529 Adams St NE
+Rio Rancho,NA,NA,Las Cazuelas Brewing,NA,NA,4051 Sara Rd SE
+Albuquerque,NA,NA,Lava Rock Brewing Company,NA,NA,2220 Unser Blvd
+Albuquerque,NA,NA,Marble Brewery - Mav Lab,NA,NA,9904 Montgomery Blvd NE
+Las Cruces,NA,NA,Picacho Peak Brewing Company,NA,NA,3900 W Picacho Ave
+Albuquerque,NA,NA,Rio Bravo Brewing Company,NA,NA,1912 2nd Street NW
+Taos,NA,NA,Taos Ale House,NA,NA,401 Paseo del Pueblo Norte
+Albuquerque,NA,NA,The 377 Brewery,NA,NA,2027 Yale Blvd SE
+Farmington,NA,NA,Three Rivers Eatery and Brewery,NA,NA,101 E Main St
+Truth or Consequences,NA,NA,Truth Or Consequences Brewing Company,NA,NA,410 N Broadway St
+Davenport,NA,NA,212 Brewing Company,NA,NA,21476 Route 23
+Poughkeepsie,NA,NA,8th Ward Brewing Company,NA,NA,
+New York,NA,NA,Alphabet City Brewing Co,NA,NA,96 Avenue C Frnt 4
+Blauvelt,NA,NA,Andean Brewing,NA,NA,300 Corporate Dr Ste 2
+Central Valley,NA,NA,Apex Brewery,NA,NA,
+King Ferry,NA,NA,Aurora Ale & Lager,NA,NA,1891 State Route 90 N
+Keeseville,NA,NA,Ausable Brewing Co,NA,NA,765 Mace Chasm Rd
+New York,NA,NA,B9 Beverages Inc,NA,NA,404 5th Ave # 7.055
+Farmingdale,NA,NA,Barrage Brewing Co,NA,NA,32 Allen Blvd Ste E
+Port Crane,NA,NA,Beer Tree Brew Co,NA,NA,197 Rte 369
+Long Island City,NA,NA,Big Alice Brewing Company,NA,NA,808 43rd Rd
+Holland Patent,NA,NA,16 Stone Brewpub,NA,NA,9542 Main St
+East Aurora,NA,NA,42 North Brewing Company,NA,NA,25 Pine St
+Ossining,NA,NA,6 Degrees of Separation,NA,NA,35 Main St
+Long Island City,NA,NA,Alewife Brewing Company,NA,NA,514 51st Ave
+Baldwinsville,NA,NA,Anheuser-Busch Inc â Baldwinsville,NA,NA,2885 Belgium Rd
+Accord,NA,NA,Arrowood Farms,NA,NA,236 Lower Whitfield Rd
+Dryden,NA,NA,Bacchus Brewing,NA,NA,15 Ellis Dr
+Lowville,NA,NA,BarkEater Craft Brewery,NA,NA,5411 Shady Ave
+Buffalo,NA,NA,Big Ditch Brewing Company,NA,NA,55 E Huron St
+Lake Placid,NA,NA,Big Slide Brewery,NA,NA,5686 Cascade Road
+Geneva,NA,NA,"Bottomless Brewing, LLC",NA,NA,3543 E Lake Rd
+Astoria,NA,NA,Brewery in Planning - Astoria,NA,NA,
+Brooklyn,NA,NA,Brewery In Planning - Brooklyn,NA,NA,
+Brooklyn,NA,NA,Brewery in Planning - Brooklyn,NA,NA,
+East Rochester,NA,NA,"Brewery in Planning - East Rochester, NY",NA,NA,
+Fabius,NA,NA,Brewery in Planning - Fabius,NA,NA,
+Long Island City,NA,NA,Brewery in Planning - Long Island City,NA,NA,
+Medina,NA,NA,Brewery in Planning - Medina,NA,NA,
+New York,NA,NA,Brewery in Planning - New York,NA,NA,
+Olivebridge,NA,NA,Brewery in Planning - Olivebridge,NA,NA,
+Warwick,NA,NA,Brewery In Planning - Oyster Bay,NA,NA,
+Point Lookout,NA,NA,Brewery In Planning - Point Lookout,NA,NA,
+Ticonderoga,NA,NA,"Brewery in Planning - TICONDEROGA, NY",NA,NA,
+Centerport,NA,NA,"Blind Bat Brewery LLC, The",NA,NA,420 Harrison Dr
+Watertown,NA,NA,"Boots Brewing Company, Inc.",NA,NA,89 Public Sq
+New Paltz,NA,NA,"Bradley Farm / RB Brew, LLC",NA,NA,317 Springtown Rd
+Hyde Park,NA,NA,Brewery At The Culinary Institute Of America,NA,NA,1946 Campus Dr
+Spencerport,NA,NA,Brindle Haus Brewing Company,NA,NA,377 S Union St
+Albany,NA,NA,CH Evans Brewing Co/Albany Pump Station,NA,NA,19 Quackenbush Sq
+Peekskill,NA,NA,CL River Outpost Brewing,NA,NA,5 John Walsh Blvd
+Penn Yan,NA,NA,Climbing Bines Craft Ale Company,NA,NA,511 Hanson Point Rd
+College Point,NA,NA,College Point Brewery,NA,NA,
+Friendship,NA,NA,Country Town Farm Brewery,NA,NA,
+Tarrytown,NA,NA,Duncan's Abbey,NA,NA,
+Bronx,NA,NA,Dyckman Beer Co,NA,NA,
+Chatham,NA,NA,Chatham Brewing LLC,NA,NA,59 Main St
+Bronx,NA,NA,Chelsea Craft Brewing Co Llc,NA,NA,463 E 173rd St
+Glens Falls,NA,NA,Coopers Cave Ale Co,NA,NA,2 Sagamore St
+Phelps,NA,NA,Crafty Ales and Lagers,NA,NA,2 Exchange St
+Cazenovia,NA,NA,Critz Farms Brewing & Cider Co.,NA,NA,3232 Rippleton Rd
+Athens,NA,NA,Crossroads Brewing Co,NA,NA,21 2nd St
+Mamaroneck,NA,NA,Decadent Ales,NA,NA,607A E Boston Post Rd
+New City,NA,NA,District 96 Beer Factory,NA,NA,395 S Main St
+Bay Shore,NA,NA,Fire Island Beer Co,NA,NA,25 Drexel Dr
+New Paltz,NA,NA,Foreign Objects Beer Company,NA,NA,
+Brooklyn,NA,NA,Four Beasts Brewery,NA,NA,
+Red Hook,NA,NA,From the Ground Brewery,NA,NA,245 Guski Rd
+Geneva,NA,NA,G.C. Starkey Beer Company,NA,NA,68 Castle St Apt 1C
+Geneva,NA,NA,Gael Brewing Co,NA,NA,4180 State Route 14
+Binghamton,NA,NA,Galaxy Brewing Co,NA,NA,"41 Court St, 153 & 157"
+West Park,NA,NA,Great Life Brewing,NA,NA,
+Dobbs Ferry,NA,NA,Ferrari Beer Company,NA,NA,160 Ashford Ave
+Long Island City,NA,NA,Fifth Hammer Brewing Company,NA,NA,10-28 46th Ave
+Staten Island,NA,NA,"Flagship Brewery, LLC.",NA,NA,40 Minthorne St
+Farmingdale,NA,NA,Flying Belgian Brewery,NA,NA,211 Main St
+Munnsville,NA,NA,Foothill Hops Farm Brewery,NA,NA,5024 Bear Path Rd
+Clay,NA,NA,Freight Yard Brewing LLC,NA,NA,4975 State Route 31
+Riverhead,NA,NA,Garden of Eve Farm Brewery,NA,NA,4558 Sound Ave
+Buffalo,NA,NA,Gene McCarthy's/Old First Ward Brewing Company,NA,NA,73 Hamburg St
+Rochester,NA,NA,Genesee Brew House / North American Breweries,NA,NA,25 Cataract St
+New Paltz,NA,NA,Gilded Otter Brewing Co,NA,NA,3 Main St
+Schenectady,NA,NA,Great Flats Brewing,NA,NA,151 Lafayette St
+Bay Shore,NA,NA,Great South Bay Brewery,NA,NA,25 Drexel Dr
+Mechanicville,NA,NA,Hank Hudson Brewing At Fairways of Halfmoon,NA,NA,17 Johnson Rd
+Jamesville,NA,NA,Hill Country Farm Brewery,NA,NA,
+Buffalo,NA,NA,Hofbrauhaus Buffalo,NA,NA,
+Altamont,NA,NA,Indian Ladder Farmstead Brewery and Cidery,NA,NA,342 Altamont Rd
+Jamestown,NA,NA,Jamestown Brewing Company,NA,NA,
+Kingston,NA,NA,Kingston Standard Brewing Co.,NA,NA,
+Northport,NA,NA,Harbor Head Brewing Co,NA,NA,81 Fort Salonga Rd
+New York,NA,NA,Harlem Brewing Co,NA,NA,2 W 123rd St
+East Berne,NA,NA,Helderberg Mountain Brewing Company,NA,NA,83 Main St
+Highland,NA,NA,Hudson Ale Works,NA,NA,17 Milton Ave
+Brooklyn,NA,NA,Island To Island Brewery,NA,NA,642 Rogers Ave
+Brooklyn,NA,NA,KelSo Beer Company,NA,NA,529 Waverly Ave
+Staten Island,NA,NA,Kills Boro Brewing Company,NA,NA,62 Van Duzer St
+Queensbury,NA,NA,Lake George Beer Hub,NA,NA,1043 State Route 9
+Manlius,NA,NA,Limestone Creek Brewing Company,NA,NA,
+Canandaigua,NA,NA,Lincoln Hill Farm,NA,NA,
+Brooklyn,NA,NA,Lineup Brewing LLC,NA,NA,33 35th St Unit 6A
+Hector,NA,NA,"Lucky Hare Brewing Company, Inc.",NA,NA,6085 Beckhorn Road
+Weedsport,NA,NA,Lunkenheimer Craft Brewing Co. LLC,NA,NA,"PO Box 539 8920 N Seneca St,"
+Syracuse,NA,NA,Middle Ages Brewing Co Ltd,NA,NA,120 Wilkinson St Ste 3
+Cold Spring,NA,NA,Midriver Brewery,NA,NA,
+Himrod,NA,NA,Miles Craft Ales @ Miles Wine Cellars,NA,NA,168 Randall Rd
+Poughkeepsie,NA,NA,Mill House Brewing Company - Production,NA,NA,
+Center Moriches,NA,NA,Moriches Field Brewing Company,NA,NA,
+Auburn,NA,NA,Next Chapter Brewpub,NA,NA,
+Riverhead,NA,NA,North Fork Brewing Company,NA,NA,
+Moriah,NA,NA,Northern Harvest Brewing Company,NA,NA,
+Westport,NA,NA,Ledge Hill Brewing Co,NA,NA,6700 Main St
+Penn Yan,NA,NA,Lyonsmith Brewing Company,NA,NA,138 Water St
+Schenectady,NA,NA,Mad Jack Brewing Co / Van Dyck Restaurant & Lounge,NA,NA,237 Union St
+Corning,NA,NA,Market Street Brewing Co,NA,NA,63 W Market St # 65
+Rochester,NA,NA,North American Breweries,NA,NA,445 Saint Paul St
+Endicott,NA,NA,North Brewery,NA,NA,110 Washington Ave
+Malone,NA,NA,Owls Rest Brewery,NA,NA,
+Schroon Lake,NA,NA,Paradox Brewery / Gateway To the Adirondacks,NA,NA,
+Albany,NA,NA,Perfect World Brewing Co,NA,NA,1276 Broadway
+New York,NA,NA,Radiant Pig Craft Beers,NA,NA,122 W 27th St Fl 10
+Cherry Valley,NA,NA,Red Shed Brewing Company,NA,NA,817 Butter Bowl Rd
+Rocky Point,NA,NA,Rocky Point Artisan Ales,NA,NA,
+New York,NA,NA,Ruckus Brewing Co,NA,NA,261 W 35th St Ste 1002
+Auburn,NA,NA,Prison City Brewing,NA,NA,28 State St
+New Paltz,NA,NA,Pull Brewing Co,NA,NA,317 Springtown Rd
+Penfield,NA,NA,Rogers Beer,NA,NA,23 Woodline Dr
+Rochester,NA,NA,Rohrbach Brewing Company,NA,NA,97 Railroad St
+Oneonta,NA,NA,Roots Brewing Company,NA,NA,175 Main St
+Mahopac,NA,NA,Route 6 Tap House/ Putnam Brewery,NA,NA,728 US-6
+Chester,NA,NA,Rushing Duck Brewing Co,NA,NA,1 Battiato Ln
+Holbrook,NA,NA,Saint James Brewery,NA,NA,929 Lincoln Ave Ste 11
+Brooklyn,NA,NA,"SakeBrooklyn Brewing Co., LLC",NA,NA,
+Ithaca,NA,NA,Scale House Brewery & Pub,NA,NA,23 Cinema Dr Ste C
+Manlius,NA,NA,Seneca Street Brew Pub,NA,NA,315 E Seneca St Ste 1
+Howes Cave,NA,NA,Serious Brewing Co.,NA,NA,116 Caverns Rd
+Farmington,NA,NA,Sevens Brew Pub,NA,NA,5857 Route 96
+Queensbury,NA,NA,SlickFin Brewing Company LLC,NA,NA,
+New Paltz,NA,NA,Smart Beer Company,NA,NA,
+Lakewood,NA,NA,Southern Tier Brewing Co,NA,NA,2072 Stoneman Cir
+Albany,NA,NA,Steadfast Beer Co,NA,NA,1756 Western Ave Rear
+Gloversville,NA,NA,Stump City Brewing LLC,NA,NA,521 W Fulton Street Ext
+Millerton,NA,NA,Svendale Brewing Co,NA,NA,
+Brooklyn,NA,NA,Sweet Thursday Beer Co,NA,NA,
+Lansing,NA,NA,"Salt Point Brewing Co, LLC",NA,NA,2075 East Shore Dr
+Utica,NA,NA,Saranac Brewery / Matt Brewing Co,NA,NA,811 Edward St
+West Islip,NA,NA,Secatogue Brewing Co.,NA,NA,375 Union Blvd
+Brooklyn,NA,NA,The Food Works,NA,NA,
+New York,NA,NA,Toast Ale,NA,NA,601 W 26th St Ste 325-291
+Farmingdale,NA,NA,Tweaking Frog Brewing Company,NA,NA,211 Main St Ste A
+Livingston Manor,NA,NA,Upward Brewing Co.,NA,NA,
+Plattsburgh,NA,NA,Valcour Brewing Company LLC,NA,NA,49 Ohio Rd
+Mamaroneck,NA,NA,Velveteen Brewing Co,NA,NA,
+Lodi,NA,NA,Wagner Valley Brewing Co,NA,NA,9322 Route 414
+Brooklyn,NA,NA,War Flag Brewing Co,NA,NA,649 Morgan Ave Ste B16-5
+Brooklyn,NA,NA,Wartega,NA,NA,33 35th St Unit 6A
+Saratoga Springs,NA,NA,Whitman Brewing Company,NA,NA,
+New Paltz,NA,NA,The Brewery At Bacchus,NA,NA,4 S Chestnut St
+New York,NA,NA,Third Rail Beer,NA,NA,928 Broadway Ste 902
+Marietta,NA,NA,Tim's Pumpkin Patch,NA,NA,2901 Rose Hill Rd
+Troupsburg,NA,NA,TripEnd Brewing,NA,NA,3072 Prutsman Rd
+Oswego,NA,NA,US Beer Brewers At the Cellar Door,NA,NA,17 W Cayuga St
+Brooklyn,NA,NA,Wild East Brewing Co.,NA,NA,
+Saratoga Springs ,NA,NA,Winnerâs Circle Brewing Company,NA,NA,21 Whistler Court Apt 4
+Buffalo,NA,NA,Wooden Skiff Beer Co.,NA,NA,
+Raleigh,NA,NA,1323 R & D,NA,NA,1323 Capital Blvd 1323 R and D
+Elkin,NA,NA,Angry Troll Brewing / 222 Public House,NA,NA,222 E Main St Ste U2
+Mint Hill,NA,NA,Barking Duck Brewing Company,NA,NA,4400 Morris Park Dr Ste R
+Bear Creek,NA,NA,Bear Creek Brews,NA,NA,10538 Nc 902 Hwy
+New Bern,NA,NA,Beer Army,NA,NA,
+Baldwinsville,NA,NA,WT Brews LLC,NA,NA,3 W Genesee St
+Yonkers,NA,NA,Yonkers Brewing Co,NA,NA,92 Main St
+Ocracoke,NA,NA,1718 Ocracoke Brewing,NA,NA,1129 Irvin Garrish Hwy
+Shallotte,NA,NA,34 Degree North Experiment Station,NA,NA,4802 Main St
+Trenton,NA,NA,3rd Rock Brewing Company,NA,NA,134 Industrial Park Dr
+Asheville,NA,NA,Asheville Brewing Co,NA,NA,77 Coxe Ave
+Asheville,NA,NA,Ben's Tune-Up / Ben's Beer,NA,NA,195 Hilliard Ave
+Asheville,NA,NA,Bhramari Brewhouse,NA,NA,101 S Lexington Ave
+Wilmington,NA,NA,Bill's Brewing Co.,NA,NA,4238 Market St.
+Wilmington,NA,NA,Bill's Front Porch Pub and Brewery,NA,NA,4238 Market St
+Tryon,NA,NA,Bottle Tree Beer Co,NA,NA,10 N Trade St Apt A
+Matthews,NA,NA,"Brewery in Planning - Matthews, NC",NA,NA,
+Winston Salem,NA,NA,Brewery in Planning - Winston Salem,NA,NA,
+Asheville,NA,NA,Burial Beer Co Forestry Camp,NA,NA,
+Winston Salem,NA,NA,Cavern Brewing At Lowes Foods,NA,NA,1381 Old Mill Cir Ste 200
+Raleigh,NA,NA,Collection Brewing Company,NA,NA,
+Cincinnati,NA,NA,Brewery in Planning - Cincinnati,NA,NA,
+Boone,NA,NA,Booneshine Brewing Company,NA,NA,465 Industrial Park Dr.
+Mebane,NA,NA,Bright Penny Brewing Company,NA,NA,309 W Graham St
+Morehead City,NA,NA,Crystal Coast Brewing Company LLC,NA,NA,702 Arendell St
+Carrboro,NA,NA,Dingo Dog Brewing Co,NA,NA,
+Pisgah Forest ,NA,NA,Ecusta Brewing Co,NA,NA,49 Pisgah Hwy Ste 3
+Pisgah Forest,NA,NA,Ecusta Brewing Co - Drift Taproom,NA,NA,49 Pisgah Hwy
+Graham,NA,NA,Forgotten Road Ales,NA,NA,
+Angier,NA,NA,"Franklin Brewing Company, LLC",NA,NA,
+Greensboro,NA,NA,"G. Mansfield, Inc",NA,NA,
+Seagrove,NA,NA,GroundLion Brewing,NA,NA,
+Southern Pines,NA,NA,Hatchet Brewing Company,NA,NA,
+Cuyahoga Falls,NA,NA,Brewery in Planning - Cuyahoga Falls,NA,NA,
+Farmville,NA,NA,Duck Rabbit Craft Brewery,NA,NA,4519 West Pine St
+Carolina Beach,NA,NA,Good Hops Brewing LLC,NA,NA,811 Harper Ave
+Asheville,NA,NA,Green Man Brewing Co,NA,NA,27 Buxton Ave
+Hayesville,NA,NA,Hayesville Brewing Co,NA,NA,1568 Highway 64 W
+Winston Salem,NA,NA,HOOTS Beer Co.,NA,NA,840 Mill Works St
+Boone,NA,NA,Ivory Tower Brewery,NA,NA,
+High Point,NA,NA,"Jigsaw Brewing, LLC",NA,NA,
+Mooresville,NA,NA,Jolly Roger Brew,NA,NA,236 Raceway Dr Ste 12
+Rocky Mount,NA,NA,Koi Pond Brewing Co,NA,NA,1107 Falls Rd
+Boone,NA,NA,"Lost Province Brewing Company, LLC",NA,NA,130 N. Depot Street PO Box 614
+Reidsville,NA,NA,Lucky City Brewing Co.,NA,NA,
+Asheville,NA,NA,Hi-Wire Brewing Big Top Production Facility,NA,NA,2 Huntsman Pl
+Asheville,NA,NA,Hi-Wire Brewing South Slope Specialty Brewery,NA,NA,197 Hilliard Ave
+Fayetteville,NA,NA,Huske Hardware House Brewing Co,NA,NA,405 Hay St
+Charlotte,NA,NA,Hyde Brewing,NA,NA,2911 Griffith St
+Kernersville,NA,NA,Kernersville Brewing Company,NA,NA,210 N Main St
+Asheville,NA,NA,Lexington Avenue Brewery - The LAB,NA,NA,39 N Lexington Ave
+Marshall,NA,NA,Mad County Brewing,NA,NA,45 N Main St
+Wilmington,NA,NA,Mad Mole Brewing LLC,NA,NA,6309 Boathouse Rd Ste C
+Pineville,NA,NA,Middle James Brewing Company,NA,NA,
+Arden,NA,NA,Mills River Brewery,NA,NA,330 Rockwood Rd Ste 103
+Durham,NA,NA,Modern Romance Brewery,NA,NA,
+Gold Hill,NA,NA,Morgan Ridge Vineyards & Brewhouse,NA,NA,486 John Morgan Rd
+Pittsboro,NA,NA,NAZZ'D Brew Works and Pub,NA,NA,
+Raleigh,NA,NA,NC State Brewery,NA,NA,400 Dan Allen Drive Campus Box 7624
+Lansing,NA,NA,New River Brewing,NA,NA,9211 NC Hwy 194 N Unit A
+Davidson,NA,NA,Off Main Brewing,NA,NA,
+Hickory,NA,NA,Olde Hickory Brewery & Amos Howards,NA,NA,2828 US Highway 70 SW
+Wake Forest,NA,NA,Owls Roost Brewing,NA,NA,
+Brevard,NA,NA,Peaks and Creeks Brewing Company,NA,NA,212 King St Ste B
+Oriental,NA,NA,New Village Brewery and Taproom,NA,NA,702 Broad St
+Charlotte,NA,NA,NoDa Brewing Co - NE,NA,NA,2921 N Tryon St
+Charlotte,NA,NA,NoDa Brewing Co - OG,NA,NA,2229 N Davidson St
+Hickory,NA,NA,Olde Hickory Brewery - Production,NA,NA,2 3rd St SW
+Clemmons,NA,NA,Other Side of the Moon Brewery / Full Moon Oyster Bar,NA,NA,1477 River Ridge Dr
+Whitsett,NA,NA,Red Oak Brewing Co,NA,NA,6901 Konica Dr
+Charlotte,NA,NA,Rock Bottom Brewery- Charlotte,NA,NA,401 N Tryon St Ste 100
+Charlotte,NA,NA,Seven Jars Products,NA,NA,6148-B Brookshire Blvd
+Hendersonville,NA,NA,Southern Appalachian Brewery,NA,NA,822 Locust St Ste 100
+Chapel Hill,NA,NA,"Starpoint Brewing, LLC",NA,NA,901 Clarence Dr
+Chapel Hill,NA,NA,"Starpoint Brewing, LLC / Beer Study",NA,NA,2501 University Dr Ste 4
+Valdese,NA,NA,"The Levee Brewing Company, Inc",NA,NA,
+Concord,NA,NA,Red Hill Brewing Co,NA,NA,21 Union St S
+Charlotte,NA,NA,Resident Culture Brewing Company LLC,NA,NA,2101 Central Ave
+Belmont,NA,NA,Rivermen Brewing Co,NA,NA,1500 River Dr
+Hendersonville,NA,NA,Sanctuary Brewing Company,NA,NA,147 1st Ave E
+Wilmington,NA,NA,Tek Mountain Brewing,NA,NA,1844 Sir Tyler Dr
+Jamestown,NA,NA,The Other Side of the Moon - Jamestown,NA,NA,103 W Main St
+Charlotte,NA,NA,The Sycamore Brewing Cannery,NA,NA,401 W 24th St
+Charlotte,NA,NA,Thirsty Nomad Brewing,NA,NA,4402 Stuart Andrew Blvd Ste A
+Charlotte,NA,NA,Traust Brewing Co.,NA,NA,
+Fairview,NA,NA,Turgua Brewing Co,NA,NA,27 Firefly Hollow Dr
+Lincolnton,NA,NA,"Untapped Territory, LLC",NA,NA,326 E Main St Ste 1735
+,NA,NA,1487 Brewery,NA,NA,
+Charlotte,NA,NA,Wooden Robot,NA,NA,1440 S Tryon St Ste 110
+Morehead City,NA,NA,Tight Lines Pub,NA,NA,709 Arendell St
+Raleigh,NA,NA,Tobacco Road Brewery,NA,NA,505 W Jones St
+Arden,NA,NA,Wicked Weed Funk House,NA,NA,95 Old Shoals Rd
+McKenzie,NA,NA,Black Leg Brewery,NA,NA,
+Whitehall,NA,NA,2 Tones Brewing Co.,NA,NA,
+Cincinnati,NA,NA,Big Ash Brewing Company,NA,NA,
+Cleveland,NA,NA,"Bookhouse Brewing, LLC.",NA,NA,
+Cleveland Heights,NA,NA,Breaking Point Brewery,NA,NA,
+Bethel,NA,NA,Brewery In Planning - Bethel,NA,NA,
+Defiance,NA,NA,4kd Crick Brewery,NA,NA,211 Carpenter Rd
+Columbus,NA,NA,"Actual Brewing Company, LLC",NA,NA,655 N James Rd
+Akron,NA,NA,Akronym Brewing LLC,NA,NA,58 E Market St
+Columbus,NA,NA,Anheuser-Busch Inc â Columbus,NA,NA,700 Schrock Rd
+Mount Orab,NA,NA,Bardwell Winery and Brewery,NA,NA,716 N High St
+Lakewood,NA,NA,BottleHouse Brewery,NA,NA,13368 Madison Ave
+Strongsville,NA,NA,Brew Kettle - Production Works,NA,NA,20102 Progress Dr
+Canal Winchester,NA,NA,"BrewDog Brewing Company, LLC",NA,NA,96 Gender Rd
+Logan,NA,NA,"Brewery 33 Hocking Hills, LLC",NA,NA,12684 College Prospect Dr
+Solon,NA,NA,"Brewery in Planning - Solon, OH",NA,NA,
+Stow,NA,NA,"Brewery in Planning - Stow, OH",NA,NA,
+Upper Arlington,NA,NA,Brewery in Planning - Upper Arlington,NA,NA,
+Wadsworth,NA,NA,Brewery In Planning - Wadsworth,NA,NA,
+Waynesville,NA,NA,Brewery in Planning - Waynesville,NA,NA,
+Columbus,NA,NA,"Brewery In Planning - Worthington, OH.",NA,NA,
+Sylvania,NA,NA,Brubaker's Brewery & Pub,NA,NA,
+Newbury,NA,NA,Crooked Pecker Brewing,NA,NA,
+Cincinnati,NA,NA,Dead Low Brewing,NA,NA,
+Cleveland,NA,NA,Earlybird Brewing Company,NA,NA,737 Bolivar Rd Ste 4100
+Columbus,NA,NA,Elevator Brewing Co - Production facility,NA,NA,165 N 4th St
+Versailles,NA,NA,Endless Pint Brewing,NA,NA,
+Newark,NA,NA,Buck's Brewing Co,NA,NA,993 Mount Vernon Rd
+Chagrin Falls,NA,NA,Chagrin Beer Company,NA,NA,178 E Washington St
+Mentor,NA,NA,CLE Brewing,NA,NA,9431 Mercantile Dr
+Cleveland,NA,NA,Cleveland Brewing Company @ Butcher and The Brewer,NA,NA,2043 E 4th St
+Warren,NA,NA,Clubhouse Brewing Company Ltd,NA,NA,668 N River Rd NW
+Columbus,NA,NA,Columbus Brewing Co,NA,NA,2555 Harrison Rd
+Columbus,NA,NA,Commonhouse Ales,NA,NA,535 Short St
+Newark,NA,NA,DankHouse Brewing Company,NA,NA,161 Forry St
+Xenia,NA,NA,Devil Wind Brewing LLC,NA,NA,130 S Detroit St
+Madison,NA,NA,Double Wing Brewing Co,NA,NA,7840 Doty Rd
+Columbus,NA,NA,Endeavor Brewing Company,NA,NA,909 W 5th Ave
+North Olmsted,NA,NA,Fat Head's Brewery & Saloon,NA,NA,24581 Lorain Rd
+Canton,NA,NA,Fat Head's Brewpub - Canton,NA,NA,3885 Everhard Rd NW
+Cleveland,NA,NA,Forest City Brewery,NA,NA,2135 Columbus Rd Ste A
+Columbus,NA,NA,Four String Brewing Company - West Side Production Facility,NA,NA,660 N Hague Ave
+Maumee,NA,NA,Granite City Food & Brewery (#25),NA,NA,2300 Village Dr W
+Grove City,NA,NA,Grove City Brewing Company,NA,NA,3946 Broadway
+Rayland,NA,NA,Hightower Brewing Co,NA,NA,3445 County Road 16 Unit B
+Akron,NA,NA,Hoppin' Frog Brewing Co,NA,NA,1680 E Waterloo Rd Ste F
+Middletown,NA,NA,FigLeaf Brewing Company,NA,NA,3387 Cincinnati Dayton Rd
+Napoleon,NA,NA,Flatrock Brewery,NA,NA,621 N Perry St
+Columbus,NA,NA,Four String Brewing Company,NA,NA,985 W 6th Ave
+Elyria,NA,NA,Franklin Brewing Co,NA,NA,1345 East Ave
+Blue Ash,NA,NA,Fretboard Brewing Company,NA,NA,5800 Creek Rd
+Cleveland,NA,NA,Goldhorn Brewery,NA,NA,1361 E 55th St
+Geneva,NA,NA,GOTL Brewing Co,NA,NA,5243 Lake Rd E
+Toledo,NA,NA,Great Black Swamp Brewing Co,NA,NA,3323 Monroe St
+Cleveland,NA,NA,Gypsy Brewery,NA,NA,3506 Vega Ave
+Cleveland,NA,NA,Hansa Brewery,NA,NA,2717 Lorain Ave
+Coshocton,NA,NA,Hasseman Brewing,NA,NA,115 S 6th St
+Stow,NA,NA,Headtrip Brewery,NA,NA,1634 Norton Rd
+Cuyahoga Falls,NA,NA,HiHO Brewing Co,NA,NA,1707 Front St
+Hudson,NA,NA,Hop Tree Brewing Company Ltd,NA,NA,1297 Hudson Gate Dr
+Columbus,NA,NA,Hoster Brewing Co,NA,NA,760 Harmon Ave
+Powell,NA,NA,Ill Mannered Brewing Company,NA,NA,30 Grace Dr
+Sylvania,NA,NA,Inside The Five Brewing,NA,NA,5703 Main St
+Athens,NA,NA,Jackie O's Pub & Brewery,NA,NA,22-24 W Union St
+Mansfield,NA,NA,Laxton Hollow Brewing Works,NA,NA,302 E Main St
+Mount Victory,NA,NA,Levitate,NA,NA,
+Bolivar,NA,NA,Lockport Brewery,NA,NA,10891 OH-212
+Chagrin Falls,NA,NA,Lucky Owl Brewing,NA,NA,8660 Tamarack Trl
+Cincinnati,NA,NA,March First Brewing,NA,NA,7885 E Kemper Rd
+Cadiz,NA,NA,Monzula Farm Brewery / Vineyard 22,NA,NA,83800 Monzula Rd
+Lancaster,NA,NA,Mosaic Brewing,NA,NA,
+Cincinnati,NA,NA,Mt. Carmel Brewing Co,NA,NA,4362 Mount Carmel Tobasco Rd
+Medina,NA,NA,Lager Heads Brewing Co.,NA,NA,325 W Smith Rd
+Medina,NA,NA,Lager Heads Smokehouse,NA,NA,2832 Abbeyville Rd
+Columbus,NA,NA,Lineage Brewing,NA,NA,2971 N High St
+Canal Winchester,NA,NA,Loose Rail Brewing,NA,NA,37 W Waterloo St
+Kent,NA,NA,Madcap Brew Co.,NA,NA,1422 Mogadore Rd
+Hartville,NA,NA,Maize Valley Craft Brewery,NA,NA,6193 Edison St NE
+Cleveland,NA,NA,Market Garden Brewery,NA,NA,1947 W 25th St
+Trenton,NA,NA,MillerCoors Brewing Co - Trenton,NA,NA,2525 Wayne Madison Rd
+Nelsonville,NA,NA,Multiple Brewing Company,NA,NA,82 W Washington St
+Grand Rapids,NA,NA,Neon Groundhog Brewery - Majestic Oak Winery,NA,NA,13554 Mohler Rd
+New Bremen,NA,NA,New Bremen Brewing Company,NA,NA,
+Dayton,NA,NA,Nowhere In Particular Brewing Company,NA,NA,6826 Loop Rd
+Bidwell,NA,NA,Old Mill Craft Beer,NA,NA,2376 State Route 850
+Sunbury,NA,NA,On The Fly Brewing Company,NA,NA,
+Carroll,NA,NA,Outerbelt Brewing Company,NA,NA,
+Belle Center,NA,NA,Paradune Brewing Company,NA,NA,20707 Township Rd 119
+Lakewood,NA,NA,Pedestrian Brewing,NA,NA,
+Columbus,NA,NA,Permission Brewing Company,NA,NA,
+Wauseon,NA,NA,Ramblin Reds Brewing Company,NA,NA,1493 N Shoop Ave Unit A
+Wauseon,NA,NA,Ridge Runner Brewing LLC,NA,NA,
+Cincinnati,NA,NA,Rock Bottom Brewery - Cincinnati,NA,NA,10 Fountain Square Plz
+Cincinnati,NA,NA,Northern Row Brewery & Distillery,NA,NA,111 W McMicken Ave
+Cincinnati,NA,NA,Off Track Brewing Company,NA,NA,227 Stark Street
+Medway,NA,NA,Pinups & Pints,NA,NA,10963 Lower Valley Pike
+Cleveland,NA,NA,Platform Beer Co - Production Facility,NA,NA,3506 Vega Ave
+Cincinnati,NA,NA,Platform Cincinnati,NA,NA,916 Dalton Ave
+Lancaster,NA,NA,Rockmill Brewing Co,NA,NA,5705 Lithopolis Rd NW
+Akron,NA,NA,Roobrew,NA,NA,
+Middle Bass Island,NA,NA,Saint Hazards Brewery,NA,NA,1233 Fox Road
+Mount Orab,NA,NA,Sons Of Toil Brewing LLC,NA,NA,14090 Klein Rd
+Westerville,NA,NA,Spires Social Brewing Co.,NA,NA,
+Hinckley,NA,NA,The Blue Heron Brewery,NA,NA,
+Mason,NA,NA,The Common Beer Company,NA,NA,
+Columbia,NA,NA,Fawken Beer Company,NA,NA,
+Brunswick,NA,NA,The Vine N Hop Shop,NA,NA,1327 N. Carpenter Rd.
+Massillon,NA,NA,Royal Docks Brewhouse and Cannery,NA,NA,5646 Wales Ave NW
+North Canton,NA,NA,Shale Brewing Co,NA,NA,7253 Whipple Ave NW
+Jackson,NA,NA,Sixth Sense Brewing Company,NA,NA,175 Main St.
+Cincinnati,NA,NA,Taft's Brewing Co,NA,NA,4831 Spring Grove Ave
+Columbus,NA,NA,The Brew Brothers / Scioto Downs Racino,NA,NA,6000 S. High Street
+Strongsville,NA,NA,"The Brew Kettle, Taproom and Smokehouse",NA,NA,8377 Pearl Rd
+Cincinnati,NA,NA,Third Eye Brewery,NA,NA,
+Ashland,NA,NA,Veteran Brewhouse,NA,NA,829 CR 801
+Geneva,NA,NA,Virant Family Winery / Black Angus Brewery,NA,NA,541 Atkins Rd
+Dayton,NA,NA,Warped Wing Brewing Co,NA,NA,26 Wyandot St
+Zanesville,NA,NA,Weasel Boy Brewing Co  LLC,NA,NA,126 Muskingum Ave Unit E
+Columbus,NA,NA,Zaftig Brewing Co.,NA,NA,7020 Huntley Rd Ste A
+Norman,NA,NA,Beer Is Good Brewing Company,NA,NA,
+Oklahoma City,NA,NA,"Brewery in Planning - Oklahoma City, OK",NA,NA,
+Akron,NA,NA,Thirsty Dog Brewing Company,NA,NA,529 Grant St Ste 103
+Catawba Island,NA,NA,Twin Oast Brewing,NA,NA,3630 NE Catawba Rd
+Cleveland,NA,NA,West East Brewing Co,NA,NA,4125 Lorain Ave
+Cincinnati,NA,NA,"Wiedemann Brewing Co, LLC",NA,NA,4811 Vine St
+Norman,NA,NA,Black Mesa Brewing Company,NA,NA,3901 N Flood Ave
+Pryor,NA,NA,Fat Toad Brewing Company,NA,NA,3986 W 530 Rd
+Edmond,NA,NA,Frenzy Brewing Company,NA,NA,
+Caddo,NA,NA,Harbinger Beer Company LLC,NA,NA,
+El Reno,NA,NA,Land Run Craft Brewing Co.,NA,NA,
+Oklahoma City,NA,NA,Red Dirt Brewing Co,NA,NA,
+Bartlesville,NA,NA,Scissortail Brewing Co.,NA,NA,
+Albany,NA,NA,3 Sheets Brewery,NA,NA,136 W 1st Ave
+Eugene,NA,NA,"Agrarian Ales, LLC",NA,NA,31115 W Crossroads Ln
+Hillsboro,NA,NA,Ambacht Brewing,NA,NA,1060 NE 25th Ave Ste B
+Tulsa,NA,NA,Hanson Brothers Beer Company,NA,NA,209 N Main St
+Tulsa,NA,NA,High Gravity Brewing Company,NA,NA,6808 S Memorial Dr STE 144
+Oklahoma City,NA,NA,Huebert Brewing Co.,NA,NA,421 SW 26th St
+Tulsa,NA,NA,"Marshall Brewing Co, LLC",NA,NA,618 S Wheeling Ave
+Tulsa,NA,NA,Nothing's Left Brewing Co.,NA,NA,1502 E 6th St
+Moore,NA,NA,"Royal Bavaria Brewhouse, Restaurant and Biergarten",NA,NA,3401 S Sooner Rd
+Oklahoma City,NA,NA,Twisted Spike Brewing Company,NA,NA,1 NW 10th St
+Portland,NA,NA,13 Virtues Brewing Co,NA,NA,6410 SE Milwaukie Ave
+Portland,NA,NA,Assembly brewing,NA,NA,
+Bend,NA,NA,Bend Brewing High Desert,NA,NA,20650 NE High Desert Lane
+Bend,NA,NA,Bevel Craft Brewing,NA,NA,
+Bend,NA,NA,Boneyard Beer Co,NA,NA,37 NW Lake Pl Ste B
+Boring,NA,NA,"Boring Brewing Co., LLC",NA,NA,29300 SE Haley Road Ste B
+Portland,NA,NA,Brewery 26,NA,NA,
+Bend,NA,NA,Brewery In Planning - Bend,NA,NA,
+Eugene,NA,NA,Brewery In Planning - Eugene,NA,NA,
+Eugene,NA,NA,Brewery in Planning - Eugene,NA,NA,
+Florence,NA,NA,"Brewery in Planning - Florence, OR",NA,NA,
+Portland,NA,NA,Brewery In Planning - Portland,NA,NA,
+Gresham,NA,NA,Barley Sprouts Brewery,NA,NA,639 SE 223rd Ave
+Lebanon,NA,NA,Barsideous Brewing Co,NA,NA,644 S Main St
+Newport,NA,NA,Bier One Brewing,NA,NA,424 SW Coast Hwy
+Philomath,NA,NA,Bierly Brewing @ Eats and Treats,NA,NA,1644 Main St
+Hood River,NA,NA,Big Horse Brewpub,NA,NA,115 State St
+Corvallis,NA,NA,Block 15,NA,NA,300 SW Jefferson Ave
+Milwaukie,NA,NA,Breakside Brewery & Taproom,NA,NA,5821 SE International Way
+Portland,NA,NA,Breakside Brewery Slabtown,NA,NA,1570 NW 22nd Ave
+Portland,NA,NA,Brewed By Gnomes,NA,NA,1735 SE 33rd Ave
+Astoria,NA,NA,Buoy Beer Company,NA,NA,1 8th St
+Portland,NA,NA,Burnside Brewing Co,NA,NA,701 E Burnside St
+Ashland,NA,NA,Caldera Brewing Co,NA,NA,590 Clover Ln
+Beaverton,NA,NA,Cascade Brewing Blending House,NA,NA,6770 SW 111th Ave
+Independence,NA,NA,Chatoe Rogue Farmstead Brewery,NA,NA,3590 Wigrich Rd
+Newberg,NA,NA,Chehalem Valley Brewery,NA,NA,2515 Portland Rd Ste B
+Portland,NA,NA,Coalition Brewing Co,NA,NA,2705 SE Ankeny St Ste C
+Bend,NA,NA,Craft Kitchen and Brewery,NA,NA,62988 Layton Ave Ste 103
+Carlton,NA,NA,Crowing Hen,NA,NA,
+Bend,NA,NA,Crux Fermentation Project - Crux2,NA,NA,63065 18th St
+Seaside,NA,NA,"DAMARKOM, INC.",NA,NA,
+Dundee,NA,NA,Deception Brewing Company,NA,NA,1174 SW Highway 99W
+Albany,NA,NA,Deluxe Brewing Co,NA,NA,PO Box 3358
+Eugene,NA,NA,Elk Horn Brewery,NA,NA,686 E Broadway
+Harrisburg,NA,NA,Brewery in Planning - Harrisburg,NA,NA,
+Grants Pass,NA,NA,Conner Fields Brewing,NA,NA,121 SW H St
+Beaverton,NA,NA,Cooper Mountain Ale Works,NA,NA,15855 SW Kestrel Ct
+Tillamook,NA,NA,De Garde Brewing,NA,NA,114 Ivy Ave
+Hillsboro,NA,NA,Deep Space Brewing / Out of This World Pizza,NA,NA,6255 NE Century Blvd
+Bend,NA,NA,Deschutes Brewery,NA,NA,901 SW Simpson Ave
+Roseburg,NA,NA,Draper Brewing,NA,NA,640 SE Jackson St
+McMinnville,NA,NA,Evasion Brewing - Production Facility,NA,NA,4230 NE Riverside Dr
+Estacada,NA,NA,Fearless Brewing Co,NA,NA,326 S Broadway St
+Oregon City,NA,NA,Feckin Brewery,NA,NA,415 S McLoughlin Blvd
+Portland,NA,NA,Fire On the Mountain Brewing Co,NA,NA,3443 NE 57th Ave
+Astoria,NA,NA,Fort George Brewery,NA,NA,1483 Duane St
+Portland,NA,NA,Funhouse Brews,NA,NA,7717 N Emerald Ave Unit A
+Terrebonne,NA,NA,Good Earth Brewing,NA,NA,
+Portland,NA,NA,Great Notion Brewing,NA,NA,2204 NE Alberta St Ste 101
+Banks,NA,NA,Hop Cycle Brewing Company,NA,NA,
+Newberg,NA,NA,Long Brewing LLC,NA,NA,
+Corvallis,NA,NA,Mazama Brewing Co,NA,NA,33930 SE Eastgate Cir Unit A
+Tualatin,NA,NA,G Man Brewery / G-Man Sports Bar,NA,NA,18791 SW Martinazzi Ave
+Portland,NA,NA,"Gateway Brewing, Inc",NA,NA,114 NE 133rd Ave
+Salem,NA,NA,Gilgamesh Brewing Co,NA,NA,2065 Madrona Ave SE
+Portland,NA,NA,Hair of the Dog Brewing Co,NA,NA,61 SE Yamhill St
+Hermiston,NA,NA,Hermiston Brewing Co,NA,NA,125 N 1st St
+Forest Grove,NA,NA,"Kaiser Brewing Company, LLC",NA,NA,1607 Hawthorne St
+Redmond,NA,NA,Kobold Brewing,NA,NA,245 SW 6th St
+Gresham,NA,NA,Krauski's Brewskis / The Hoppy Brewer,NA,NA,328 N Main Ave
+Portland,NA,NA,Laurelwood Public House and Brewery - NE,NA,NA,5115 NE Sandy Blvd
+Portland,NA,NA,Madcow Brewing Co.,NA,NA,206 SE 166th Ave
+Chattanooga,NA,NA,Five Wits Brewing Co.,NA,NA,
+Milwaukie,NA,NA,Oakenbrau,NA,NA,
+Roseburg,NA,NA,Old 99 Brewing Co,NA,NA,3750 Hooker Rd Ste A
+Portland,NA,NA,McMenamins Crystal Ballroom Brewery,NA,NA,1332 W Burnside St
+Pacific City,NA,NA,Pelican Brewing Company,NA,NA,33180 Cape Kiwanda Dr
+Cannon Beach,NA,NA,Pelican Brewing Company - Cannon Beach,NA,NA,1371 S Hemlock St
+Portland,NA,NA,PINTS Brewing Company and Urban Taproom,NA,NA,412 NW 5th Ave Suite 200
+Bend,NA,NA,RiverBend Brewing Pub,NA,NA,2650 NE Division St
+Silverton,NA,NA,Seven Brides Brewery,NA,NA,990 North First Street
+Bend,NA,NA,Shade Tree Brewing,NA,NA,
+Corvallis,NA,NA,Splintercat Brewing,NA,NA,
+Tillamook,NA,NA,Pelican Brewing Company - Tillamook,NA,NA,1708 1st St
+Portland,NA,NA,Pono Brewing Company,NA,NA,5716 SE 92nd Ave
+Portland,NA,NA,Portland Brewing/North American Breweries,NA,NA,2730 NW 31st Ave
+Portland,NA,NA,Portland U-Brew & Pub,NA,NA,6237 SE Milwaukie Ave
+Pendleton,NA,NA,"Prodigal Son Brewery and Pub, The",NA,NA,230 SE Court Ave
+Clackamas,NA,NA,RAM Restaurant and Brewery - Clackamas,NA,NA,9073 SE Sunnyside Rd
+Medford,NA,NA,RAM Restaurant and Brewery - Medford,NA,NA,165 Rossanley Dr
+Portland,NA,NA,Rock Bottom Brewery - Portland,NA,NA,206 SW Morrison St
+Portland,NA,NA,Rosenstadt Brewery LLC,NA,NA,4110 SE Hawthorne Blvd # 735
+Portland,NA,NA,"Ruse Brewing, LLC.",NA,NA,4784 SE 17th Ave
+Portland,NA,NA,Sasquatch Pub,NA,NA,6440 SW Capitol Hwy.
+Seaside,NA,NA,Seaside Brewery,NA,NA,851 Broadway St
+Silverton,NA,NA,Silver Falls Brewery,NA,NA,207 Jersey St
+Burns,NA,NA,Steens Mountain Brewing Company,NA,NA,673 B W Monroe St
+Lake Oswego,NA,NA,Stickmen Brewery,NA,NA,40 N State St
+Sunriver,NA,NA,Sunriver Brewing,NA,NA,56840 Venture Ln
+Portland,NA,NA,Super Brewing Company LLC,NA,NA,
+Bend,NA,NA,The Ale Apothecary,NA,NA,30 SW Century Drive Suite 140
+Sisters,NA,NA,Three Creeks Production,NA,NA,265 E. Barclay Dr.
+Portland,NA,NA,Upright Brewing Co,NA,NA,240 N Broadway Ste 2
+,NA,NA,Amazon Beer,NA,NA,Rua Boulevard Castilhos Franca Estacao Das Docas
+Williams,NA,NA,Wizards of Williams Hops Garden and Craft Brewery,NA,NA,
+Seal Rock,NA,NA,Wolf Tree Brewery,NA,NA,199 N Wolkau Rd
+Mc Kees Rocks,NA,NA,412 Brews,NA,NA,706 Island Ave
+Midlothian,NA,NA,"Brewery in Planning - MIDLOTHIAN, TX",NA,NA,
+Sherwood,NA,NA,Two Kilts Brewing,NA,NA,14841 SW Tualatin Sherwood Rd Ste 501
+Tillamook,NA,NA,Werner Brewing Company,NA,NA,2807 3rd St
+Pendleton,NA,NA,Wm Roesch Brewing Company,NA,NA,250 SE 3rd St
+Coraopolis,NA,NA,180 and Tapped,NA,NA,2010 A State Ave
+Collegeville,NA,NA,Appalachian Brewing Co - Collegeville,NA,NA,50 W Third Ave Collegeville Station 2nd Floor
+Gettysburg,NA,NA,Appalachian Brewing Co - Gettysburg Gateway,NA,NA,70 Presidential Cir
+Philadelphia,NA,NA,Attic Brewing,NA,NA,
+Pittsburgh,NA,NA,Bayonet Cider Company,NA,NA,
+Lander,NA,NA,Bent Run Brewing Co,NA,NA,5607 SR 957
+Pocono Pines,NA,NA,Black Wolf Brewing LLC,NA,NA,
+Harleysville,NA,NA,Blueprint Brewing Co.,NA,NA,1571 Gehman Rd
+West Chester,NA,NA,Boxcar Brewing Co LLC,NA,NA,306 Westtown Rd Ste C
+Kennett Square,NA,NA,Braeloch Brewing Company,NA,NA,
+Bala Cynwyd,NA,NA,Brewery in Planning - Bala Cynwyd,NA,NA,
+Chambersburg,NA,NA,"Brewery in Planning - Chambersburg, PA",NA,NA,
+Erie,NA,NA,Brewery in Planning - Erie,NA,NA,
+GIBSONIA,NA,NA,"Brewery in Planning - GIBSONIA, PA",NA,NA,
+Wilkes Barre,NA,NA,American Honor Beer Co,NA,NA,700 N Pennsylvania Ave
+Pittsburgh,NA,NA,Aurochs Brewing Company,NA,NA,8321 Ohio River Blvd
+Philadelphia,NA,NA,Bar Hygge / Brewery Techne,NA,NA,1720 Fairmount Ave
+Ephrata,NA,NA,Black Forest Brewery,NA,NA,301 W Main St
+Sayre,NA,NA,Bluestone Brewing Company,NA,NA,18 Pitney St
+Mechanicsburg,NA,NA,Brewery In Planning - Marysville,NA,NA,
+Philadelphia,NA,NA,Brewery in Planning - Philadelphia,NA,NA,
+Wexford,NA,NA,Brewery in Planning - WEXFORD,NA,NA,
+Yardley,NA,NA,Brewery in Planning - Yardley,NA,NA,
+Zelienople,NA,NA,Burghâers Brewing,NA,NA,22410 Perry Hwy Ste 410E
+New Kensington,NA,NA,Conny Creek Brewing Co,NA,NA,4323 Shearsburg Rd
+Moscow,NA,NA,Curran Brewing Co,NA,NA,6230 Bloomington Rd
+Williamsport,NA,NA,Bullfrog Brewery,NA,NA,229 W 4th St
+Williamsport,NA,NA,Bullfrog Brewery - Production Only,NA,NA,229 W 4th St
+Bethlehem,NA,NA,Cave Brewing Co,NA,NA,1407 Seidersville Rd
+Pittsburgh,NA,NA,Church Brew Works/Lawrenceville Brewery Inc.,NA,NA,3525 Liberty Ave
+Pittsburgh,NA,NA,Cinderlands Beer Co.,NA,NA,3705 Butler St
+Bridgeport,NA,NA,Conshohocken Brewing - Bridgeport,NA,NA,3 DeKalb St
+Pittsburgh,NA,NA,CoStar Brewing Inc.,NA,NA,919 N Saint Clair St
+New Castle,NA,NA,CR Brewing Company,NA,NA,3009 Wilmington Rd
+Philadelphia,NA,NA,Crime & Punishment Brewing Company,NA,NA,2711 W Girard Ave
+Phoenixville,NA,NA,Crowded Castle Brewing Co. Inc.,NA,NA,242 Bridge St
+York,NA,NA,Crystal Ball Brewing,NA,NA,1612 W King St
+Erie,NA,NA,Daugherty Brewing Company,NA,NA,
+Sunbury,NA,NA,Eclipse Craft Brewing,NA,NA,
+Camp Hill,NA,NA,Ever Grain Brewing Co,NA,NA,4444 Carlisle Pike Ste C
+Doylestown,NA,NA,Geronimo Brewing Inc,NA,NA,
+Swarthmore,NA,NA,Gravity Ales LLC,NA,NA,
+Millerstown,NA,NA,Hidden Stories Brewing Company,NA,NA,
+Camp Hill,NA,NA,Highway Manor Brewing Co,NA,NA,2238 Gettysburg Rd
+Vandergrift,NA,NA,Double D Brewing / Dommy's Pizza,NA,NA,1100 Hancock Ave
+Doylestown,NA,NA,Doylestown Brewing Co,NA,NA,52 East State St.
+Pittsburgh,NA,NA,Duquesne Brewing of Pittsburgh,NA,NA,932 W North Ave
+Pittsburgh,NA,NA,Eleventh Hour Brewing Co,NA,NA,3711 Charlotte St
+Lancaster,NA,NA,Fetish Brewing Co,NA,NA,325 Ice Ave
+Philadelphia,NA,NA,Fishtown Brewing Co,NA,NA,1101 Frankford Ave
+Ambler,NA,NA,Forest & Main Brewery and Pub,NA,NA,61 N Main St
+Irwin,NA,NA,Fury Brewing Company,NA,NA,13380 US-30
+Philadelphia,NA,NA,Goose Island Philadelphia,NA,NA,1002 Canal St
+New Hope,NA,NA,Great Barn Brewery,NA,NA,12 W Mechanic St
+Oakdale,NA,NA,Helicon Brewing,NA,NA,102 Union Ave
+Conneaut Lake,NA,NA,Home Brewing Co Of Pennsylvania,NA,NA,
+Hickory,NA,NA,Imperium Brewing,NA,NA,
+Collegeville,NA,NA,Intercourse Brewing Co,NA,NA,4166 Ironbridge Dr
+North Wales,NA,NA,Iron Hill Brewery & Restaurant - North Wales,NA,NA,1460 Bethlehem Pike
+Smithton,NA,NA,Jones Brewing Co,NA,NA,254 Second Street
+Philadelphia,NA,NA,Kensington Barrel Project,NA,NA,
+Oakmont,NA,NA,KNURD Brewing Co,NA,NA,
+Franklin,NA,NA,Garr's Beer Co.,NA,NA,
+Lebanon,NA,NA,Lebanon Valley Craft Brewery,NA,NA,
+Pittsburgh,NA,NA,Lincoln Avenue Brewery,NA,NA,
+Duncannon,NA,NA,Lindgren Craft Brewery,NA,NA,
+Duncannon,NA,NA,Loud Brewing Company,NA,NA,
+Carbondale,NA,NA,Iron Hart,NA,NA,49 N Church St
+Newfoundland,NA,NA,Jam Room Brewing Co,NA,NA,875 Main St
+Uniontown,NA,NA,Laurel Highlands Brewing,NA,NA,21 Enamel St
+Erie,NA,NA,Lavery Brewing Co,NA,NA,128 W 12th St
+Howard,NA,NA,Mad-K Brewery,NA,NA,298 Mountain Top Rd
+Malvern,NA,NA,McKenzie Brew House (#2),NA,NA,240 Lancaster Ave
+Clarion,NA,NA,Mechanistic Brewing,NA,NA,
+Williamsport,NA,NA,New Trail Brewing Company,NA,NA,240 Arch St Bldg 18
+Tunkhannock,NA,NA,Nimble Hill Brewing Co,NA,NA,3971 SR 6
+Slippery Rock,NA,NA,North Country Canning Co,NA,NA,111 Arrowhead Dr Ste B
+Telford,NA,NA,Perkiomen Valley Brewery,NA,NA,
+Bradford,NA,NA,Pig Island Brewery,NA,NA,
+Plano,NA,NA,Brewery in Planning - Plano,NA,NA,
+Philadelphia,NA,NA,Manayunk Brewing Co & Restaurant,NA,NA,4120 Main St
+Bloomsburg,NA,NA,Marley's Brewery,NA,NA,1323 Columbia Blvd
+York,NA,NA,Mexitaly Brick Oven Brewhouse,NA,NA,2440 E Market St
+Erie,NA,NA,Millcreek Brewing Company,NA,NA,4102 W Lake Rd
+Castle Shannon,NA,NA,Mindful Brewing Company,NA,NA,3759 Library Rd
+Croydon,NA,NA,Neshaminy Creek Brewing Co,NA,NA,909 Ray Ave
+Slippery Rock,NA,NA,North Country Brewing Co. LLC,NA,NA,141 S Main St
+Titusville,NA,NA,Orr's Brewing Company,NA,NA,109 S Franklin St
+New Brighton,NA,NA,Petrucci Brothers Brewing Co,NA,NA,911 5th Ave
+Pittsburgh,NA,NA,Pittsburgh Brewing Co,NA,NA,3340 Liberty Ave
+Philadelphia,NA,NA,Point Breeze Brewing,NA,NA,1225 S 28th St
+Peckville,NA,NA,Ritter Brewing Company LLC,NA,NA,449 Gino Merli Dr
+Wyalusing,NA,NA,River Barge Brewing,NA,NA,71 Grovedale Ln
+Duquesne,NA,NA,Rogan Brewing Company,NA,NA,
+Danville,NA,NA,Roundback Brewery LLC,NA,NA,
+Breinigsville,NA,NA,Samuel Adams Pennsylvania Brewing Co,NA,NA,7880 Penn Dr
+Bethlehem,NA,NA,Seven Sirens Brewing Company,NA,NA,
+New Stanton,NA,NA,"Sobel's Obscure Brewery, LLC",NA,NA,954 Arona Rd
+Houston,NA,NA,"Brewery In Planning - Somerville, MA",NA,NA,
+Monroeville,NA,NA,Rivertowne Pour House,NA,NA,312 Center Rd
+Homestead,NA,NA,Rock Bottom Brewery - Pittsburgh,NA,NA,171 E Bridge St
+Lansdale,NA,NA,Round Guys Brewing Co,NA,NA,324 W Main St
+Ephrata,NA,NA,Saint Boniface Craft Brewing Co,NA,NA,1701 W Main St
+Philadelphia,NA,NA,Second District Brewing Co.,NA,NA,1939 S. Bancroft St.
+Zelienople,NA,NA,"ShuBrew, LLC",NA,NA,210 S Main St
+Hanover,NA,NA,Something Wicked Brewing Company,NA,NA,34 Broadway Ste 200
+Schwenksville,NA,NA,Spring Mountain Brewing Company,NA,NA,
+Coatesville,NA,NA,Stargazer Brewing Company,NA,NA,
+Tamaqua,NA,NA,Stoker's Brewing Company,NA,NA,
+Manheim,NA,NA,Swashbuckler Brewing Co,NA,NA,2775 Lebanon Rd
+Ambler,NA,NA,Tannery Run Brew Works,NA,NA,
+Middletown,NA,NA,The Brewery At Hershey,NA,NA,598 Schoolhouse Rd
+Easton,NA,NA,"The Brewery BÃ¶ser Geist Brewing Co., LLC",NA,NA,1250 Simon Blvd Unit K100
+Parkesburg,NA,NA,Victory Brewing Co,NA,NA,3127 Lower Valley Rd
+Pittsburgh,NA,NA,Strange Roots Experimental Ales,NA,NA,501 E Ohio St
+Catasauqua,NA,NA,Taylor House Brewing Co,NA,NA,76 Lehigh St
+Mercer,NA,NA,The Barley House Brewing Company LLC,NA,NA,8399 Sharon Mercer Rd
+Harrisburg,NA,NA,The Millworks Brewery,NA,NA,340 Verbeke St
+Ardmore,NA,NA,Tired Hands Brewing Co,NA,NA,16 Ardmore Ave
+Easton,NA,NA,Weyerbacher Brewing Co,NA,NA,905 Line St Ste G
+Landenberg,NA,NA,White Clay Brewing Company,NA,NA,
+Wexford,NA,NA,Young's Brewing,NA,NA,
+East Greenwich,NA,NA,Brewery in Planning - east greenwich,NA,NA,
+Newport,NA,NA,Newport Storm Brewery / Coastal Extreme Brewing Company,NA,NA,293 JT Connell Hwy
+Providence,NA,NA,Union Station Brewery,NA,NA,36 Exchange Ter Ste 2
+,NA,NA,Hunter Gatherer Brewery and Alehouse,NA,NA,
+Meadville,NA,NA,Voodoo Brewing Production Facility,NA,NA,834 Bessemer St
+Washington,NA,NA,Washington Brewing Co,NA,NA,28 E Maiden St
+Latrobe,NA,NA,Western Pennsylvania Brewing Co,NA,NA,119 Jefferson St
+Berlin,NA,NA,Whitehorse Brewing LLC,NA,NA,824 Diamond St
+Philadelphia,NA,NA,Yards Brewing Co,NA,NA,901 N Delaware Ave
+Pawtucket,NA,NA,Foolproof Brewing Company,NA,NA,241 Grotto Ave
+Westerly,NA,NA,Grey Sail Brewing Co. LLC,NA,NA,63 Canal St
+Cranston,NA,NA,Revival Brewing,NA,NA,505 Atwood Ave
+West Kingston,NA,NA,"Shaidzon Beer Company, LLC",NA,NA,141 Fairgrounds Rd.
+Middletown,NA,NA,Taproot Brewing Co / Newport Vineyards,NA,NA,909 E Main Rd
+Lancaster,NA,NA,Benford Brewing Co.,NA,NA,2271 Boxcar Rd
+North Augusta,NA,NA,Bomb Plant Brewing Company,NA,NA,
+Columbia,NA,NA,Brewery In Planning - Dulles,NA,NA,
+Johns Island,NA,NA,Brewery in Planning - Hollywood,NA,NA,
+Indian Land,NA,NA,"Brewery in Planning - Indian Land, SC",NA,NA,
+Ridgeland,NA,NA,"Brewery in Planning - Ridgeland, SC",NA,NA,
+Salem,NA,NA,Brewery in Planning - salem,NA,NA,
+North Charleston,NA,NA,COAST Brewing Co,NA,NA,1250 N 2nd St
+Charleston,NA,NA,Fam's Brewing Company,NA,NA,1291 Folly Rd
+Lexington,NA,NA,Hazelwood Brewing Company,NA,NA,
+Hilton Head Island,NA,NA,Hilton Head Brewing Co,NA,NA,1 Cardinal Ct Ste 13
+Hilton Head Island,NA,NA,Lincoln and South Brewing Co.,NA,NA,
+North Charleston,NA,NA,Commonhouse Aleworks,NA,NA,4831 Ohear Ave
+Ridgeland,NA,NA,Dead Eric Brewing Co. LLC,NA,NA,433 Old House Rd
+Fort Mill,NA,NA,Full Spectrum Brewing Co,NA,NA,2180 Carolina Place Dr Ste 101
+Greenwood,NA,NA,Good Times Brewing,NA,NA,237 Maxwell Ave
+Myrtle Beach,NA,NA,Liberty Steakhouse and Brewery,NA,NA,1321 Celebrity Cir
+Mineral,NA,NA,Cooling Pond Brewery,NA,NA,
