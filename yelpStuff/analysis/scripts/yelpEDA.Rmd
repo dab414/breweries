@@ -152,9 +152,9 @@ yelp %>%
   xlab('Does the brewery have take out?') + ylab('Average Rating')
 ```
 
-**Breweries without take out are rated more highly than those that do.** This seems puzzling. The first thing to note is that places that *do* have take out are actually still doing quite well (ie, 4/5 stars). Why are they being edged out by breweries with no take out? The few brewery crazies I know in my life don't love a certain brewery because of its take out, they love it because of the atmosphere and how great it is to sit back and drink a beer. If you're main product is beer, then what is it that you're *actually* selling to go? Food? When thinking about it this way, maybe breweries without take out have closer-knit cultures, leading people to rate those breweries more favorably.  
+**Breweries without take out are rated more highly than those that do.** This seems puzzling. The first thing to note is that places that *do* have take out are actually still doing quite well (ie, 4/5 stars). Why are they being edged out by breweries with no take out? The few brewery crazies I know in my life don't love a certain brewery because of its take out, they love it because of the atmosphere and how great it is to sit back and drink a beer. If your main product is beer, then what is it that you're *actually* selling to go? Food? When thinking about it this way, maybe breweries without take out have closer-knit cultures, leading people to rate those breweries more favorably.  
 
-Let's say an owner *has* to have take out at their brewery---**what are ways to make take out better for a breweries?** Well, what if you wanted to do more to attract passer-bys on the street? If someone is in a hurry but sees a brewery offering take out, what feature would make them more likely to stop in and have an enjoyable experience? If it's a densely-populated community, it's likely that people are relying on bicycles for transportation. If breweries made it easy for cyclists to pop in and out, that might enhance the sense of community around the brewery and boost its ratings.
+Let's say an owner *has* to have take out at their brewery---**what are ways to make take out better for a brewerie?** Well, what if you wanted to do more to attract passer-bys on the street? If someone is in a hurry but sees a brewery offering take out, what feature would make them more likely to stop in and have an enjoyable experience? If it's a densely-populated community, it's likely that people are relying on bicycles for transportation. If breweries made it easy for cyclists to pop in and out, that might enhance the sense of community around the brewery and boost its ratings.
 
 ```{r}
 yelp %>% 
@@ -167,7 +167,7 @@ yelp %>%
   theme(legend.position = 'top')
 ```
 
-**Offering make parking makes take out more desirable.** The effect looks slight, but, if an owner had to have take out at their restaraunt, I might recommend that they have a bike rack or two outside the brewery to welcome passer-bys (assuming the brewery is in a city where it makes sense to do so).  
+**Offering bike parking makes take out more desirable.** The effect looks slight, but, if an owner had to have take out at their restaraunt, I might recommend that he or she have a bike rack or two outside the brewery to welcome passer-bys (assuming the brewery is in a city where it makes sense to do so).  
 
 **Do breweries do better in some areas than others?** Since we've been talking about how culture influences brewery success, maybe some areas have more brewery culture than others. Vermont and Colorado come to mind specifically when thinking about strong brewery culture, while southern states maybe come to mind when thinking about where breweries might be less popular. We can get a sense of brewery popularity by state by contrasting number of breweries against population for a given state:
 
