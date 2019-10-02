@@ -1,0 +1,41 @@
+what's the goal of phase 1?
+
+  identify regions that are similar based on cultural, geographic, and brewery centric factors
+    what's a brewery-centric factor?
+      things about an area that would specifically be relevant or be like preconditions for one's ability to run a successful microbrewery in that area
+
+    validation metrics
+
+      giving a grouping of competitive regions, how do i determine whether it's any good?
+
+        for cultural
+          find candidate areas that i have an idea should cluster together by culture
+            eg, new york / boston; rural areas and rural ares ... ? lol
+
+
+  economic data by zip
+    https://census.gov/programs-surveys/cbp/data/datasets.html
+
+    alister recommended the census fact finder (american survey) or something like that
+      https://factfinder.census.gov/faces/nav/jsf/pages/download_center.xhtml
+
+  wide array of demographic data by zip
+    https://simplemaps.com/data/us-zips
+
+  tax data by zip
+    https://www.irs.gov/statistics/soi-tax-stats-individual-income-tax-statistics-zip-code-data-soi
+
+  general census data
+    https://factfinder.census.gov/
+
+
+  think about govt taxes on breweries by area
+
+  ingredients: water, yeast, hops
+
+
+  from marissa:
+    American national election survey
+    general social survey
+
+    she's saying this is individual-level data that would need to be aggregated up`

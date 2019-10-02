@@ -1,0 +1,33 @@
+FRONTEND
+
+  input
+
+    user selects a city / region that they own a brewery in or wish to open one
+
+  output
+
+    map reveals top ~5 locations highest in similarity to target area
+      where candidate areas have some minimum number of breweries
+
+implementation
+
+  how to define regions?
+
+    city-wise approach:
+      there are only 97 cities with > 10 breweries
+      in total, this only captures 2262 of the 8079 breweries in US
+
+    clustering approach:
+      eliminate all breweries that don't have x breweries within y mile radius (not representative of a competitive area)
+      cluster according to long and lat only
+      set k arbitrarily high
+      desired outcome:
+        ~ >200 clusters representing different 'competition spheres'
+        competition spheres ought to be large in sparse states, small in dense ones
+
+  I ALSO NEED TO DEFINE SOME TYPE OF REGION SIMILARITY
+    in such a way that, given a new observation, i can say, you are most similar to these k regions
+
+
+this approach is starting to feel too complex
+

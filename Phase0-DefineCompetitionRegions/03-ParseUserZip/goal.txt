@@ -1,0 +1,9 @@
+given a zipcode as user input
+
+  i want to verify that it's a zip within the continental 48
+  then i want to retrieve the lat / lon for that zip to display on the map
+
+  money spot:
+    https://public.opendatasoft.com/explore/dataset/us-zip-code-latitude-and-longitude/api/?q=07460
+
+  

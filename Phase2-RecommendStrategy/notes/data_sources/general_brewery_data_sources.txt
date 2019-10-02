@@ -1,0 +1,36 @@
+## GENERAL ##
+
+https://s3-us-west-2.amazonaws.com/brewersassoc/wp-content/uploads/2018/08/State-by-State-Breakdown-2017.pdf
+	simple breakdown of economic impact of breweries (or beer, more generally) by state
+
+https://www.brewersassociation.org/statistics-and-data/
+	i think this is where the link before this one came from
+	this links to what's essentially a data-driven blog, looks like they have a tight leash on the good stuff, though
+
+https://www.brewerydb.com/developers
+	this might be the money spot
+	might be the best way of trying to get a metric for distribution
+	has tons of features for lots of breweries
+	hard to get a handle on exactly how much data i could get through their api..
+	python api seems powerful:
+		https://github.com/yarian/brewerydb
+	also they have brewery-specific pages:
+		https://www.brewerydb.com/brewery/ttAs6M
+
+## SOCIAL MEDIA ##
+
+https://www.rivaliq.com/explore/craft-beer/
+	rivaliq is a site that claims to analyze social media success
+	the linked page shows some of what they consider to be brewery success on social media
+	the first bits of information presented are actually really cool aggregate, longitudinal measures 
+	looks to be mostly: 
+		how much are people posting about beers from the brewery
+		how much attention are those posts getting
+
+twitter
+	would be informative to get data on how well developed each breweries twitter presence is
+	as well as 'buzz' around the brewery, how many people are tweeting about it, the general gist of the tweets
+
+untappd
+	one of the largest beer-specific social-media type sites
+	regarded as more of the facebook for beer, not really esoteric enough for true beer nerds	

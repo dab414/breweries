@@ -1,0 +1,30 @@
+this is all about understanding important metrics of success for breweries and brainstorming what possible proxies might be
+
+source: https://studentofbeer.wordpress.com/tag/metrics/
+	
+	craft breweries
+		number of days of production per week / month / year
+		volume produced
+		beer wasted during the production process
+		brewing efficiency 
+		sales
+			per license
+			sales per style / brand
+			per type of container bottle [bottle, can, keg]
+			seasonality
+				typically low in winter, high in summer
+		most important:
+			growth and volume
+				how much did i brew this year relative to last year
+
+	brewpub
+		how many customers are you getting and how much are they spending
+
+	for more, see source
+
+source: https://brewingindustryguide.com/performing-at-peak-efficiency/
+	
+	emphasizing distribution and social media presence
+
+
+

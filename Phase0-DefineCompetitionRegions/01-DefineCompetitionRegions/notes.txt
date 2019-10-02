@@ -1,0 +1,7 @@
+9/30/2019
+
+  after selecting only microbreweries in the continental 48, we're down to about only 2300 breweries
+  i still think that k = 150 looks reasonable
+  i get about ~ 20 clusters with < 5 breweries, could prob just prune these
+
+  there's an id var already in breweries.csv... but idk what it comes from... i think im just gonna overwrite it with my own id var

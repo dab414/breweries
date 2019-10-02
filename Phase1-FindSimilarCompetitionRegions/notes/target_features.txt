@@ -1,0 +1,30 @@
+some features that i'd ideally like to have in the final data
+
+  brewery-relevant
+    tap water data
+      https://www.ewg.org/tapwater/search-results.php?zip5=18015&searchtype=zip
+      looks like this dude might have already done the work for me:
+        https://github.com/albertovilla/ewg
+    
+    some indicator of how many breweries are in the surrounding area
+      for existing competition areas, this can just be how many breweries are in the cluster
+      for user-input zip code, this would need to be more complicated
+    
+    maybe a count of restaurants generally
+      this is a type of bayesian logic
+      p(b | r) = p(r | b) * p(b) / p(r)
+      ^ assuming a restaurant can be a brewery or non-brewery, what's the probability of brewery given restaurant
+        eh something about that doesn't work cuz p(r | b) is always 1
+
+    something about legal restrictions
+      different rules for micro breweries / brewpubs
+      https://www.crowdspring.com/blog/how-to-start-a-brewery-business/
+      https://www.craftbeer.com/craft-beer-muses/three-tier-system-impacts-craft-beer 
+      this seems important and dificult to get a handle on
+        need something like this: https://www.craftbeer.com/craft-beer-muses/three-tier-system-impacts-craft-beer
+          but of course these guys block access
+
+
+  basic demographics
+    age seems pretty important
+    real estate prices

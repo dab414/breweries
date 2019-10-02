@@ -1,5 +1,3 @@
-data/*.csv
-data/old
-yelpStuff/scrape/exportData
-yelpStuff/scrape/cache
-yelpStuff/analysis/data
+general_journal.txt
+private/
+other/
