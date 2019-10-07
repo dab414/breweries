@@ -73,7 +73,7 @@ def request_location(lat_lon, query):
   d = {}
 
   for header, datum in zip(headers, data):
-    d[header] = datum
+    d[header.strip()] = datum
 
   return d
 

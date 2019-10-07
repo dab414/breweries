@@ -51,7 +51,7 @@ def prune_small_clusters(centroids, d, min_brew = 5):
   centroids = centroids[keep['label']]
   d = d[d['label'].isin(keep['label'])]
 
-  print('Numer of clusters pruned: {}'.format(original_cluster_count - len(centroids)))
+  print('Number of clusters pruned: {}'.format(original_cluster_count - len(centroids)))
 
   return centroids, d
 
