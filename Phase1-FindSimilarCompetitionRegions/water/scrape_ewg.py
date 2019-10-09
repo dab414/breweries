@@ -116,7 +116,7 @@ def scrap_contaminants_from_df(df):
     
     return contaminants_rows
     
-def scrap_ewg_tap_water_database(df):
+def scrape_ewg(df):
     data = []
        
     status = 0
@@ -161,6 +161,6 @@ if __name__ == '__main__':
   df = pd.read_csv('../data/centroid_data.csv')
   df = df.rename(columns = {'Zip': 'zipcode', 'State': 'state_id'})
 
-  result = scrap_ewg_tap_water_database(df[['zip', 'state_id']].dropna())
+  result = scrape_ewg(df[['zip', 'state_id']].dropna())
 
   pd.DataFrame(result).to_csv('../data/water_by_zip_raw.csv', index = False)

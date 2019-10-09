@@ -20,10 +20,15 @@ if __name__ == '__main__':
   base_data = base_data.reset_index()
   print(base_data.head())
 
+  water_cols = [x for x in base_data.columns if x != 'zipcode']
+  f = open('../data/water_columns.txt', 'w')
+  f.write(str(water_cols))
+  f.close()
+
   for arg in args[1:]:
     join_data = pd.read_csv(arg, dtype = {'zipcode': str})
     if arg == '../data/centroid_data.csv':
-      join_data = join_data[['zipcode', 'label']]
+      join_data = join_data[['zipcode', 'label', 'longitude', 'latitude']]
     base_data = base_data.merge(join_data)
 
   base_data.to_csv('../data/aggregated_data.csv', index = False)

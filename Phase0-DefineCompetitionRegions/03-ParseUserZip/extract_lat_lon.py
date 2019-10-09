@@ -2,11 +2,11 @@ import sys
 import requests
 
 
-def extract_lat_lon(userZip):
+def extract_lat_lon(user_zip):
 
   base = 'https://public.opendatasoft.com/api/records/1.0/search/?dataset=us-zip-code-latitude-and-longitude&facet=state&facet=timezone&facet=dst&q='
 
-  data = eval(requests.get(base + userZip).text)
+  data = eval(requests.get(base + user_zip).text)
 
 
   if data['nhits']:

@@ -20,11 +20,11 @@ def clean_codes(raw_codes):
   x = x[[len(i) == 5 for i in x]]
   return x.tolist()
 
-def webScrape(inputTxt):
+def webScrape(zipcodes):
 
   #x = pd.read_csv(inputCsv)
-  x = eval(open(inputTxt, 'r').read())
-  zipcodes = clean_codes(x)
+  
+  zipcodes = clean_codes(zipcodes)
 
   base = 'https://factfinder.census.gov/'
   report = base + 'bkmk/table/1.0/en/ACS/16_5YR/DP05/8600000US'
@@ -95,7 +95,9 @@ def main():
     print('Usage: file.txt')
     sys.exit()
 
-  out_data = webScrape(args[0])
+  zipcodes = eval(open(args[0], 'r').read())
+
+  out_data = webScrape(zipcodes)
   out_data.to_csv('../data/demographics_by_zip.csv', index = False)
 
 if __name__ == '__main__':
