@@ -13,7 +13,9 @@ def compute_similarity(new_obs, centroids):
 
   similar_centroids = find_distances(new_obs, centroids_arr)
 
-  return centroids[[x[0] for x in similar_centroids]]
+  crit_labels = [x[0] for x in similar_centroids]
+
+  return centroids[centroids['label'].isin(crit_labels)][['zipcode', 'label']]
 
 
 def find_distances(new_obs, centroids):
@@ -22,12 +24,12 @@ def find_distances(new_obs, centroids):
 
   distances = []
 
-  for index, centroid in enumerate(centroids):
+  for centroid in centroids:
     sse = 0
     for obs_feature, base_feature in zip(obs_features, centroid[1]):
       sse += (base_feature - obs_feature)**2
 
-    distances.append((index, math.sqrt(sse)))
+    distances.append((centroid[0][1], math.sqrt(sse)))
 
   distances = sorted(distances, key = lambda x: x[1])
 
@@ -36,6 +38,8 @@ def find_distances(new_obs, centroids):
 
 
 def normalize_count(new_obs, centroids):
+
+  new_obs_zip = new_obs['zipcode'].values[0]
 
   ## combine all data
   d = pd.concat([new_obs, centroids])
@@ -51,9 +55,8 @@ def normalize_count(new_obs, centroids):
   d = pd.concat([zips_labels, d], axis = 1)
 
   ## split data back apart
-  new_obs = d.iloc[-1]
-  centroids = d.drop(d.tail(1).index)
-
+  new_obs = d[d['zipcode'] == new_obs_zip]
+  centroids = d[d['zipcode'] != new_obs_zip]
 
   return new_obs, centroids
 
@@ -62,15 +65,24 @@ def normalize_count(new_obs, centroids):
 
 
 def convert_to_array(d):
-  ## ISSUE AROUND HERE
-  print(d[['zipcode', 'label']].values)
-  zips_labels = [tuple(x) for x in d[['zipcode', 'label']].values]
-  features = [tuple(x) for x in d.drop(['zipcode', 'label'], axis = 1).values]
-
+  ## need two separate cases depending on whether incoming data is new_obs or base_data
+  
   out = []
 
-  for name, features in zip(zips_labels, features):
-    out.append((name, (features)))
+  if len(d.shape) > 1:
+    zips_labels = [tuple(x) for x in d[['zipcode', 'label']].values]
+    features = [tuple(x) for x in d.drop(['zipcode', 'label'], axis = 1).values]
+
+    for name, features in zip(zips_labels, features):
+      out.append((name, (features)))
+
+  else:
+    zips_labels = d[['zipcode', 'label']]
+    features = d.drop(['zipcode', 'label'])
+    out.append((zips_labels, (features)))
+  
+
+  
 
   return out
   
