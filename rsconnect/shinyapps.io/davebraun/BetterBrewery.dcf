@@ -1,0 +1,13 @@
+name: BetterBrewery
+title: BetterBrewery
+username:
+account: davebraun
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 1310758
+bundleId: 2488042
+url: https://davebraun.shinyapps.io/BetterBrewery/
+when: 1570722977.39854
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: other

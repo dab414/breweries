@@ -1,0 +1,1 @@
+Sys.setenv(RETICULATE_PYTHON = "/home/shiny/.virtualenvs/python_environment/bin/python")
