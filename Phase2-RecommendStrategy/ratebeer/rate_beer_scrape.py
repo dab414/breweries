@@ -36,7 +36,7 @@ def rate_beer_scrape(urls, machine_id):
     else:
       out.append(result)
 
-    if count and not count % 100:
+    if count and not count % 2:
       print('\n')
       print('#####################')
       print('Processing brewery {} of {}.\n'.format(count, len(urls)))
@@ -176,7 +176,8 @@ def cache(out, machine_id):
     prev = []
 
   f = open(filepath, 'w')
-  f.write(str(prev.extend(out)))
+  prev.extend(out)
+  f.write(str(prev))
   f.close()
     
 
@@ -200,7 +201,7 @@ if __name__ == '__main__':
   for state in d:
     urls.extend(state['list_of_breweries'])
 
-  out, bad_brews = rate_beer_scrape(urls[750:870], machine_id)
+  out, bad_brews = rate_beer_scrape(urls[6548:], machine_id)
 
   if os.path.exists('../data/cache/ratebeer_cache.txt'):
     prev = eval(open('../data/cache/ratebeer_cache_{}.txt'.format(machine_id), 'r').read())
