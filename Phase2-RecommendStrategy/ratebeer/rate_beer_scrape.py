@@ -5,6 +5,7 @@ import re
 import time
 import numpy as np
 from fake_useragent import UserAgent
+import os
 
 base = 'https://ratebeer.com'
 user_agent = 'Mozilla/5.0 (X11; U; OpenBSD i386; en-US; rv:1.9.2.20) Gecko/20110803 Firefox/3.6.20'
