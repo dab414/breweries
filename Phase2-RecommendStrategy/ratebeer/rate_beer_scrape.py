@@ -36,7 +36,7 @@ def rate_beer_scrape(urls, machine_id):
     else:
       out.append(result)
 
-    if count and not count % 2:
+    if count and not count % 100:
       print('\n')
       print('#####################')
       print('Processing brewery {} of {}.\n'.format(count, len(urls)))
