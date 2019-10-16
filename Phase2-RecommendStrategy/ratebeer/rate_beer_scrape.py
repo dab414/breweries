@@ -201,8 +201,9 @@ if __name__ == '__main__':
   for state in d:
     urls.extend(state['list_of_breweries'])
 
-  out, bad_brews = rate_beer_scrape(urls[6548:], machine_id)
+  out, bad_brews = rate_beer_scrape(urls[(6548+2100):], machine_id)
 
+  ## STUPID MISTAKE RIGHT HERE
   if os.path.exists('../data/cache/ratebeer_cache.txt'):
     prev = eval(open('../data/cache/ratebeer_cache_{}.txt'.format(machine_id), 'r').read())
     out.extend(prev)
@@ -211,7 +212,7 @@ if __name__ == '__main__':
   f.write(str(out))
   f.close()
 
-  f = open('../data/ratebeer_bad_brews_{}.txt'.format(machine_id, 'w'))
+  f = open('../data/ratebeer_bad_brews_{}.txt'.format(machine_id), 'w')
   f.write(str(bad_brews))
   f.close()
 

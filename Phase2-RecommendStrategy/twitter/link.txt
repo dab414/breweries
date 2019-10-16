@@ -1,0 +1,17 @@
+https://python-twitter.readthedocs.io/en/latest/installation.html
+
+full docs for twitter search query: https://developer.twitter.com/en/docs/tweets/search/api-reference/get-search-tweets
+
+full docs for python api: https://python-twitter.readthedocs.io/en/latest/twitter.html#module-twitter.api
+
+
+api = twitter.api.Api(oauth info)
+
+for searching tweets:
+  api.search(raw_query='q=')
+
+for getting data on a user
+  api.GetUser(screen_name = screen_name)
+  where screen_name is what i scraped from the ratebeer data
+
+  rate limit appears to be 900 requests / 15 min
