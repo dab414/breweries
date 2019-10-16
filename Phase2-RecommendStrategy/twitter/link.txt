@@ -9,6 +9,9 @@ api = twitter.api.Api(oauth info)
 
 for searching tweets:
   api.search(raw_query='q=')
+    ^ NO
+  api.GetSearch()
+    https://python-twitter.readthedocs.io/en/latest/twitter.html
 
 for getting data on a user
   api.GetUser(screen_name = screen_name)
