@@ -35,7 +35,7 @@ def harvest_tweets(guide_data):
     except:
       print('Something other than user not found happened when calling the api')
 
-    if count and not count % 10:
+    if count and not count % 100:
       cache(out)
       out = []
       print('Scraping: {}'.format(brewery[1]))
@@ -83,7 +83,7 @@ if __name__ == '__main__':
     guide_data = [x for x in guide_data if x[0] not in prev_ids]
 
 
-  out = harvest_tweets(guide_data[:50])
+  out = harvest_tweets(guide_data)
 
   if os.path.exists(cache_path):
     prev_data = dill.load(open(cache_path, 'rb'))

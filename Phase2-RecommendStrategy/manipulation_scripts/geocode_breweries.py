@@ -2,32 +2,39 @@ import urllib.parse
 import sys
 import requests
 sys.path.append('../../private/')
-from loquate_key import *
+from google_geocoding import *
+import json
 
 def geocode_breweries(d):
   ## input: [(brewery_id, address), ...]
 
   out = {}
 
-  base = 'https://api.addressy.com/Geocoding/International/Geocode/v1.10/json3.ws'
-  country = 'Country=US'
-  key = 'Key={}'.format(api_key)
+  base = 'https://maps.googleapis.com/maps/api/geocode/json'
+  key = 'key={}'.format(api_key)
 
   for count, brewery in enumerate(d):
 
-    location = 'Location=' + urllib.parse.quote(brewery[1])
-    query = base + '?' + '&'.join([country, key, location])
+    address = 'address=' + brewery[1].replace(' ', '+')
+    query = base + '?' + '&'.join([address, key])
 
     result = requests.get(query)
 
-    result = eval(result.text)['Items'][0]
+    #result = eval(result.text)['results']['geometry']
+    result = json.loads(result.text)
+
+    if result['results']:
+      result = result['results'][0]['geometry']['location']
+    else:
+      out[brewery[0]] = None
+      pass
 
     try:
-      out[brewery[0]] = {'latitude': result['Latitude'], 'longitude': result['Longitude']}
+      out[brewery[0]] = {'latitude': result['lat'], 'longitude': result['lng']}
     except:
       pass
 
-    if not count % 100:
+    if not count % 10:
       print('Parsing brewery {} of {}.\n'.format(count, len(d)))
 
   return out
