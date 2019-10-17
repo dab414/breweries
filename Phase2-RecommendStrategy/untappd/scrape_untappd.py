@@ -19,7 +19,7 @@ def similar(a, b):
   return SequenceMatcher(None, a, b).ratio()
 
 
-def scrape_untappd(d):
+def scrape_untappd(d, machine):
 
   out = []
 
@@ -35,7 +35,7 @@ def scrape_untappd(d):
     out.append(scrape_brewery(brewery, header, proxy))
 
     if count and not count % cache_frequency:
-      cache(out, cache_dir)
+      cache(out, cache_dir, machine)
       out = []
       print('\n')
       print('################')
@@ -81,12 +81,12 @@ def scrape_brewery(brewery, header, proxy):
   avg_rating = float(match.select('p.rating')[0].select('span.num')[0].text.replace('(','').replace(')', ''))
 
 
-  out = {'brewery_id': brewery[0], 'request_status': page.status_code, 'data': [{\
+  out = {'brewery_id': brewery[0], 'request_status': page.status_code, 'data': {\
     'target_name': brewery[1],\
     'scraped_name': scraped_name,\
     'num_beers': num_beers, \
     'num_ratings': num_ratings, \
-    'avg_rating':avg_rating}]}
+    'avg_rating':avg_rating}}
 
   print('Target name: {}, Scraped name: {}\n'.format(brewery[1], scraped_name))
 
@@ -111,9 +111,9 @@ def get_match(results_list, query_string):
   return out[0][0]
 
 
-def cache(d, cache_dir):
+def cache(d, cache_dir, machine):
 
-  save_path = cache_dir + 'untappd_ratings_cache.txt'
+  save_path = cache_dir + 'untappd_ratings_cache_{}.txt'.format(machine)
 
   if os.path.exists(save_path):
     prev = eval(open(save_path, 'r').read())
@@ -129,20 +129,26 @@ if __name__ == '__main__':
 
   args = sys.argv[1:]
 
-  if not args:
-    print('Usage: breweries_names.txt')
+  if len(args) != 2:
+    print('Usage: breweries_names.txt machine')
 
   file = args[0]
+  machine = args[1]
 
   d = eval(open(file, 'r').read())
 
-  out = scrape_untappd(d)
+  if machine == 'desktop':
+    d = d[:(len(d) // 2)]
+  elif machine == 'laptop':
+    d = d[(len(d) // 2):]
 
-  if os.path.exists(cache_dir + 'untappd_ratings_cache.txt'):
-    prev = eval(open(cache_dir + 'untappd_ratings_cache.txt', 'r').read())
+  out = scrape_untappd(d, machine)
+
+  if os.path.exists(cache_dir + 'untappd_ratings_cache_{}.txt'.format(machine)):
+    prev = eval(open(cache_dir + 'untappd_ratings_cache_{}.txt'.format(machine), 'r').read())
     out.extend(prev)
 
 
-  file = open('../data/untappd/untappd_ratings.txt', 'w')
+  file = open('../data/untappd/untappd_ratings_{}.txt'.format(machine), 'w')
   file.write(str(out))
   file.close()
