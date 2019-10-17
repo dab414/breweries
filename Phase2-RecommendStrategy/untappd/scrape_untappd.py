@@ -12,7 +12,7 @@ from rotate_proxies import RotateProxies
 
 cache_dir = '../data/untappd/cache/'
 throttle = 1.5
-cache_frequency = 5
+cache_frequency = 100
 
 def similar(a, b):
   ## from: https://stackoverflow.com/questions/17388213/find-the-similarity-metric-between-two-strings
@@ -136,8 +136,6 @@ if __name__ == '__main__':
   machine = args[1]
 
   d = eval(open(file, 'r').read())
-
-  d = d[:20]
 
   if machine == 'desktop':
     d = d[:(len(d) // 2)]
