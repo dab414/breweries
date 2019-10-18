@@ -131,16 +131,29 @@ if __name__ == '__main__':
 
   if len(args) != 2:
     print('Usage: breweries_names.txt machine')
+    sys.exit(1)
 
   file = args[0]
   machine = args[1]
 
+
   d = eval(open(file, 'r').read())
 
+  good_data = []
+
+  if os.path.exists('../data/untappd/untappd_ratings_{}.txt'.format(machine)):
+    prev_data = eval(open('../data/untappd/untappd_ratings_{}.txt'.format(machine)).read())
+    bad_ids = [x['brewery_id'] for x in prev_data if not x['data']]
+    d = [x for x in d if x[0] in bad_ids]
+    good_data = [x for x in d if x[0] not in bad_ids]
+  
+
+  '''
   if machine == 'desktop':
     d = d[:(len(d) // 2)]
   elif machine == 'laptop':
     d = d[(len(d) // 2):]
+  '''
 
   out = scrape_untappd(d, machine)
 
@@ -148,6 +161,8 @@ if __name__ == '__main__':
     prev = eval(open(cache_dir + 'untappd_ratings_cache_{}.txt'.format(machine), 'r').read())
     out.extend(prev)
 
+  if good_data:
+    out.extend(good_data)
 
   file = open('../data/untappd/untappd_ratings_{}.txt'.format(machine), 'w')
   file.write(str(out))
