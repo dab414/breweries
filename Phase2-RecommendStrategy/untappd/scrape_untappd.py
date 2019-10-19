@@ -144,9 +144,11 @@ if __name__ == '__main__':
   if os.path.exists('../data/untappd/untappd_ratings_{}.txt'.format(machine)):
     prev_data = eval(open('../data/untappd/untappd_ratings_{}.txt'.format(machine)).read())
     bad_ids = [x['brewery_id'] for x in prev_data if not x['data']]
-    d = [x for x in d if x[0] in bad_ids]
     good_data = [x for x in d if x[0] not in bad_ids]
+    d = [x for x in d if x[0] in bad_ids]
   
+  print(len(good_data))
+  sys.exit(1)
 
   '''
   if machine == 'desktop':
