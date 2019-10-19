@@ -153,9 +153,6 @@ if __name__ == '__main__':
     good_data = [x for x in d if x[0] not in bad_ids]
     d = [x for x in d if x[0] in bad_ids]
   
-  print(len(good_data))
-  sys.exit(1)
-
 
   out = scrape_untappd(d, machine)
 
