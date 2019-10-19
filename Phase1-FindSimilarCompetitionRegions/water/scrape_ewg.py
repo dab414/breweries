@@ -1,7 +1,7 @@
 ## from https://github.com/albertovilla/ewg/blob/master/EWG.ipynb
 
 import pandas as pd
-#import progressbar
+import progressbar
 import pprint
 import requests
 from bs4 import BeautifulSoup
@@ -95,12 +95,12 @@ def scrap_contaminants_from_df(df):
     contaminants_rows = []
    
     status = 0
-    #bar = progressbar.ProgressBar(maxval=df.shape[0])
-    #bar.start()
+    bar = progressbar.ProgressBar(maxval=df.shape[0])
+    bar.start()
     
     for index, utility in df.iterrows():
         # percentage of completion
-        #bar.update(status)        
+        bar.update(status)        
         status = status + 1
         
         r = requests.get(utility['url'])
@@ -112,7 +112,7 @@ def scrap_contaminants_from_df(df):
         row['contaminants_above_hbl'] = get_contaminants_above_hbl(soup)
         row['contaminants_other'] = get_contaminants_other(soup)
         contaminants_rows.append(row)
-    #bar.finish()
+    bar.finish()
     
     return contaminants_rows
     
@@ -120,18 +120,18 @@ def scrape_ewg(df):
     data = []
        
     status = 0
-    #bar = progressbar.ProgressBar(maxval=df.shape[0])
-    #bar.start()
+    bar = progressbar.ProgressBar(maxval=df.shape[0])
+    bar.start()
     
     # Step 1: get information about the utilities in each zip code    
     for index, row in df.iterrows():
         # percentage of completion
-        #bar.update(status)        
+        bar.update(status)        
         status = status + 1
         
         utilities = process_zip(row['zip'], row['state_id'])
         data = data + utilities
-    #bar.finish()
+    bar.finish()
     
     # Let's save this to a CSV just in case the second process does not work
     utilities_df = pd.DataFrame(data)
@@ -139,27 +139,27 @@ def scrape_ewg(df):
         
     # Step 2: for each utility obtain the contaminants
     status = 0
-    #bar = progressbar.ProgressBar(maxval=len(data))
-    #bar.start()
+    bar = progressbar.ProgressBar(maxval=len(data))
+    bar.start()
 
     for utility in data:
         # percentage of completion
-        #bar.update(status)        
+        bar.update(status)        
         status = status + 1
         
         r = requests.get(utility['url'])
         soup = BeautifulSoup(r.content, 'html.parser')
         utility['contaminants_above_hbl'] = get_contaminants_above_hbl(soup)
         utility['contaminants_other'] = get_contaminants_other(soup)
-    #bar.finish()
+    bar.finish()
     
     return data
 
 
 
 if __name__ == '__main__':
-  df = pd.read_csv('../data/centroid_data.csv')
-  df = df.rename(columns = {'Zip': 'zipcode', 'State': 'state_id'})
+  df = pd.read_csv('../data/centroid_data.csv', dtype = {'zipcode': str})
+  df = df.rename(columns = {'zipcode': 'zip', 'State': 'state_id'})
 
   result = scrape_ewg(df[['zip', 'state_id']].dropna())
 

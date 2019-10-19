@@ -8,7 +8,7 @@ from sklearn.cluster import KMeans
 
 ## constants
 ## defined relative to next dir up
-data_path = 'data/breweries.csv'
+data_path = '../Phase2-RecommendStrategy/data/brewery_features_df.csv'
 usa_box = [-125.771484, 23.725012, -66.269531, 49.239121]
 usa_lat = [usa_box[1], usa_box[3]]
 usa_lon = [usa_box[0], usa_box[2]]
@@ -17,12 +17,7 @@ usa_lon = [usa_box[0], usa_box[2]]
 def import_extract():
 
   d = pd.read_csv(data_path)
-  
-  ## creating my own id var here and writing out
-  d['id'] = list(d.index)
-  d.to_csv('data/breweries.csv', index = False)
-
-  d = d[d['brewery_type'] == 'micro'][['id', 'latitude', 'longitude']]
+  d = d[['brewery_id', 'latitude', 'longitude']]
   lat_filter = (d['latitude'] > usa_lat[0]) & (d['latitude'] < usa_lat[1])
   lon_filter = (d['longitude'] > usa_lon[0]) & (d['longitude'] < usa_lon[1])
   d = d[(lat_filter & lon_filter)]
@@ -46,7 +41,7 @@ def prune_small_clusters(centroids, d, min_brew = 5):
 
   ## aggregate and only keep clusters with counts greater than or equal to min_brew
   keep = d.groupby('label').count().reset_index()
-  keep = keep[keep['id'] >= min_brew]
+  keep = keep[keep['brewery_id'] >= min_brew]
 
   centroids = centroids[keep['label']]
   d = d[d['label'].isin(keep['label'])]
@@ -63,7 +58,7 @@ def main():
   centroids, d['label'] = run_clustering(d[['latitude', 'longitude']])
   centroids, d = prune_small_clusters(centroids, d)
 
-  d.to_csv('data/breweries_labeled.csv', index = False)
+  d.to_csv('../Phase2-RecommendStrategy/data/brewery_features_df_labeled.csv', index = False)
   
   ## return centroid coordinates as list of tuples
   out = []

@@ -18,7 +18,6 @@ def preprocess_water(d):
     else:
       water_dict[zipcode] += contam
 
-
   df = []
 
   for zipcode in water_dict:
@@ -39,7 +38,7 @@ if __name__ == '__main__':
     print('Usage: water_by_zip_raw.csv')
     sys.exit(1)
 
-  d = pd.read_csv(args[0], dtype = {'zipcode': str})
+  d = pd.read_csv(args[0], dtype = {'zip': str}).rename(columns = {'zip': 'zipcode'})
 
   out = preprocess_water(d)
 

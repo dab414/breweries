@@ -16,6 +16,7 @@ def txt_to_csv(t):
 
   d = d[d['zipcode'].map(len) == 5]
 
+
   return d
 
 
@@ -25,5 +26,7 @@ if __name__ == '__main__':
   t = eval(open('../data/centroid_data.txt', 'r').read())
 
   out = txt_to_csv(t)
+
+  print([x for x in out['zipcode'].values if len(x) != 5])
 
   out.to_csv('../centroid_data.csv', index = False)

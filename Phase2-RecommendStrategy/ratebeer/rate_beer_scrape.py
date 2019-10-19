@@ -141,7 +141,9 @@ def extract_reviews(page, headers, url):
 
 
 def extract_beers(soup):
-
+  ## SOMETHING WENT WRONG HERE
+  ## I HAVE MANY REDUNDANT ENTRIES FOR EACH BEER
+  
   beers = []
 
   row_list = soup.select('table#brewer-beer-table tr')[1:]

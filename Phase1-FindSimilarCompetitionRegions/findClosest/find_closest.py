@@ -6,6 +6,8 @@ import math
 
 def compute_similarity(new_obs, centroids):
 
+  centroids = centroids.drop('median_age', axis = 1)
+
   new_obs, centroids = normalize_count(new_obs, centroids)
 
   new_obs = convert_to_array(new_obs)

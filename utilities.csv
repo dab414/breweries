@@ -1,11 +1,11 @@
-url,utility_name,city,people_served,zip,state
-https://www.ewg.org/tapwater/system.php?pws=NJ1605002,Passaic Valley Water Commission,Clifton,310120,07460,NJ
-https://www.ewg.org/tapwater/system.php?pws=NJ0712001,NJ American Water - Short Hills,Cherry Hill,217230,07460,NJ
-https://www.ewg.org/tapwater/system.php?pws=NJ1424001,Southeast Morris County Municipal Utilities Authority,Cedar Knolls,62050,07460,NJ
-https://www.ewg.org/tapwater/system.php?pws=NJ1614001,Wayne Township Division of Water,Wayne,55000,07460,NJ
-https://www.ewg.org/tapwater/system.php?pws=NJ1429001,Parsippany-Troy Hills Water Department,Parsippany,50400,07460,NJ
-https://www.ewg.org/tapwater/system.php?pws=NJ1432001,Morris County MUA,Randolph Twp,32980,07460,NJ
-https://www.ewg.org/tapwater/system.php?pws=NJ1409001,Dover Water Commission,Dover,27806,07460,NJ
-https://www.ewg.org/tapwater/system.php?pws=NJ1421003,Montville Twp MUA,Montville,22000,07460,NJ
-https://www.ewg.org/tapwater/system.php?pws=NJ1604001,Hawthorne Water Department,Hawthorne Boro,21006,07460,NJ
-https://www.ewg.org/tapwater/system.php?pws=NJ1918004,Sparta Twp Water Utility - Lake Mohawk,Sparta,17628,07460,NJ
+city,people_served,state,url,utility_name,zip
+Bethlehem,115686,PA,https://www.ewg.org/tapwater/system.php?pws=PA3480046,City of Bethlehem,18015
+Allentown,106000,PA,https://www.ewg.org/tapwater/system.php?pws=PA3390024,Lehigh County Authority Allentown Division,18015
+Easton,85163,PA,https://www.ewg.org/tapwater/system.php?pws=PA3480050,Easton Area Water System,18015
+Northampton,40000,PA,https://www.ewg.org/tapwater/system.php?pws=PA3480057,Northampton Boro Municipal Authority,18015
+Allentown,39792,PA,https://www.ewg.org/tapwater/system.php?pws=PA3390073,Lca Wlsa Central Division,18015
+Wilkes-barre,23613,PA,https://www.ewg.org/tapwater/system.php?pws=PA3480055,Paw Blue Mountain Division,18015
+Allentown,16000,PA,https://www.ewg.org/tapwater/system.php?pws=PA3390065,Swta - Main System,18015
+Emmaus,14000,PA,https://www.ewg.org/tapwater/system.php?pws=PA3390032,Emmaus Borough Public Water,18015
+Whitehall,13063,PA,https://www.ewg.org/tapwater/system.php?pws=PA3390081,Whitehall Twp Authority,18015
+Wilkes-barre,10001,PA,https://www.ewg.org/tapwater/system.php?pws=PA3480038,Paw Bangor District,18015
