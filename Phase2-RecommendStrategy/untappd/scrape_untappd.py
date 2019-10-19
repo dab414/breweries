@@ -141,21 +141,18 @@ if __name__ == '__main__':
 
   good_data = []
 
+  if machine == 'desktop':
+    d = d[:(len(d) // 2)]
+  elif machine == 'laptop':
+    d = d[(len(d) // 2):]
+  
+
   if os.path.exists('../data/untappd/untappd_ratings_{}.txt'.format(machine)):
     prev_data = eval(open('../data/untappd/untappd_ratings_{}.txt'.format(machine)).read())
     bad_ids = [x['brewery_id'] for x in prev_data if not x['data']]
     good_data = [x for x in d if x[0] not in bad_ids]
     d = [x for x in d if x[0] in bad_ids]
   
-  print(len(good_data))
-  sys.exit(1)
-
-  '''
-  if machine == 'desktop':
-    d = d[:(len(d) // 2)]
-  elif machine == 'laptop':
-    d = d[(len(d) // 2):]
-  '''
 
   out = scrape_untappd(d, machine)
 
