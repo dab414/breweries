@@ -1,11 +1,11 @@
-city,people_served,state,url,utility_name,zip
-Bethlehem,115686,PA,https://www.ewg.org/tapwater/system.php?pws=PA3480046,City of Bethlehem,18015
-Allentown,106000,PA,https://www.ewg.org/tapwater/system.php?pws=PA3390024,Lehigh County Authority Allentown Division,18015
-Easton,85163,PA,https://www.ewg.org/tapwater/system.php?pws=PA3480050,Easton Area Water System,18015
-Northampton,40000,PA,https://www.ewg.org/tapwater/system.php?pws=PA3480057,Northampton Boro Municipal Authority,18015
-Allentown,39792,PA,https://www.ewg.org/tapwater/system.php?pws=PA3390073,Lca Wlsa Central Division,18015
-Wilkes-barre,23613,PA,https://www.ewg.org/tapwater/system.php?pws=PA3480055,Paw Blue Mountain Division,18015
-Allentown,16000,PA,https://www.ewg.org/tapwater/system.php?pws=PA3390065,Swta - Main System,18015
-Emmaus,14000,PA,https://www.ewg.org/tapwater/system.php?pws=PA3390032,Emmaus Borough Public Water,18015
-Whitehall,13063,PA,https://www.ewg.org/tapwater/system.php?pws=PA3390081,Whitehall Twp Authority,18015
-Wilkes-barre,10001,PA,https://www.ewg.org/tapwater/system.php?pws=PA3480038,Paw Bangor District,18015
+url,utility_name,city,people_served,zip,state
+https://www.ewg.org/tapwater/system.php?pws=NJ1918004,Sparta Twp Water Utility - Lake Mohawk,Sparta,17628,07419,NJ
+https://www.ewg.org/tapwater/system.php?pws=NJ1915001,Newton Water & Sewer Utility,Newton,8300,07419,NJ
+https://www.ewg.org/tapwater/system.php?pws=NJ1912001,Hopatcong Water Department,Hopatcong,7224,07419,NJ
+https://www.ewg.org/tapwater/system.php?pws=NJ1906002,Franklin Board of Public,Franklin,5500,07419,NJ
+https://www.ewg.org/tapwater/system.php?pws=NJ1919001,Stanhope W Department,Stanhope,3730,07419,NJ
+https://www.ewg.org/tapwater/system.php?pws=NJ1909001,Hamburg Board of Public,Hamburg,3382,07419,NJ
+https://www.ewg.org/tapwater/system.php?pws=NJ1922026,United Water Nj Vernon Valley,Highland Lakes,3295,07419,NJ
+https://www.ewg.org/tapwater/system.php?pws=NJ1916001,Ogdensburg W Department,Ogdensburg,2800,07419,NJ
+https://www.ewg.org/tapwater/system.php?pws=NJ1921001,Sussex W Department,Sussex,2201,07419,NJ
+https://www.ewg.org/tapwater/system.php?pws=NJ1914002,Montague Water Company,Dunkirk,2124,07419,NJ

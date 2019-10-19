@@ -3,11 +3,16 @@ sys.path.append('Phase1-FindSimilarCompetitionRegions/processIncomingZip/')
 sys.path.append('Phase1-FindSimilarCompetitionRegions/findClosest/')
 sys.path.append('Phase1-FindSimilarCompetitionRegions/water/')
 sys.path.append('Phase1-FindSimilarCompetitionRegions/demographics/')
+sys.path.append('Phase1-FindSimilarCompetitionRegions/manipulation_scripts/')
 sys.path.append('Phase0-DefineCompetitionRegions/03-ParseUserZip/')
+sys.path.append('private')
+
+import get_centroid_addresses as gca
 import extract_lat_lon as ell
 import process_incoming_zip as piz
 import find_closest as fc
 import pandas as pd
+import numpy as np
 
 data_path = 'Phase1-FindSimilarCompetitionRegions/data/'
 
@@ -21,11 +26,12 @@ def zip_to_similar(zipcode):
   if type(user_summary) is str:
     return user_summary
 
+  user_summary['label'] = np.nan
+  user_summary = gca.get_addresses(user_summary)
+
   print('User Input: \n{}\n'.format(user_summary))
   print('Output: \n')
-  print(user_data)
   results = fc.compute_similarity(user_data, centroids)
-  print(results)
 
   centroids_summary = pd.read_csv(data_path + 'centroid_data_with_summary.csv', dtype = {'zipcode': str})
 
@@ -40,13 +46,17 @@ def zip_to_similar(zipcode):
 
   formatted_results = centroids_summary[centroids_summary['label'].isin(results.loc[:,'label'])]
 
-  formatted_results = pd.DataFrame(formatted_results)[['City', 'latitude', 'longitude', 'State', 'zipcode', 'label', 'StreetAddress', 'total_water_count', 'median_age', 'total_population']]#.\
+  #formatted_results = pd.DataFrame(formatted_results)[['city', 'latitude', 'longitude', 'state_long', 'zipcode', 'label', 'total_water_count', 'median_age', 'total_population']]#.\
   #rename(columns = {'city': 'Matching City', 'latitude': 'Latitude', 'longitude': 'Longitude', 'state': 'State', 'zip': 'Zip'})
+
+  user_summary['id'] = 'user'
+  formatted_results['id'] = ['competition']*3
+  formatted_results = pd.concat([user_summary, formatted_results]).reset_index()
 
 
   return formatted_results
 
-
+'''
 
 if __name__ == '__main__':
   args = sys.argv[1:]
@@ -57,5 +67,6 @@ if __name__ == '__main__':
 
   zipcode = args[0]
 
-  print(zip_to_similar(zipcode)[['zipcode', 'City']])
+  print(zip_to_similar(zipcode))
 
+'''
