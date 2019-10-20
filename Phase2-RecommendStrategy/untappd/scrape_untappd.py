@@ -147,12 +147,10 @@ if __name__ == '__main__':
     d = d[(len(d) // 2):]
   
 
-  if os.path.exists('../data/untappd/untappd_ratings_{}.txt'.format(machine)):
-    prev_data = eval(open('../data/untappd/untappd_ratings_{}.txt'.format(machine)).read())
-    bad_ids = [x['brewery_id'] for x in prev_data if not x['data']]
-    good_data = [x for x in d if x[0] not in bad_ids]
-    d = [x for x in d if x[0] in bad_ids]
-  
+  if os.path.exists('../data/untappd/untappd_successful_scrapes_{}.txt'.format(machine)):
+    good_data = eval(open('../data/untappd/untappd_successful_scrapes_{}.txt'.format(machine)).read())
+    good_data_ids = [x['brewery_id'] for x in good_data]
+    d = [x for x in d if x[0] not in good_data_ids]
 
   out = scrape_untappd(d, machine)
 
@@ -161,7 +159,7 @@ if __name__ == '__main__':
     out.extend(prev)
 
   if good_data:
-    out.extend(good_data)
+    out.extend([x for x in prev_data if x['data']])
 
   file = open('../data/untappd/untappd_ratings_{}.txt'.format(machine), 'w')
   file.write(str(out))
