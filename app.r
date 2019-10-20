@@ -20,7 +20,7 @@ reticulate::use_virtualenv('python_environment', required = TRUE)
 usa_bbox <- data.frame(latitude = c(23.725012, 49.239121), longitude = c(-125.771484,-66.2695311))
 
 ui <- dashboardPage(
-  dashboardHeader(title = 'Get your insights here'),
+  dashboardHeader(title = 'Better Brewery'),
   dashboardSidebar(),
   dashboardBody(
     box(title = 'Welcome to the competition matcher.',
@@ -38,7 +38,7 @@ ui <- dashboardPage(
         fluidRow(
         
           column(width = 12,
-           
+                 
             tags$head(tags$style(type="text/css", "
                  #loadmessage {
                    position: fixed;
@@ -54,6 +54,7 @@ ui <- dashboardPage(
                    z-index: 105;
                  }
               ")),
+            
             leafletOutput('mainResult'),# %>% withSpinner(),
             
             absolutePanel(top = 100, left = 100, class = 'panel panel-default', draggable = TRUE, width = 180, height = 160,
@@ -74,27 +75,29 @@ ui <- dashboardPage(
       status = 'primary',
       solidHeader = TRUE,
       
-      box(width = 6,
-             title = h3(textOutput('your_location')),
-             #infoBoxOutput('user_location'),
-             infoBoxOutput('user_population'),
-             infoBoxOutput('user_median_age'),
-             infoBoxOutput('user_total_water')
-             ),
+      box(width = 6, 
+         title = h3(textOutput('your_location') %>% withSpinner()),
+         #infoBoxOutput('user_location'),
+         infoBoxOutput('user_population'),
+         infoBoxOutput('user_median_age'),
+         infoBoxOutput('user_total_water')
+          ),
       
-      box(width = 6,
-             #h3(textOutput()),
-             #infoBoxOutput('user_population')
-             )
+      box(width = 6, 
+          title = h3(textOutput('competition_location')),
+          infoBoxOutput('comp_population'),
+          infoBoxOutput('comp_median_age'),
+          infoBoxOutput('comp_total_water')
+          )
       ),  
   
-  box(width = 12,
-      title = 'Output data',
-      status = 'primary',
-      solidHeader = TRUE,
-      tableOutput('criticalData') %>%  withSpinner()
-      )
-)
+  # box(width = 12,
+  #     title = 'Output data',
+  #     status = 'primary',
+  #     solidHeader = TRUE,
+  #     tableOutput('criticalData') %>%  withSpinner()
+  #     )
+  )
 )
 
 server <- function(input, output){
@@ -109,6 +112,7 @@ server <- function(input, output){
     })
   
   
+  ## ADD MARKERS IN RESPONSE TO ZIPCODE INPUT
   observe({
     #pal <- colorFactor(c("navy", "red"), domain = c("ship", "pirate"))
     
@@ -125,33 +129,78 @@ server <- function(input, output){
     
     leafletProxy('mainResult', data = in_data) %>% 
       clearShapes() %>% 
-      addCircleMarkers(color = ~ifelse(id == 'user', 'blue', 'green'), stroke = FALSE, fillOpacity = .6, popup = ~popup)
+      addCircleMarkers(color = ~ifelse(id == 'user', 'blue', 'green'), stroke = FALSE, fillOpacity = .6, popup = ~popup, layerId = ~id)
     
   })
   
   
-     output$your_location <- renderText({
-       paste(snake()[snake()$id == 'user',]$city, ', ', snake()[snake()$id == 'user',]$state_long, sep = '')
-     })
-  
-  
-    output$user_population <- renderInfoBox({
-      infoBox('Population', format(snake()[snake()$id == 'user',]$total_population, big.mark = ','), icon = icon('user', lib = 'glyphicon'), color = 'green')
-    })
+  ### USER LOCATION STATS
+  output$your_location <- renderText({
+     paste(snake()[snake()$id == 'user',]$city, ', ', snake()[snake()$id == 'user',]$state_long, sep = '')
+   })
+  output$user_population <- renderInfoBox({
+    infoBox('Population', format(snake()[snake()$id == 'user',]$total_population, big.mark = ','), icon = icon('user', lib = 'glyphicon'), color = 'green')
+  })
+  output$user_median_age <- renderInfoBox({
+    infoBox('Median Age', snake()[snake()$id == 'user',]$median_age, icon = icon('info-sign', lib = 'glyphicon'), color = 'blue')
+  })
+  output$user_total_water <- renderInfoBox({
+    infoBox('Water Contams', format(snake()[snake()$id == 'user',]$total_water_count, big.mark = ','), icon = icon('warning-sign', lib = 'glyphicon'), color = 'orange')
+  })
     
-    output$user_median_age <- renderInfoBox({
-      infoBox('Median Age', snake()[snake()$id == 'user',]$median_age, icon = icon('info-sign', lib = 'glyphicon'), color = 'blue')
-    })
     
-    output$user_total_water <- renderInfoBox({
-      infoBox('Water Contams', format(snake()[snake()$id == 'user',]$total_water_count, big.mark = ','), icon = icon('warning-sign', lib = 'glyphicon'), color = 'orange')
-    })
+  competitionData <- eventReactive(input$mainResult_marker_click, {
+    click <- input$mainResult_marker_click
     
-  
-  output$criticalData <- renderTable({
-    snake()
+    if (click$id == 'user') {
+      return('Click on a competition area to view the comparison')
+    } else if (!is.null(click)) {
+      return(snake()[snake()$id == click$id,])
+    }
   })
   
+  
+  ## COMPETITION STATS
+  output$competition_location <- renderText({
+    if (typeof(competitionData()) == 'character'){
+      return(competitionData())
+    } else {
+      return(paste(competitionData()$city, ', ', competitionData()$state_long, sep = ''))
+    }
+  })
+  
+  output$comp_population <- renderInfoBox({
+    if (typeof(competitionData()) == 'character'){
+      return()
+    } else {
+      infoBox('Population', format(snake()[snake()$id == input$mainResult_marker_click$id,]$total_population, big.mark = ','), icon = icon('user', lib = 'glyphicon'), color = 'green')
+    }
+  })
+  
+  output$comp_median_age <- renderInfoBox({
+    if (typeof(competitionData()) == 'character'){
+      return()
+    } else {
+      infoBox('Median Age', snake()[snake()$id == input$mainResult_marker_click$id,]$median_age, icon = icon('info-sign', lib = 'glyphicon'), color = 'blue')
+    }
+  })
+  
+  output$comp_total_water <- renderInfoBox({
+    if (typeof(competitionData()) == 'character'){
+      return()
+    } else {
+      infoBox('Water Contams', format(snake()[snake()$id == input$mainResult_marker_click$id,]$total_water_count, big.mark = ','), icon = icon('warning-sign', lib = 'glyphicon'), color = 'orange')
+    }
+  })
+  
+
+  
+    
+  # 
+  # output$criticalData <- renderTable({
+  #   snake()
+  # })
+  # 
   
 }
 

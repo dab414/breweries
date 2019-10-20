@@ -50,7 +50,7 @@ def zip_to_similar(zipcode):
   #rename(columns = {'city': 'Matching City', 'latitude': 'Latitude', 'longitude': 'Longitude', 'state': 'State', 'zip': 'Zip'})
 
   user_summary['id'] = 'user'
-  formatted_results['id'] = ['competition']*3
+  formatted_results['id'] = ['competition0', 'competition1', 'competition2']
   formatted_results = pd.concat([user_summary, formatted_results]).reset_index()
 
 
