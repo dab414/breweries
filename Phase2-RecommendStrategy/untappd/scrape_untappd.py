@@ -147,11 +147,14 @@ if __name__ == '__main__':
     d = d[(len(d) // 2):]
   
 
-  if os.path.exists('../data/untappd/untappd_successful_scrape_{}.txt'.format(machine)):
-    good_data = eval(open('../data/untappd/untappd_successful_scrape_{}.txt'.format(machine)).read())
+  if os.path.exists('../data/untappd/untappd_successful_scrapes_{}.txt'.format(machine)):
+    good_data = eval(open('../data/untappd/untappd_successful_scrapes_{}.txt'.format(machine)).read())
     good_data_ids = [x['brewery_id'] for x in good_data]
+    print(len(good_data_ids))
     d = [x for x in d if x[0] not in good_data_ids]
   
+  print(len(d))
+  sys.exit(1)
 
   out = scrape_untappd(d, machine)
 
