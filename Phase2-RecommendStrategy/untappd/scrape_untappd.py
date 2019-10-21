@@ -34,7 +34,7 @@ def scrape_untappd(d, machine):
     time.sleep(abs(throttle + np.random.normal(.5)))
     out.append(scrape_brewery(brewery, header, proxy))
 
-    if count and not count % cache_frequency:
+    if not count % cache_frequency:
       cache(out, cache_dir, machine)
       out = []
       print('\n')
@@ -159,7 +159,7 @@ if __name__ == '__main__':
     out.extend(prev)
 
   if good_data:
-    out.extend([x for x in prev_data if x['data']])
+    out.extend([x for x in good_data if x['data']])
 
   file = open('../data/untappd/untappd_ratings_{}.txt'.format(machine), 'w')
   file.write(str(out))
