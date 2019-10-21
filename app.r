@@ -1,4 +1,5 @@
 library(shiny)
+library(shinyjs)
 library(ggplot2)
 library(reticulate)
 library(dplyr)
@@ -23,6 +24,7 @@ ui <- dashboardPage(
   dashboardHeader(title = 'Better Brewery'),
   dashboardSidebar(),
   dashboardBody(
+    useShinyjs(),
     box(title = 'Welcome to the competition matcher.',
         status = 'primary',
         solidHeader = TRUE,
@@ -83,7 +85,7 @@ ui <- dashboardPage(
          infoBoxOutput('user_total_water')
           ),
       
-      box(width = 6, 
+      box(width = 6, id ='comp_box',
           title = h3(textOutput('competition_location')),
           infoBoxOutput('comp_population'),
           infoBoxOutput('comp_median_age'),
@@ -115,7 +117,8 @@ server <- function(input, output){
   ## ADD MARKERS IN RESPONSE TO ZIPCODE INPUT
   observe({
     #pal <- colorFactor(c("navy", "red"), domain = c("ship", "pirate"))
-    
+    hide(id = 'comp_box')
+    ## ^ https://stackoverflow.com/questions/33027756/hide-an-element-box-tabs-in-shiny-dashboard
     label = rep(0, 4)
     
     for (row in 1:(nrow(snake()))){
@@ -155,6 +158,7 @@ server <- function(input, output){
     if (click$id == 'user') {
       return('Click on a competition area to view the comparison')
     } else if (!is.null(click)) {
+      show(id = 'comp_box')
       return(snake()[snake()$id == click$id,])
     }
   })
@@ -163,34 +167,25 @@ server <- function(input, output){
   ## COMPETITION STATS
   output$competition_location <- renderText({
     if (typeof(competitionData()) == 'character'){
+      hide(id = 'comp_box')
       return(competitionData())
     } else {
+      show(id = 'comp_box')
       return(paste(competitionData()$city, ', ', competitionData()$state_long, sep = ''))
     }
   })
   
   output$comp_population <- renderInfoBox({
-    if (typeof(competitionData()) == 'character'){
-      return()
-    } else {
+    if (typeof(competitionData()) == 'list') 
       infoBox('Population', format(snake()[snake()$id == input$mainResult_marker_click$id,]$total_population, big.mark = ','), icon = icon('user', lib = 'glyphicon'), color = 'green')
-    }
   })
-  
   output$comp_median_age <- renderInfoBox({
-    if (typeof(competitionData()) == 'character'){
-      return()
-    } else {
+    if (typeof(competitionData()) == 'list') 
       infoBox('Median Age', snake()[snake()$id == input$mainResult_marker_click$id,]$median_age, icon = icon('info-sign', lib = 'glyphicon'), color = 'blue')
-    }
   })
-  
   output$comp_total_water <- renderInfoBox({
-    if (typeof(competitionData()) == 'character'){
-      return()
-    } else {
+    if (typeof(competitionData()) == 'list') 
       infoBox('Water Contams', format(snake()[snake()$id == input$mainResult_marker_click$id,]$total_water_count, big.mark = ','), icon = icon('warning-sign', lib = 'glyphicon'), color = 'orange')
-    }
   })
   
 
