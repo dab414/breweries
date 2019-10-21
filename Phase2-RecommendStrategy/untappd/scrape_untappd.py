@@ -34,7 +34,7 @@ def scrape_untappd(d, machine):
     time.sleep(abs(throttle + np.random.normal(.5)))
     out.append(scrape_brewery(brewery, header, proxy))
 
-    if count and not count % cache_frequency:
+    if not count % cache_frequency:
       cache(out, cache_dir, machine)
       out = []
       print('\n')
