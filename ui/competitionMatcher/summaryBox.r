@@ -3,7 +3,7 @@ summaryBox <- box(width = 12,
       status = 'primary',
       solidHeader = TRUE,
       
-      box(width = 6, 
+      box(width = 6, id = 'user_box',
          title = h3(textOutput('your_location') %>% withSpinner()),
          #infoBoxOutput('user_location'),
          infoBoxOutput('user_population'),

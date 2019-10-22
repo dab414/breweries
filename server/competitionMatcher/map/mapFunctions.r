@@ -1,7 +1,7 @@
 ## initialize map
   output$mainResult <- renderLeaflet({
       leaflet(usa_bbox) %>% addTiles() %>% fitBounds(~min(longitude), ~min(latitude), ~max(longitude), ~max(latitude)) 
-    })
+  })
 
 ## ADD MARKERS IN RESPONSE TO ZIPCODE INPUT
 observeEvent(valid_data(), {

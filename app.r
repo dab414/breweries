@@ -29,3 +29,4 @@ reticulate::use_virtualenv('python_environment', required = TRUE)
 
 shinyApp(ui = ui, server = server)
 
+  

@@ -1,7 +1,7 @@
 import json
 import sys
 import pandas as pd
-sys.path.append('../../private/')
+sys.path.append('private/')
 from google_geocoding import *
 import requests
 

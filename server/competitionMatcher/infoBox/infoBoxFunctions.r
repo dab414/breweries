@@ -1,47 +1,50 @@
+### MANAGE DISPLAYING THE BOXES
+observe({
+
+  if (rv$is_bad_zip | rv$init) {
+    shinyjs::hide(id = 'user_box') 
+    } else shinyjs::show(id = 'user_box')
+
+  if (rv$is_bad_zip | rv$init | rv$new_search) {
+    shinyjs::hide(id = 'comp_box') 
+  } else shinyjs::show(id = 'comp_box') 
+
+})
+
+
 ## USER LOCATION STATS
 
   output$your_location <- renderText({
-     paste(valid_data()()[valid_data()()$id == 'user',]$city, ', ', valid_data()()[valid_data()()$id == 'user',]$state_long, sep = '')
+    if (!rv$is_bad_zip & !rv$init)
+    paste(centroid_data$data[centroid_data$data$id == 'user',]$city, ', ', 
+      centroid_data$data[centroid_data$data$id == 'user',]$state_long, sep = '')
   })
 
   output$user_population <- renderInfoBox({
-    infoBox('Population', format(valid_data()()[valid_data()()$id == 'user',]$total_population, big.mark = ','), icon = icon('user', lib = 'glyphicon'), color = 'green')
+    infoBox('Population', format(centroid_data$data[centroid_data$data$id == 'user',]$total_population, 
+      big.mark = ','), icon = icon('user', lib = 'glyphicon'), color = 'green')
   })
   
-  
   output$user_median_age <- renderInfoBox({
-    infoBox('Median Age', valid_data()()[valid_data()()$id == 'user',]$median_age, icon = icon('info-sign', lib = 'glyphicon'), color = 'blue')
+    infoBox('Median Age', centroid_data$data[centroid_data$data$id == 'user',]$median_age, icon = icon('info-sign', lib = 'glyphicon'), color = 'blue')
   })
 
   output$user_total_water <- renderInfoBox({
-    infoBox('Water Contams', format(valid_data()()[valid_data()()$id == 'user',]$total_water_count, big.mark = ','), icon = icon('warning-sign', lib = 'glyphicon'), color = 'orange')
+    infoBox('Water Contams', format(centroid_data$data[centroid_data$data$id == 'user',]$total_water_count, big.mark = ','), icon = icon('warning-sign', lib = 'glyphicon'), color = 'orange')
   })
-  
-
-  
   
   ## COMPETITION STATS
   output$competition_location <- renderText({
-    if (typeof(competitionData()) == 'character'){
-      cat(file = stderr(), 'line 26 running')
-      hide(id = 'comp_box')
-      #show(id = 'comp_box')
-      return(competitionData())
-    } else {
-      show(id = 'comp_box')
-      return(paste(competitionData()$city, ', ', competitionData()$state_long, sep = ''))
-    }
+    if (!rv$is_bad_zip & !rv$init & !rv$new_search)
+    return(paste(centroid_data$rel_data$city, ', ', centroid_data$rel_data$state_long, sep = ''))
   })
-  
   output$comp_population <- renderInfoBox({
-    if (typeof(competitionData()) == 'list') 
-      infoBox('Population', format(valid_data()()[valid_data()()$id == input$mainResult_marker_click$id,]$total_population, big.mark = ','), icon = icon('user', lib = 'glyphicon'), color = 'green')
+    infoBox('Population', format(centroid_data$rel_data[centroid_data$rel_data$id == input$mainResult_marker_click$id,]$total_population, big.mark = ','), icon = icon('user', lib = 'glyphicon'), color = 'green')
   })
   output$comp_median_age <- renderInfoBox({
-    if (typeof(competitionData()) == 'list') 
-      infoBox('Median Age', valid_data()()[valid_data()()$id == input$mainResult_marker_click$id,]$median_age, icon = icon('info-sign', lib = 'glyphicon'), color = 'blue')
+   infoBox('Median Age', centroid_data$rel_data[centroid_data$rel_data$id == input$mainResult_marker_click$id,]$median_age, icon = icon('info-sign', lib = 'glyphicon'), color = 'blue')
   })
   output$comp_total_water <- renderInfoBox({
-    if (typeof(competitionData()) == 'list') 
-      infoBox('Water Contams', format(valid_data()()[valid_data()()$id == input$mainResult_marker_click$id,]$total_water_count, big.mark = ','), icon = icon('warning-sign', lib = 'glyphicon'), color = 'orange')
+  
+    infoBox('Water Contams', format(centroid_data$rel_data[centroid_data$rel_data$id == input$mainResult_marker_click$id,]$total_water_count, big.mark = ','), icon = icon('warning-sign', lib = 'glyphicon'), color = 'orange')
   })
