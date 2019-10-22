@@ -59,8 +59,6 @@ server <- function(input, output){
 
 
 
-
-
   #observe({cat(file = stderr(), snake())})
   
   #### COMPETITION MATCHER ####
