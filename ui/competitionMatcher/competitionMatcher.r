@@ -5,4 +5,4 @@ competitionMatcher <- tabItem(
   tabName = 'competitionMatcher', 
   mapBox,
   summaryBox
-  )
+)

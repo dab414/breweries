@@ -5,7 +5,7 @@ observe({
     shinyjs::hide(id = 'user_box') 
     } else shinyjs::show(id = 'user_box')
 
-  if (rv$is_bad_zip | rv$init | rv$new_search) {
+  if (rv$is_bad_zip | rv$init | rv$new_search | rv$user_selected) {
     shinyjs::hide(id = 'comp_box') 
   } else shinyjs::show(id = 'comp_box') 
 
@@ -35,7 +35,7 @@ observe({
   
   ## COMPETITION STATS
   output$competition_location <- renderText({
-    if (!rv$is_bad_zip & !rv$init & !rv$new_search)
+    if (!rv$is_bad_zip & !rv$init & !rv$new_search & !rv$user_selected)
     return(paste(centroid_data$rel_data$city, ', ', centroid_data$rel_data$state_long, sep = ''))
   })
   output$comp_population <- renderInfoBox({
