@@ -48,12 +48,22 @@ def process_results(results, zip_value, state_id):
     return zip_results
 
 def process_zip(zip_value, state_id):
+
+    print('running process_zip')
     url = generate_url_from_zip(zip_value)
+    print('url: {}'.format(url))
     r = requests.get(url)
     soup = BeautifulSoup(r.content, 'html.parser')
 
+    
+
     if got_results_from_url(soup, url):
         results = soup.find_all('table', {'class': 'search-results-table'})
+        
+        ## FLAG
+        ## THIS IS ONLY A TEMPORARY SOLUTION
+        if not results:
+            return []
         # NOTE: there are two search-results-table, first one shows the results for the 
         # largest utilities serving County, the second one is more complete and includes
         # utilities serving the searched zip and the surrounding county
@@ -119,20 +129,23 @@ def scrap_contaminants_from_df(df):
 def scrape_ewg(df):
     data = []
        
+    print(df)
+
     status = 0
     bar = progressbar.ProgressBar(maxval=df.shape[0])
     bar.start()
     
     # Step 1: get information about the utilities in each zip code    
     for index, row in df.iterrows():
+        print('running scrape_ewg')
         # percentage of completion
         bar.update(status)        
         status = status + 1
-        
         utilities = process_zip(row['zip'], row['state_id'])
         data = data + utilities
     bar.finish()
     
+    print('sanity check')
     # Let's save this to a CSV just in case the second process does not work
     utilities_df = pd.DataFrame(data)
     utilities_df.to_csv('utilities.csv', index=False)

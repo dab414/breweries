@@ -5,9 +5,9 @@ account: davebraun
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 1310758
-bundleId: 2530557
+bundleId: 2531083
 url: https://davebraun.shinyapps.io/BetterBrewery/
-when: 1571861270.77258
+when: 1571878137.38345
 asMultiple: FALSE
 asStatic: FALSE
 ignoredFiles: utilities.csv|summary_data/large_data/beers_breweries.csv|summary_data/small_data/bad_ids_only.csv|other|Phase2-RecommendStrategy

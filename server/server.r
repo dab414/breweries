@@ -1,5 +1,5 @@
 usa_bbox <- data.frame(latitude = c(23.725012, 49.239121), longitude = c(-125.771484,-66.2695311))
-summary_data <- read.csv('summary_data/small_data/beer_summary_data.csv')
+
 
 ## dunno if this will work
 # https://github.com/ThinkR-open/golem/blob/master/R/use_favicon.R
@@ -17,17 +17,35 @@ server <- function(input, output){
     user_selected = TRUE
   )
 
+  busy <- reactiveValues(
+    is_busy = FALSE
+  )
+
   centroid_data <- reactiveValues()
+  beer_data <- reactiveValues(
+    all = read.csv('summary_data/small_data/beer_summary_data.csv')
+  )
+
 
   output$mainResult <- renderLeaflet({
       leaflet(usa_bbox) %>% addTiles() %>% 
       fitBounds(~min(longitude), ~min(latitude), ~max(longitude), ~max(latitude)) 
   })
 
+  observe({
+    shinyjs::hide(id = 'zip_processing')
+  })
   
   observeEvent(input$submitButton, {
+    ## CONTROL THE LOADING PANEL
+    shinyjs::hide(id = 'zip_ready')
+    shinyjs::show(id = 'zip_processing')
+    
     source_python('get_similar_regions_from_zip.py')
     centroid_data$data <- zip_to_similar(input$textMe)
+    
+    shinyjs::show(id = 'zip_ready')
+    shinyjs::hide(id = 'zip_processing')      
 
     if (typeof(centroid_data$data) == 'character') {
       rv$is_bad_zip <- TRUE
@@ -66,6 +84,17 @@ server <- function(input, output){
     centroid_data$rel_data <- centroid_data$data[centroid_data$data$id == click$id,]
     rv$new_search <- FALSE
 
+    ## condense beer data
+    beer_data$rel_data <- beer_data$all[beer_data$all$label == centroid_data$rel_data$label,]
+    
+
+    ### NEED TO ADD THE REVIEW COLUMNS HERE
+    beer_data$rel_data <- beer_data$rel_data[,c('beer_name', 'beer_type', 
+        'beer_abv', 'beer_num_reviewers', 'beer_beer_date_added', 
+        'brewery_name','beer_beer_score', 'review_review_date', 'review_review_text')]
+    beer_data$rel_data <- beer_data$rel_data[order(beer_data$rel_data$beer_beer_score,
+      decreasing = TRUE),]
+
   })  
   
   
@@ -89,8 +118,7 @@ server <- function(input, output){
 
 
   observe({
-    
-    ## HIDING THE TAB BOX DOESNT APPLY TO ITS CONTENTS
+    ## SHOW OR HIDE ALL THE ANALYSIS STUFF
 
     if (rv$init | rv$is_bad_zip | rv$new_search | rv$user_selected) {
       shinyjs::hide(id = 'results_container')
@@ -104,8 +132,8 @@ server <- function(input, output){
 
   output$competition_top_beer_data <- renderTable(
     {
-      out <- summary_data[summary_data$label == centroid_data$rel_data$label, 
-      c('beer_name', 'beer_type', 'beer_abv', 'beer_num_reviewers', 'beer_beer_date_added', 
+      out <- beer_data$rel_data[, c('beer_name', 'beer_type', 
+        'beer_abv', 'beer_num_reviewers', 'beer_beer_date_added', 
         'brewery_name','beer_beer_score')]
 
       out <- out[order(out$beer_beer_score, decreasing = TRUE),]
@@ -120,27 +148,36 @@ server <- function(input, output){
   )
 
   output$winning_beer_name <- renderText({
-    out <- summary_data[summary_data$label == centroid_data$rel_data$label,]
-    out <- out[order(out$beer_beer_score, decreasing = TRUE),][1,]
-
-    paste('Review of:', as.character(out$beer_name))
+    paste('Review of:', as.character(beer_data$rel_data$beer_name)[1])
   })
 
   output$winning_beer_date <- renderText({
-    out <- summary_data[summary_data$label == centroid_data$rel_data$label,]
-    out <- out[order(out$beer_beer_score, decreasing = TRUE),][1,]
-
-    as.character(out$review_review_date)
+    as.character(beer_data$rel_data$review_review_date[1])
   })
 
   output$top_review <- renderText({
-
-    out <- summary_data[summary_data$label == centroid_data$rel_data$label,]
-    out <- out[order(out$beer_beer_score, decreasing = TRUE),][1,]
-    #cat(file = stderr(), out)
-
-    as.character(out$review_review_text)
+    as.character(beer_data$rel_data$review_review_text[1])
   })
+
+
+
+## FAILED
+  # output$review_tabs <- renderUI({
+
+  #   beer_data$rel_data <- beer_data$rel_data[order(beer_data$rel_data$beer_beer_score, 
+  #     decreasing = TRUE),]
+
+  #   reviewTabs <- lapply(
+  #       as.character(beer_data$rel_data$beer_name),
+  #      tabPanel, 
+  #         arg1 = lapply(paste('Review of:', beer_data$rel_data$beer_name), h3),
+  #         arg2 = lapply(beer_data$rel_data$review_review_date, p),
+  #         arg3 = lapply(beer_data$rel_data$review_review_text, div)
+  #   )
+
+  #   do.call(tabsetPanel, reviewTabs)
+
+  # })
 
 
   ## CATCH INVALID ZIPS

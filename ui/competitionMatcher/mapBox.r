@@ -32,13 +32,26 @@ mapBox <- box(title = 'Welcome to the competition matcher.',
       
       leafletOutput('mainResult'),# %>% withSpinner(),
       
-      absolutePanel(top = 100, left = 100, class = 'panel panel-default', draggable = TRUE, width = 180, height = 160,
-                    column(width = 12,
-                      p('Enter a valid US zip code'),
-                      textOutput('invalid_zipcode'),
-                      textInput(inputId = 'textMe', label = '', placeholder = '00000', width = '100px'),
-                      actionButton('submitButton', 'Submit'))
-                    ),
+      absolutePanel(top = 100, left = 100, class = 'panel panel-default', id='zip_ready',
+        draggable = TRUE, width = 180, height = 160,
+        column(
+          width = 12,
+          p('Enter a valid US zip code'),
+          textInput(inputId = 'textMe', label = '', placeholder = '00000', width = '100px'),
+          actionButton('submitButton', 'Submit')
+        )
+      ),
+
+      absolutePanel(top = 100, left = 100, class = 'panel panel-default', id='zip_processing',
+        draggable = TRUE, width = 180, height = 160,
+        column(
+          width = 12,
+          p('Please wait. Processing massive amounts of data.'),
+          div(tags$img(src = 'loading.gif', height = '75px', width = '75px'), 
+            style = 'text-align: center')
+        )
+        
+      ),
       
       conditionalPanel(condition = "$('html').hasClass('shiny-busy')",
                        tags$div("Please wait. Processing massive amounts of data.", id = 'loadmessage'))

@@ -19,15 +19,14 @@ competitionAnalyzer <- tabItem(
 
           tabBox(width = 12, id = 'review_container',
             tabPanel(
-              title = 'beer1',
+              #title = 'beer1',
               h3(textOutput('winning_beer_name')),
               p(textOutput('winning_beer_date')),
               div(textOutput('top_review'), style = 'font-size: 200%')
             )
-
-
           )
 
+          #uiOutput('review_tabs')
           
         )
       )
