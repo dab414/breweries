@@ -1,20 +1,24 @@
 import sys 
 sys.path.append('../../organizational_scripts/')
 
-from set_wd import set_wd
 import pandas as pd
 
 
-root = set_wd()
+
 
 def txt_to_csv(t):
 
-  d = pd.DataFrame(t)
+  print('Len text: {}'.format(len(t)))
+
+  d = pd.DataFrame(t, dtype = str)
+
+
 
   d = d.rename(columns = {'Zip': 'zipcode'}).astype({'zipcode': str}).dropna(subset = ['zipcode'])
-
+  print('Len df: {}'.format(d.shape))
 
   d = d[d['zipcode'].map(len) == 5]
+  print('Len df after zip trim: {}'.format(d.shape))
 
 
   return d
@@ -29,4 +33,4 @@ if __name__ == '__main__':
 
   print([x for x in out['zipcode'].values if len(x) != 5])
 
-  out.to_csv('../centroid_data.csv', index = False)
+  out.to_csv('../data/centroid_data.csv', index = False)

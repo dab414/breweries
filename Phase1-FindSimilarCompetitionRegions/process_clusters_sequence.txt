@@ -1,0 +1,13 @@
+./manipulation_scripts/centroid_txt_to_csv.py
+
+./water/scrape_ewg.py
+./water/preprocess_water.py
+
+./manipulation_scripts/centroids_to_lists_zips.py
+./demographics/census_scrape.py
+
+## these are both aggregating the data but `aggregate_data.py` is for backend similarity comparisons and `append_water...` aggregates the summary information that's presented to the user
+./aggregate/aggregate_data.py
+./manipulation_scripts/append_water_census_to_centroids.py
+
+./manipulation_scripts/get_centroid_addresses.py

@@ -1,0 +1,12 @@
+a gist of the order in which these scripts are being run
+
+it all starts with the `data/ratebeer/ratebeer_compiled.txt` data
+  from this, `data/general/breweries_ids.txt` is made (no script for that tho)
+
+from there, can run the two `manipulation_scripts/get_*` scripts to make separate datasets for beers and reviews
+
+can then run the geocoder and twitter scraper (in parallel)
+
+then `manipulation_scripts/compute_brewery_features.py` to merge everything to one data file (`data/general/brewery_features*`)
+
+that should be enough to start doing some more detailed breakdowns in the dashboard

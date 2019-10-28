@@ -1,7 +1,7 @@
 import sys
 import dill
 import numpy as np
-
+import pandas as pd
 
 def compile_data(ratebeer, geocodes, twitter):
 
@@ -87,3 +87,5 @@ if __name__ == '__main__':
   file = open('../data/brewery_features.txt', 'w')
   file.write(str(out))
   file.close()
+
+  pd.DataFrame(out).to_csv('../data/brewery_features_df.csv', index = False)

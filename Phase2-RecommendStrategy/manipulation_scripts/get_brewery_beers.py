@@ -1,45 +1,29 @@
 import sys
+import pandas as pd
 
-
-def extract_beers(files):
+def flatten_beers(d):
 
   out = []
 
-  for count, file in enumerate(files):
+  for row in d:
 
-    d = eval(open(file, 'r').read())
-    print('Opened file {}'.format(count))
+    del row['reviews']
+    brewery_keys = [x for x in row.keys() if x != 'beers']
 
-    for row in d:
-      out.append(repair_beers(row))
+    for beer in row['beers']:
+      new_row = {}
+
+      for k in brewery_keys:
+        new_row[k] = row[k]
+
+      for obs in beer:
+        new_row.update({'beer_{}'.format(obs).lower(): beer[obs]})
+
+      out.append(new_row)
+
+
 
   return out
-
-
-
-def repair_beers(row):
-
-  beers = row['beers']
-  out_beers = []
-
-  already_present = {}
-
-  for beer in beers:
-    
-    if beer['Name'] not in already_present:
-      already_present[beer['Name']] = 1
-      out_beers.append(beer)
-
-  row['beers'] = out_beers
-
-  return row
-
-
-
-
-
-
-
 
 
 
@@ -50,12 +34,18 @@ if __name__ == '__main__':
 
   args = sys.argv[1:]
 
-  if len(args) != 3:
-    print('Usage: ratebeer_data.txt')
+  if not args:
+    print('Usage: ratebeer_compiled.txt')
     sys.exit(1)
 
-  breweries_beers = extract_beers(args)
+  file = args[0]
 
-  file = open('../data/ratebeer/breweries_beers.txt', 'w')
-  file.write(str(breweries_beers))
+  d = eval(open(file, 'r').read())
+
+  out = flatten_beers(d)
+
+  file = open('../data/ratebeer/ratebeer_beers.txt','w')
+  file.write(str(out))
   file.close()
+
+  pd.DataFrame(out).to_csv('../data/ratebeer/ratebeer_beers_df.csv', index = False)

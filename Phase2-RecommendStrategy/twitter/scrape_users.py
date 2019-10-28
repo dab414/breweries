@@ -44,14 +44,15 @@ if __name__ == '__main__':
   args = sys.argv[1:]
 
   if not args:
-    print('Usage: breweries_twitter_links.txt')
+    print('Usage: ratebeer_compiled.txt')
     sys.exit(1)
 
   guide_data = eval(open(args[0], 'r').read())
 
-  guide_data = [x for x in guide_data if x[1]]
+  guide_data = [(x['brewery_id'], x['twitter_link']) for x in guide_data if x['twitter_link']]
 
   guide_data = [(x[0], re.search(r'twitter\.com/(.*)', x[1]).group(1)) for x in guide_data]
+
 
 
   ## prune what's already been scraped

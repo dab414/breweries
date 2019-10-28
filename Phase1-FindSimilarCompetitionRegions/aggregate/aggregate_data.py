@@ -9,6 +9,7 @@ if __name__ == '__main__':
   args = sys.argv[1:]
 
   if len(args) < 2:
+    ## join_zip_data is 2 datasets in this context
     print('Usage: base_zip_data.csv join_zip_data.csv; base needs to be water data')
     sys.exit(1)
 

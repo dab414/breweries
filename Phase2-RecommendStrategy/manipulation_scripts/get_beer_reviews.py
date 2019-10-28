@@ -51,3 +51,4 @@ if __name__ == '__main__':
   file.write(str(out))
   file.close()
 
+  pd.DataFrame(out).to_csv('../data/ratebeer/ratebeer_reviews_df.csv', index = False)

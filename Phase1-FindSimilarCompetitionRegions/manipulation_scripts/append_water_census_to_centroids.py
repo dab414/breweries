@@ -1,7 +1,7 @@
 import sys
 import pandas as pd
 
-
+## this produces the summary data that gets presented after search
 
 def merge_data(centroids, water, demo):
 

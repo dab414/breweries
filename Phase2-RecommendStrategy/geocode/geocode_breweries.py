@@ -4,6 +4,7 @@ import requests
 sys.path.append('../../private/')
 from google_geocoding import *
 import json
+import pandas as pd
 
 def geocode_breweries(d):
   ## input: [(brewery_id, address), ...]
@@ -47,19 +48,35 @@ if __name__ == '__main__':
   args = sys.argv[1:]
 
   if not args:
-    print('Usage: brewery_name_address.txt')
+    print('Usage: ratebeer_compiled.txt')
     sys.exit(1)
 
   file = args[0]
 
   print(file)
 
+
   d = eval(open(file, 'rb').read())
 
+  d = [(x['brewery_id'], x['address']) for x in d]
 
 
   out = geocode_breweries(d)
 
-  file = open('../data/twitter/geocoded_breweries.txt', 'w')
+  file = open('../data/geocode/geocoded_breweries.txt', 'w')
   file.write(str(out))
   file.close()
+
+  #pd.DataFrame(out).to_csv('../data/geocode/geocoded_breweries_df.csv', index = False)
+
+  df = []
+
+  for brew in out:
+    brewery_name = brew
+    if out[brew]:
+      latitude = out[brew]['latitude']
+      longitude = out[brew]['longitude']
+    else:
+      latitude = None
+      longitude = None
+    df.append({'brewery_id': brewery_id, 'latitude': latitude, 'longitude': longitude})
