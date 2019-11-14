@@ -17,13 +17,10 @@ server <- function(input, output){
     user_selected = TRUE
   )
 
-  busy <- reactiveValues(
-    is_busy = FALSE
-  )
-
   centroid_data <- reactiveValues()
   beer_data <- reactiveValues(
-    all = read.csv('summary_data/small_data/beer_summary_data.csv')
+    small = read.csv('summary_data/small_data/beer_summary_data.csv'),
+    big = read.csv('summary_data/large_data/beers_breweries.csv')
   )
 
 
@@ -67,6 +64,7 @@ server <- function(input, output){
 
     leafletProxy('mainResult', data = centroid_data$data) %>% 
       clearShapes() %>% 
+      ## LAYER ID here needs to instead reference cluster id
       addCircleMarkers(color = ~ifelse(id == 'user', 'blue', 'green'), 
         stroke = FALSE, fillOpacity = .6, popup = ~popup, layerId = ~id)
 
@@ -116,6 +114,9 @@ server <- function(input, output){
 
   })
 
+  ## MANAGE WORDCLOUD ANALYZER
+  source('server/competitionAnalyzer/wordcloud/generate_map.r', local = TRUE)
+
 
   observe({
     ## SHOW OR HIDE ALL THE ANALYSIS STUFF
@@ -161,24 +162,6 @@ server <- function(input, output){
 
 
 
-## FAILED
-  # output$review_tabs <- renderUI({
-
-  #   beer_data$rel_data <- beer_data$rel_data[order(beer_data$rel_data$beer_beer_score, 
-  #     decreasing = TRUE),]
-
-  #   reviewTabs <- lapply(
-  #       as.character(beer_data$rel_data$beer_name),
-  #      tabPanel, 
-  #         arg1 = lapply(paste('Review of:', beer_data$rel_data$beer_name), h3),
-  #         arg2 = lapply(beer_data$rel_data$review_review_date, p),
-  #         arg3 = lapply(beer_data$rel_data$review_review_text, div)
-  #   )
-
-  #   do.call(tabsetPanel, reviewTabs)
-
-  # })
-
 
   ## CATCH INVALID ZIPS
 
@@ -192,9 +175,5 @@ server <- function(input, output){
       rv$is_bad_zip <- FALSE
     }
   })
-
-
-  #### COMPETITION ANALYZER ####
-
 
 }

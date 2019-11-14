@@ -1,0 +1,21 @@
+
+given a competition region, what are factors that separate successful breweries from unsuccessful ones?
+
+  too vague...
+
+identify ONE decision brewers need to make
+  how can i use what i know about that area + ML to inform that decision
+
+deciding what beer to brew
+  https://www.bakertilly.com/insights/how-to-position-your-brewery-as-best-in-class-for-the-next-step-in-your-jou
+
+  specific, tractable 
+
+deciding on a brand
+  vague
+
+
+
+on beer
+  
+  given a beer, can we predict the overall success of the brewery?

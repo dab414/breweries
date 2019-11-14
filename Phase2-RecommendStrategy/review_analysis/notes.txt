@@ -1,0 +1,7 @@
+https://rpubs.com/enlik/wordcloud
+
+libraries
+
+SnowballC
+wordcloud
+RColorBrewer

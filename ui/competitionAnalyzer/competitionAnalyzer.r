@@ -18,18 +18,36 @@ competitionAnalyzer <- tabItem(
         fluidRow(
 
           box(width = 12, id = 'review_container',
-            
-              #title = 'beer1',
               h3(textOutput('winning_beer_name')),
               p(textOutput('winning_beer_date')),
               div(textOutput('top_review'), style = 'font-size: 200%')
             
           )
-
-          #uiOutput('review_tabs')
-          
         )
       )
+
+      tabPanel(
+        title = 'Brewery Analyzer',
+        fluidRow(
+          h3('See what people are saying about the beers from different breweries.'),
+          p('Selecting a brewery from the map on the left will show you the words that people most often use in reviews to describe beers from that brewery. The breweries on the map are color-coded by success [update this part].')
+        ),
+
+        fluidRow(
+          ## MAP
+          column(width = 6,
+            leafletOutput('brewery_map')
+          ),
+
+          ## WORDCLOUD
+          column(width = 6,
+            plotOutput('wordcloud')
+          )
+        )
+
+      )
+
+
     )
   )
 )

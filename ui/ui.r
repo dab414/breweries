@@ -1,6 +1,7 @@
 source('ui/competitionMatcher/competitionMatcher.r', local = TRUE)
 source('ui/sidebar.r', local = TRUE)
 source('ui/competitionAnalyzer/competitionAnalyzer.r', local = TRUE)
+source('ui/about/about.r', local = TRUE)
 
 
 ui <- dashboardPage(
@@ -17,7 +18,9 @@ ui <- dashboardPage(
 
         competitionMatcher,
 
-        competitionAnalyzer
+        competitionAnalyzer,
+
+        about
 
       )
 

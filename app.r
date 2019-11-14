@@ -7,6 +7,10 @@ library(shinycssloaders)
 library(shinydashboard)
 library(leaflet)
 library(htmltools)
+library(SnowballC)
+library(wordcloud)
+library(RColorBrewer)
+
 
 source('ui/ui.r')
 source('server/server.r')
