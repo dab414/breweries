@@ -64,7 +64,7 @@ server <- function(input, output){
 
     leafletProxy('mainResult', data = centroid_data$data) %>% 
       clearShapes() %>% 
-      ## LAYER ID here needs to instead reference cluster id
+      ## LAYER ID here needs to instead reference cluster ID
       addCircleMarkers(color = ~ifelse(id == 'user', 'blue', 'green'), 
         stroke = FALSE, fillOpacity = .6, popup = ~popup, layerId = ~id)
 
@@ -86,7 +86,6 @@ server <- function(input, output){
     beer_data$rel_data <- beer_data$all[beer_data$all$label == centroid_data$rel_data$label,]
     
 
-    ### NEED TO ADD THE REVIEW COLUMNS HERE
     beer_data$rel_data <- beer_data$rel_data[,c('beer_name', 'beer_type', 
         'beer_abv', 'beer_num_reviewers', 'beer_beer_date_added', 
         'brewery_name','beer_beer_score', 'review_review_date', 'review_review_text')]
