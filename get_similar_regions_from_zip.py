@@ -53,7 +53,6 @@ def zip_to_similar(zipcode):
   formatted_results['id'] = ['competition0', 'competition1', 'competition2']
   formatted_results = pd.concat([user_summary, formatted_results]).reset_index()
 
-
   return formatted_results
 
 '''

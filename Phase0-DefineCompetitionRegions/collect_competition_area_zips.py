@@ -8,6 +8,9 @@ import ReverseGeocode as rgc
 ## it also saves out a brewery-level dataset with labels to '../Phase2-RecommendStrategy/data/brewery_features_df_labeled.csv'
 centroids = dca.main()
 
+## centroids now come in as df but the next step expects list of tuples
+centroids = [((x[0], x[1]), x[2]) for x in centroids.values]
+
 centroid_data = rgc.main(centroids)
 
 ## save to file

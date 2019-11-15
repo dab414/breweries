@@ -49,9 +49,7 @@ def process_results(results, zip_value, state_id):
 
 def process_zip(zip_value, state_id):
 
-    print('running process_zip')
     url = generate_url_from_zip(zip_value)
-    print('url: {}'.format(url))
     r = requests.get(url)
     soup = BeautifulSoup(r.content, 'html.parser')
 
@@ -129,15 +127,12 @@ def scrap_contaminants_from_df(df):
 def scrape_ewg(df):
     data = []
        
-    print(df)
-
     status = 0
     bar = progressbar.ProgressBar(maxval=df.shape[0])
     bar.start()
     
     # Step 1: get information about the utilities in each zip code    
     for index, row in df.iterrows():
-        print('running scrape_ewg')
         # percentage of completion
         bar.update(status)        
         status = status + 1
@@ -145,7 +140,6 @@ def scrape_ewg(df):
         data = data + utilities
     bar.finish()
     
-    print('sanity check')
     # Let's save this to a CSV just in case the second process does not work
     utilities_df = pd.DataFrame(data)
     utilities_df.to_csv('utilities.csv', index=False)

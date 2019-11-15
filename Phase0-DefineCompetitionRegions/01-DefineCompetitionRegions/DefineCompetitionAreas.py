@@ -5,6 +5,7 @@
 import pandas as pd
 import numpy as np
 from sklearn.cluster import KMeans
+import sys
 
 ## constants
 ## defined relative to next dir up
@@ -43,7 +44,9 @@ def prune_small_clusters(centroids, d, min_brew = 5):
   keep = d.groupby('label').count().reset_index()
   keep = keep[keep['brewery_id'] >= min_brew]
 
-  centroids = centroids[keep['label']]
+  centroids = pd.DataFrame(centroids)
+  centroids['label'] = centroids.index
+  centroids = centroids[centroids['label'].isin(keep['label'])]
   d = d[d['label'].isin(keep['label'])]
 
   print('Number of clusters pruned: {}'.format(original_cluster_count - len(centroids)))
@@ -59,16 +62,12 @@ def main():
   centroids, d = prune_small_clusters(centroids, d)
 
   d.to_csv('../Phase2-RecommendStrategy/data/brewery_features_df_labeled.csv', index = False)
+  #d.to_csv('temp_breweries.csv', index = False)
   
-  ## return centroid coordinates as list of tuples
-  out = []
-
-  for index, centroid in enumerate(centroids):
-    out.append(((centroid[0], centroid[1]), index))
-
-  return out
+  return centroids
 
 
 
 if __name__ == '__main__':
-  main()
+  out = main()
+  out.to_csv('temp_centroids.csv', index = False)

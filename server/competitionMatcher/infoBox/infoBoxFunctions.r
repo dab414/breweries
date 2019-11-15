@@ -36,15 +36,18 @@ observe({
   ## COMPETITION STATS
   output$competition_location <- renderText({
     if (!rv$is_bad_zip & !rv$init & !rv$new_search & !rv$user_selected)
-    return(paste(centroid_data$rel_data$city, ', ', centroid_data$rel_data$state_long, sep = ''))
+    return(paste(centroid_data$rel_summary_data$city, ', ', centroid_data$rel_summary_data$state_long, sep = ''))
   })
   output$comp_population <- renderInfoBox({
-    infoBox('Population', format(centroid_data$rel_data[centroid_data$rel_data$id == input$mainResult_marker_click$id,]$total_population, big.mark = ','), icon = icon('user', lib = 'glyphicon'), color = 'green')
+    infoBox('Population', format(centroid_data$rel_summary_data[centroid_data$rel_summary_data$id == input$mainResult_marker_click$id,]$total_population, big.mark = ','), 
+      icon = icon('user', lib = 'glyphicon'), color = 'green')
   })
   output$comp_median_age <- renderInfoBox({
-   infoBox('Median Age', centroid_data$rel_data[centroid_data$rel_data$id == input$mainResult_marker_click$id,]$median_age, icon = icon('info-sign', lib = 'glyphicon'), color = 'blue')
+   infoBox('Median Age', centroid_data$rel_summary_data[centroid_data$rel_summary_data$id == input$mainResult_marker_click$id,]$median_age, 
+    icon = icon('info-sign', lib = 'glyphicon'), color = 'blue')
   })
   output$comp_total_water <- renderInfoBox({
   
-    infoBox('Water Contams', format(centroid_data$rel_data[centroid_data$rel_data$id == input$mainResult_marker_click$id,]$total_water_count, big.mark = ','), icon = icon('warning-sign', lib = 'glyphicon'), color = 'orange')
+    infoBox('Water Contams', format(centroid_data$rel_summary_data[centroid_data$rel_summary_data$id == input$mainResult_marker_click$id,]$total_water_count, big.mark = ','), 
+      icon = icon('warning-sign', lib = 'glyphicon'), color = 'orange')
   })

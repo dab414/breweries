@@ -1,5 +1,8 @@
 usa_bbox <- data.frame(latitude = c(23.725012, 49.239121), longitude = c(-125.771484,-66.2695311))
-
+beer_summary_data <- read.csv('summary_data/small_data/beer_summary_data.csv')
+#breweries_beers_reviews <- read.csv('summary_data/large_data/breweries_beers_reviews.csv')
+#breweries_beers <- read.csv('summary_data/large_data/breweries_beers.csv')
+breweries <- read.csv('summary_data/large_data/breweries.csv')
 
 ## dunno if this will work
 # https://github.com/ThinkR-open/golem/blob/master/R/use_favicon.R
@@ -18,10 +21,7 @@ server <- function(input, output){
   )
 
   centroid_data <- reactiveValues()
-  beer_data <- reactiveValues(
-    small = read.csv('summary_data/small_data/beer_summary_data.csv'),
-    big = read.csv('summary_data/large_data/beers_breweries.csv')
-  )
+  beer_data <- reactiveValues()
 
 
   output$mainResult <- renderLeaflet({
@@ -79,17 +79,17 @@ server <- function(input, output){
       rv$user_selected <- TRUE
     } else rv$user_selected <- FALSE
 
-    centroid_data$rel_data <- centroid_data$data[centroid_data$data$id == click$id,]
+    centroid_data$rel_summary_data <- centroid_data$data[centroid_data$data$id == click$id,]
     rv$new_search <- FALSE
 
     ## condense beer data
-    beer_data$rel_data <- beer_data$all[beer_data$all$label == centroid_data$rel_data$label,]
+    beer_data$rel_summary_data <- beer_summary_data[beer_summary_data$label == centroid_data$rel_summary_data$label,]
     
 
-    beer_data$rel_data <- beer_data$rel_data[,c('beer_name', 'beer_type', 
+    beer_data$rel_summary_data <- beer_data$rel_summary_data[,c('beer_name', 'beer_type', 
         'beer_abv', 'beer_num_reviewers', 'beer_beer_date_added', 
         'brewery_name','beer_beer_score', 'review_review_date', 'review_review_text')]
-    beer_data$rel_data <- beer_data$rel_data[order(beer_data$rel_data$beer_beer_score,
+    beer_data$rel_summary_data <- beer_data$rel_summary_data[order(beer_data$rel_summary_data$beer_beer_score,
       decreasing = TRUE),]
 
   })  
@@ -100,8 +100,8 @@ server <- function(input, output){
   
 
   output$competition_top_beer_title <- renderText(
-    return(paste('Top scoring beers in ', centroid_data$rel_data$city, ', ',
-                        centroid_data$rel_data$state_abbrv, ':', sep = ''))
+    return(paste('Top scoring beers in ', centroid_data$rel_summary_data$city, ', ',
+                        centroid_data$rel_summary_data$state_abbrv, ':', sep = ''))
   )
 
   output$bad_query <- renderText({
@@ -132,7 +132,7 @@ server <- function(input, output){
 
   output$competition_top_beer_data <- renderTable(
     {
-      out <- beer_data$rel_data[, c('beer_name', 'beer_type', 
+      out <- beer_data$rel_summary_data[, c('beer_name', 'beer_type', 
         'beer_abv', 'beer_num_reviewers', 'beer_beer_date_added', 
         'brewery_name','beer_beer_score')]
 
@@ -148,15 +148,15 @@ server <- function(input, output){
   )
 
   output$winning_beer_name <- renderText({
-    paste('Review of:', as.character(beer_data$rel_data$beer_name)[1])
+    paste('Review of:', as.character(beer_data$rel_summary_data$beer_name)[1])
   })
 
   output$winning_beer_date <- renderText({
-    as.character(beer_data$rel_data$review_review_date[1])
+    as.character(beer_data$rel_summary_data$review_review_date[1])
   })
 
   output$top_review <- renderText({
-    as.character(beer_data$rel_data$review_review_text[1])
+    as.character(beer_data$rel_summary_data$review_review_text[1])
   })
 
 

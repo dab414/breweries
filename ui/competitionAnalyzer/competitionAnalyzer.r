@@ -24,7 +24,7 @@ competitionAnalyzer <- tabItem(
             
           )
         )
-      )
+      ),
 
       tabPanel(
         title = 'Brewery Analyzer',
