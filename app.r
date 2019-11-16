@@ -10,7 +10,7 @@ library(htmltools)
 library(SnowballC)
 library(wordcloud)
 library(RColorBrewer)
-
+library(data.table)
 
 source('ui/ui.r')
 source('server/server.r')

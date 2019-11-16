@@ -2,7 +2,7 @@ usa_bbox <- data.frame(latitude = c(23.725012, 49.239121), longitude = c(-125.77
 beer_summary_data <- read.csv('summary_data/small_data/beer_summary_data.csv')
 #breweries_beers_reviews <- read.csv('summary_data/large_data/breweries_beers_reviews.csv')
 #breweries_beers <- read.csv('summary_data/large_data/breweries_beers.csv')
-breweries <- read.csv('summary_data/large_data/breweries.csv')
+# breweries <- read.csv('summary_data/large_data/breweries.csv')
 
 ## dunno if this will work
 # https://github.com/ThinkR-open/golem/blob/master/R/use_favicon.R
@@ -17,11 +17,15 @@ server <- function(input, output){
     is_bad_zip = FALSE,
     new_search = TRUE,
     init = TRUE,
-    user_selected = TRUE
+    user_selected = TRUE,
+    show_brewery_stats = FALSE
   )
 
   centroid_data <- reactiveValues()
-  beer_data <- reactiveValues()
+  beer_data <- reactiveValues(
+    large = fread('summary_data/large_data/breweries_beers_reviews.csv'),
+    small = read.csv('summary_data/large_data/breweries.csv', stringsAsFactors = FALSE)
+  )
 
 
   output$mainResult <- renderLeaflet({
@@ -64,7 +68,6 @@ server <- function(input, output){
 
     leafletProxy('mainResult', data = centroid_data$data) %>% 
       clearShapes() %>% 
-      ## LAYER ID here needs to instead reference cluster ID
       addCircleMarkers(color = ~ifelse(id == 'user', 'blue', 'green'), 
         stroke = FALSE, fillOpacity = .6, popup = ~popup, layerId = ~id)
 
@@ -74,6 +77,7 @@ server <- function(input, output){
   ## FILTER DATA BASED ON MARKER CLICK
   observeEvent(input$mainResult_marker_click, {
     click <- input$mainResult_marker_click
+    rv$show_brewery_stats <- FALSE
 
     if (click$id == 'user') {
       rv$user_selected <- TRUE
@@ -115,6 +119,8 @@ server <- function(input, output){
 
   ## MANAGE WORDCLOUD ANALYZER
   source('server/competitionAnalyzer/wordcloud/generate_map.r', local = TRUE)
+  source('server/competitionAnalyzer/wordcloud/brewery_stats.r', local = TRUE)
+  source('server/competitionAnalyzer/wordcloud/wordcloud.r', local = TRUE)
 
 
   observe({

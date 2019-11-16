@@ -35,16 +35,31 @@ competitionAnalyzer <- tabItem(
 
         fluidRow(
           ## MAP
-          column(width = 6,
-            leafletOutput('brewery_map')
+          box(width = 4,
+            leafletOutput('breweryMap')
           ),
 
           ## WORDCLOUD
-          column(width = 6,
-            plotOutput('wordcloud')
+          box(width = 8, id = 'brewery_stats_box',
+            column(width = 6, 
+              h2(textOutput('breweryName')),
+              h3('Success Metrics:'),
+              p(textOutput('avgBeerRating')),
+              p(textOutput('twitterFollowers')),
+              p(textOutput('percentileRank')),
+              h3('General Information:'),
+              p(textOutput('breweryType')),
+              p(textOutput('breweryAddress')),
+              p(textOutput('beerCount')),
+              p(textOutput('reviewCount'))
+            ),
+
+
+            column(width = 6,
+              plotOutput('wordcloud')  
+            )
           )
         )
-
       )
 
 
