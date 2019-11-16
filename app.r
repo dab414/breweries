@@ -15,7 +15,7 @@ library(data.table)
 source('ui/ui.r')
 source('server/server.r')
 
-packages <- c('pandas', 'numpy', 'requests', 'bs4', 'progressbar')
+packages <- c('pandas', 'numpy', 'requests', 'bs4', 'progressbar', 'sklearn')
 
 # use_python('/usr/bin/python3')
 # py_install(c('pandas', 'requests', 'bs4'))
