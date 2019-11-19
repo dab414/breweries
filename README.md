@@ -28,7 +28,7 @@ This phase involves collecting zip code data for each competition region, collec
 * [`aggregate_data.py`](Phase1-FindSimilarCompetitionRegions/aggregate/aggregate_data.py): Takes the collected data for competition areas, joins data together, and converts data to wide format (i.e., dummy coding, one-hot encoding), so that the data is represented as one observation per competition area.  
 * [`append_water_census_to_centroids.py`](Phase1-FindSimilarCompetitionRegions/manipulation_scripts/append_water_census_to_centroids.py): Computes summary statistics (i.e., tap water and demographics) for each competition area to be displayed in the info boxes when the user selects a competition area.  
 * [`get_centroid_addresses.py`](Phase1-FindSimilarCompetitionRegions/manipulation_scripts/get_centroid_addresses.py): Leverages [Google's geocoding services](https://maps.googleapis.com/) to use zip codes in order to assign address information to the competition areas.
-* [`process_incoming_zip.py`](Phase1-FindSimilarCompetitionRegions/manipulation_scripts/processIncomingZip/process_incoming_zip.py): The main script used to handle scraping data in real time when given a zip code from the user.
+* [`process_incoming_zip.py`](Phase1-FindSimilarCompetitionRegions/processIncomingZip/process_incoming_zip.py): The main script used to handle scraping data in real time when given a zip code from the user.
 
 
 
