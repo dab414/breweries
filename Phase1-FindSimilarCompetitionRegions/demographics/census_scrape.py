@@ -71,11 +71,14 @@ def webScrape(zipcodes):
         asian = int(re.search(r'r41.*Asian.*?>(\d.*?)<\/td>', html).group(1).replace(',',''))
         native = int(re.search(r'r49.*Native Hawaiian and Other Pacific Islander.*?>(\d.*?)<\/td>', html).group(1).replace(',',''))
         two_plus = int(re.search(r'r32.*Two or more races.*?>(\d.*?)<\/td>', html).group(1).replace(',',''))
+        ## throwing some weird error - see note below
+        hispanic = 0
         hispanic = int(re.search(r'r70.*Hispanic or Latino.*?>(\d.*?)<\/td>', html).group(1).replace(',',''))
         non_hispanic = int(re.search(r'r75.*Not Hispanic or Latino.*?>(\d.*?)<\/td>', html).group(1).replace(',',''))
 
-      final_data.append([zipcode, male, female, total, white, black, asian, native, two_plus, hispanic, non_hispanic,\
-       median_age, under_five, ten_fourteen, fifteen_twentyfour, twentyfive_fortyfour, fortyfive_fiftynine, sixty_seventyfour])
+      ## complaining that hispanic is referenced before assignment
+        final_data.append([zipcode, male, female, total, white, black, asian, native, two_plus, hispanic, non_hispanic,\
+        median_age, under_five, ten_fourteen, fifteen_twentyfour, twentyfive_fortyfour, fortyfive_fiftynine, sixty_seventyfour])
       
       ## progress tracker
       if len(zipcodes) > 100:

@@ -136,6 +136,17 @@ ggsave('05-OneCompetitionSphere.png', width = 1280/96, height = 720/96, units = 
 
 #### DETERMINING BEST K VALUE #####
 
+## adding in the updated data to check the difference ...
+d <- read.csv('../../Phase2-RecommendStrategy/data/brewery_features_df.csv')
+valid <- c('Brew Pub', 'Brew Pub/Brewery', 'Microbrewery')
+d <- d[d$brewery_type %in% valid, c('longitude', 'latitude')]
+
+
+#d <- d[d$brewery_type == 'micro' | d$brewery_type == 'brewpub', c('longitude', 'latitude')]
+d <- d[complete.cases(d),]
+
+
+
 result <- data.frame(k = numeric(), cluster = numeric(), count = numeric(), miles_dev = numeric())
 
 for (i in seq(100,500, 50)){
@@ -148,7 +159,8 @@ for (i in seq(100,500, 50)){
     group_by(cluster) %>% 
     summarize(count = n()) 
   
-  
+  ## divide by i because the withinss is just a sum of squared deviation from each cluster
+  ## multiply by 69: a rough conversion of lat/lon to miles, see https://gis.stackexchange.com/questions/142326/calculating-longitude-length-in-miles
   result <- rbind(result, data.frame(k = rep(i, nrow(out)), cluster = out$cluster, count = out$count, miles_dev = sqrt(km$withinss / i) * 69))
 }
 
@@ -163,12 +175,21 @@ result %>%
 result %>% 
   filter(k < 400) %>% 
   ggplot(aes(x = miles_dev, y = count)) +
-  geom_hline(yintercept = 5, linetype = 'dashed') +
+  geom_hline(yintercept = 5, linetype = 'dashed', color = 'grey') +
+  geom_vline(xintercept = 50, linetype = 'dashed', color = 'grey') +
   geom_point() +
   facet_wrap(~k) +
-  scale_x_continuous(labels = seq(0, 100, 10), breaks = seq(0, 100, 10))
+  labs(x = 'Within-Cluster RMSE (in miles)',
+       y = 'Number of Breweries per Cluster',
+       caption = 'N breweries = 7491. Facets represent number of clusters.') +
+  scale_x_continuous(labels = seq(0, 100, 10), breaks = seq(0, 100, 10)) + 
+  xlim(0,100) +
+  theme_bw() +
+  theme(text = element_text(size = 20),
+        strip.background = element_rect(color = 'black', fill = 'white'),
+        panel.grid = element_blank())
 
-
+ggsave('clustering_validation.png', height = 720 / 96, width = 1280 / 96, units = 'in')
 
 
 d %>% 
