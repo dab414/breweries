@@ -11,6 +11,7 @@ library(SnowballC)
 library(wordcloud)
 library(RColorBrewer)
 library(data.table)
+library(ggridges)
 
 source('ui/ui.r')
 source('server/server.r')
