@@ -24,6 +24,7 @@ server <- function(input, output){
   centroid_data <- reactiveValues()
   beer_data <- reactiveValues(
     large = fread('summary_data/large_data/breweries_beers_reviews.csv'),
+    beers = fread('summary_data/large_data/breweries_beers.csv', stringsAsFactors = FALSE),
     small = read.csv('summary_data/large_data/breweries.csv', stringsAsFactors = FALSE)
   )
 
@@ -121,6 +122,7 @@ server <- function(input, output){
   source('server/competitionAnalyzer/wordcloud/generate_map.r', local = TRUE)
   source('server/competitionAnalyzer/wordcloud/brewery_stats.r', local = TRUE)
   source('server/competitionAnalyzer/wordcloud/wordcloud.r', local = TRUE)
+  source('server/competitionAnalyzer/wordcloud/generate_ridges.r', local = TRUE)
 
 
   observe({

@@ -56,9 +56,19 @@ competitionAnalyzer <- tabItem(
 
 
             column(width = 6,
-              plotOutput('wordcloud')  
+              plotOutput('wordcloud'),
+              textOutput('bad_cloud')
             )
           )
+        ),
+        
+        fluidRow(
+          box(width = 12,
+
+            plotOutput('abv_type')
+
+          )
+
         )
       )
 

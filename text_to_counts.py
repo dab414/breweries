@@ -11,20 +11,32 @@ def get_word_counts(d):
   print('Input:')
   print(d)
   text = pd.DataFrame(d, columns = ['brewery_id', 'review_review_text']).dropna()['review_review_text'].values
-  cv = CountVectorizer()
-  cv.fit(text)
+  cv = CountVectorizer(stop_words = 'english')
+  
+  try:
+    cv_fit = cv.fit_transform(text)
+  except ValueError as e:
+    if 'empty vocabulary' in str(e):
+      return 'Not enough reviews to make a wordcloud. Try selecting a different brewery.'
+    else:
+      return 'An unknown problem occurred. Try selecting a different brewery.'
+
+
+  counts = cv_fit.toarray().sum(axis = 0)
+
   out = []
 
-  print('get_word_counts running')
+  for word, count in zip(cv.get_feature_names(), counts):
+    out.append({'word': word, 'count': count})
 
-  for word in cv.vocabulary_:
-    out.append({'word': word, 'count': cv.vocabulary_[word]})
 
+
+  #return pd.DataFrame(out)
   return pd.DataFrame(out)
 
-
-
 '''
+
+
 if __name__ == '__main__':
 
   args = sys.argv[1:]
@@ -36,6 +48,6 @@ if __name__ == '__main__':
 
   d = pd.read_csv(path)
   
-  get_word_counts(d).to_csv('dummy_word_counts.csv', index = False)
+  print(get_word_counts(d))
 
-  '''
+'''
