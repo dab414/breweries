@@ -31,6 +31,28 @@ This phase involves collecting zip code data for each competition region, collec
 * [`process_incoming_zip.py`](Phase1-FindSimilarCompetitionRegions/processIncomingZip/process_incoming_zip.py): The main script used to handle scraping data in real time when given a zip code from the user.
 
 
+### Phase 3: Recommend Strategy  
+
+Once a user selects a competition area, the breweries in that competition area can be analyzed in order to recommend what a successful strategy might be in that competition area. Better Brewery currently (11-19-2019) presents a descriptive breakdown of top beers in the competition area. Deciding on a beer to brew is one of the first decisions that goes into opening a brewery, and this summary is meant to give users an easy place to start in terms of selecting a beer to brew. The next tab in the competition analyzer presents more data that the user can explore--the user is presented with a map of the competition area and is presented with brewery-level summary data after selecting a brewery on the map. The majority of this stage, thus far, has involved scraping the data to be used in the summaries. Below is a breakdown of the data sources, along with scripts used to execute data scraping.
+
+* [`rate_beer_scrape.py`](Phase2-RecommendStrategy/ratebeer/rate_beer_scrape.py): [Ratebeer](https://www.ratebeer.com/) was the main data source for much of the data that currently drives Better Brewery. This script scrapes data on all breweries in the US from Ratebeer.  
+* [`scrape_users.py`](Phase2-RecommendStrategy/twitter/scrape_users.py): Ratebeer lists the [Twitter](https://twitter.com) URL for each brewery. This script uses those URLs to scrape the Twitter account information for each brewery (if that brewery indeed had a Twitter account).  
+**Untappd and Yelp**  
+Scraping data from [Untappd](https://untappd.com) and [Yelp](https://yelp.com) was a bit more tricky because these sites work hard to prevent themselves from being scraped. Consequently, this scraping is still underway.  
+* Untappd  
+  * [`scrape_untappd.py`](Phase2-RecommendStrategy/untappd/scrape_untappd.py): The main script used to execute the scrape.  
+  * [`rotate_proxies.py`](Phase2-RecommendStrategy/untappd/rotate_proxies.py): A class definition for rotating proxies for requests.  
+* Yelp  
+  These scripts were developed in very early iterations of the project and as such are somewhat messy...  
+  * [`scrape_yelp.py`](Phase2-RecommendStrategy/yelp/scrapeYelp.py): The main script used to execute the scrape.  
+  * [`protection.py`](Phase2-RecommendStrategy/yelp/protection.py): The main script used to manage rotating proxies.  
+
+### Shiny App  
+[R Shiny](https://shiny.rstudio.com/) was the framework in which the app was developed. The main scripts for running the app can be found in the following two directories:  
+* [`ui`](ui/): Leveraging R's HTML API to develop the front end.  
+* [`server`](server/): All files used to manage the backend data processing in the app.
+
+
 
 ## Business Objective
 

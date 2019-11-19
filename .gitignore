@@ -1,6 +1,6 @@
 general_journal.txt
 private/
-other/
+other/*
 Phase0-DefineCompetitionRegions/data/
 Phase1-FindSimilarCompetitionRegions/data/
 Phase2-RecommendStrategy/data/
