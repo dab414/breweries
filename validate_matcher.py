@@ -42,7 +42,10 @@ def run_matcher(machine_id):
       
       result_df = ''
       while type(result_df) is str:
-        input_zip = get_random_zip()
+        try:
+          input_zip = get_random_zip()
+        except:
+          continue
         result_df = zip_to_similar(input_zip)
       
       output_latlon = result_df.loc[1, ['latitude', 'longitude']]

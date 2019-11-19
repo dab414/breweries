@@ -50,7 +50,7 @@ def webScrape(zipcodes):
           html = r.json()['ProductData']['productDataTable']
         except:
           print(zipcode)
-          sys.exit()
+          #sys.exit()
 
         age = []
 
