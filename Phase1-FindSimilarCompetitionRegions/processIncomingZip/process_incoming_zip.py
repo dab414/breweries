@@ -68,10 +68,6 @@ def process_incoming_zip(user_zip):
   user_water_dict, total_water_count = get_water_data(user_summary)
   user_water = pd.DataFrame(user_water_dict, index = [0])
 
-  ### LEFT OFF AROUND HERE
-  ## JUST ADDED 'total_water_count'
-  ## still need to deal with demo data
-
   ## get census data -- comes in as df with one row
   user_demo = cs.webScrape([user_zip]).drop('zipcode', axis = 1)
   ## throw total population on user_summary
