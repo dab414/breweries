@@ -30,13 +30,14 @@ competitionAnalyzer <- tabItem(
         title = 'Brewery Analyzer',
         fluidRow(
           h3('See what people are saying about the beers from different breweries.'),
-          p('Selecting a brewery from the map on the left will show you the words that people most often use in reviews to describe beers from that brewery. The breweries on the map are color-coded by success [update this part].')
+          p('Selecting a brewery from the map on the left will show you the words that people most often use in reviews to describe beers from that brewery. You will also see a visualization about features of the beers at the brewery at the bottom of the page (if the brewery has enough beers).')
         ),
 
         fluidRow(
           ## MAP
           box(width = 4,
-            leafletOutput('breweryMap')
+            leafletOutput('breweryMap'),
+            p('Breweries marked in green are considered to be more successful based on their average beer rating and number of Twitter followers.')
           ),
 
           ## WORDCLOUD
