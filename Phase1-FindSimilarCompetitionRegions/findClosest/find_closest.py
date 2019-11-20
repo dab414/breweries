@@ -5,6 +5,7 @@ import math
 
 
 def compute_similarity(new_obs, centroids):
+  ## first function called
 
   centroids = centroids.drop('median_age', axis = 1)
 
@@ -21,11 +22,13 @@ def compute_similarity(new_obs, centroids):
 
 
 def find_distances(new_obs, centroids):
+  ## returns list of three best matching competition areas as: [('label', )]
 
   obs_features = new_obs[0][1]
 
   distances = []
 
+  ## calculate euclidean distance
   for centroid in centroids:
     sse = 0
     for obs_feature, base_feature in zip(obs_features, centroid[1]):

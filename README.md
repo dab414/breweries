@@ -71,3 +71,11 @@ Dave
 
 *-- I didn't upload some of the data, so the scripts won't be entirely reproducible if the repo is cloned--*
 
+
+
+*Scripts for demoing*  
+
+* [`get_similar_regions_from_zip.py`](get_similar_regions_from_zip.py)  
+* [`process_incoming_zip.py`](Phase1-FindSimilarCompetitionRegions/processIncomingZip/process_incoming_zip.py)  
+* [`find_closest.py`](Phase1-FindSimilarCompetitionRegions/findClosest/findClosest.py)
+

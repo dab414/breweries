@@ -17,9 +17,13 @@ import numpy as np
 data_path = 'Phase1-FindSimilarCompetitionRegions/data/'
 
 def zip_to_similar(zipcode):
+	# takes as input user zipcode
+	# returns summary table with user data and three most similar competition areas
 
   centroids = pd.read_csv(data_path + 'aggregated_data.csv', dtype = {'zipcode': str}) 
 
+  ## submit user inputted zip code
+  ## return data used for matching with centroids (user_data) and data used for presenting summary stats to user (user_summary)
   user_summary, user_data = piz.process_incoming_zip(zipcode)
 
   ## catch bad zip codes
@@ -35,19 +39,9 @@ def zip_to_similar(zipcode):
 
   centroids_summary = pd.read_csv(data_path + 'centroid_data_with_summary.csv', dtype = {'zipcode': str})
 
-  formatted_results = []
-
-  '''
-  for index, result in results.iterrows():
-    temp = ell.extract_lat_lon(result['zipcode'])
-    del(temp['geopoint'])
-    formatted_results.append(temp)
-  '''
+  formatted_results = [] 
 
   formatted_results = centroids_summary[centroids_summary['label'].isin(results.loc[:,'label'])]
-
-  #formatted_results = pd.DataFrame(formatted_results)[['city', 'latitude', 'longitude', 'state_long', 'zipcode', 'label', 'total_water_count', 'median_age', 'total_population']]#.\
-  #rename(columns = {'city': 'Matching City', 'latitude': 'Latitude', 'longitude': 'Longitude', 'state': 'State', 'zip': 'Zip'})
 
   user_summary['id'] = 'user'
   formatted_results['id'] = ['competition0', 'competition1', 'competition2']

@@ -37,13 +37,15 @@ random_summary$group <- 'Random'
 group_summary$group <- 'Grouped'
 summary_data <- rbind(random_summary, group_summary)
 
+
+## standard bar plot
 summary_data %>% 
   group_by(group) %>% 
   summarize(mse = mean(sse), sd = sd(sse)) %>% 
   ggplot(aes(x = group, y = mse)) +
   geom_bar(stat = 'identity') + 
   geom_errorbar(aes(ymin = mse - sd, ymax = mse + sd), width = 0.5) + 
-  ylim(0, 4000) + 
+  ylim(0, 6000) + 
   labs(
     y = 'Mean Squared Error',
     x = '',
@@ -53,6 +55,30 @@ summary_data %>%
   theme(text = element_text(size = 20))
 
 ggsave('matcher_validation.png', height = 720 / 96, width = 1280 / 96, units = 'in')
+
+cond_means <- summary_data %>% 
+  group_by(group) %>% 
+  summarize(mse = mean(sse))
+
+summary_data %>% 
+  ggplot(aes(x = group, y = sse)) + 
+  geom_violin(fill = NA, alpha = 0.2) + 
+  geom_boxplot(fill = NA, alpha = 0.3) +
+  geom_jitter(alpha = .7, height = 0, width = .05) + 
+  geom_point(data = cond_means, aes(x = group, y = mse), size = 4, shape = 23, color = 'black', fill = 'red') + 
+  geom_label(data = cond_means, aes(x = group, y = mse, label = round(mse, 2)), hjust = 1.5, vjust = 1.5) + 
+  labs(
+    x = '',
+    y = 'Sum of Squared Error per Group'
+  ) + 
+  ylim(0, 6000) + 
+  theme_bw() + 
+  theme(text = element_text(size = 20))
+
+ggsave('matcher_validation_detail.png', height = 720 / 96, width = 1280 / 96, units = 'in')
+
+
+
 
 
 
