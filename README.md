@@ -77,5 +77,5 @@ Dave
 
 * [`get_similar_regions_from_zip.py`](get_similar_regions_from_zip.py)  
 * [`process_incoming_zip.py`](Phase1-FindSimilarCompetitionRegions/processIncomingZip/process_incoming_zip.py)  
-* [`find_closest.py`](Phase1-FindSimilarCompetitionRegions/findClosest/findClosest.py)
+* [`find_closest.py`](Phase1-FindSimilarCompetitionRegions/findClosest/find_closest.py)
 
