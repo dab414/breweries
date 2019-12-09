@@ -1,5 +1,5 @@
 # Building a Better Brewery
-**Link to live app:** https://davebraun.org/beer
+**Link to live app:** https://davebraun.net/beer
 
 ## Implementation
 
