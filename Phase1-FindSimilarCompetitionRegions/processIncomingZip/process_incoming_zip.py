@@ -69,7 +69,8 @@ def process_incoming_zip(user_zip):
   user_water = pd.DataFrame(user_water_dict, index = [0])
 
   ## get census data -- comes in as df with one row
-  user_demo = cs.webScrape([user_zip]).drop('zipcode', axis = 1)
+  print(user_zip)
+  user_demo = cs.compile_zipcode_data([user_zip]).drop('zipcode', axis = 1)
   ## throw total population on user_summary
   user_summary = pd.concat([user_summary, user_demo[['total', 'median_age']]], axis = 1)
   user_summary = user_summary.rename(columns = {'total': 'total_population'})

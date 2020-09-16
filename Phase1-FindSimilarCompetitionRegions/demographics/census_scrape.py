@@ -1,111 +1,117 @@
-import requests
-import re
-import numpy as np
-import pandas as pd
 import sys
+import requests
+import pandas as pd
 
-'''
-this script takes in a txt file where the contents are a list of string zipcodes 
-returns `../data/demographics_by_zip.csv` with demographic data for each input zip code
-where there is no data in the system for a given zip, these entries are marked with `-99999`
-'''
+sys.path.append('../../private')
+from census_api_key import *
 
-def clean_codes(raw_codes):
-  '''
-  takes as input csv containing zips in first column and checks to make sure they're all five digit strings
-  returns list of string zip codes
-  '''
-  x = np.array(raw_codes)
-  x = x.astype(str)
-  x = x[[len(i) == 5 for i in x]]
-  return x.tolist()
+## not entirely necessary because we can assume the vars will come in in this order
+data_key = {
+	
+	'B01001_002E': 'count_male',
+	'B01001_026E': 'count_female',
+	'B00001_001E': 'total',
+	'B02001_002E': 'white',
+	'B02001_003E': 'black',
+	'B02001_005E': 'asian',
+	'B02001_004E': 'native',
+	'B02001_008E': 'two_plus',
+	'B03002_001E': 'hispanic',
+	#'non_hispanic': 'no',
+	'B01002_001E': 'median_age',
+	'B01001_003E': 'male_under_five',
+	'B01001_005E': 'male_ten_fourteen',
+	'B01001_006E': 'male_fifteen_twentyfour',
+	'B01001_011E': 'male_twentyfive_fortyfour',
+	'B01001_015E': 'male_fortyfive_fiftynine',
+	'B01001_018E': 'male_sixty_seventyfour',
+	'B01001_027E': 'female_under_five',
+	'B01001_029E': 'female_ten_fourteen',
+	'B01001_030E': 'female_fifteen_twentyfour',
+	'B01001_035E': 'female_twentyfive_fortyfour',
+	'B01001_039E': 'female_fortyfive_fiftynine',
+	'B01001_042E': 'female_sixty_seventyfour'
 
-def webScrape(zipcodes):
+}
 
-  #x = pd.read_csv(inputCsv)
-  
-  zipcodes = clean_codes(zipcodes)
-
-  base = 'https://factfinder.census.gov/'
-  report = base + 'bkmk/table/1.0/en/ACS/16_5YR/DP05/8600000US'
-  geoCheck = base + 'rest/communityFactsNav/nav?N=0&searchTerm='
-  render = base + 'tablerestful/tableServices/renderProductData'
-
-  final_data = []
-
-  with requests.session() as s:
-    s.headers['user-agent'] = 'Mozilla/5.0'
-
-    for count, zipcode in enumerate(zipcodes):
-      c = s.get(geoCheck + zipcode)
-
-      ## handling zipcodes where there is no data available
-      if c.json()['CFMetaData'].get('isNotValidGeo') or c.json()['CFMetaData'].get('displayNoDataAvailableMsg'):
-        male = female = total = white = black = asian = native = two_plus = -999999
-
-      else:
-        s.get(report + zipcode)
-        r = s.get(render)
-        try:
-          html = r.json()['ProductData']['productDataTable']
-        except:
-          print(zipcode)
-          #sys.exit()
-
-        age = []
-
-        ## LEFT OFF HERE
-
-        try:
-          male = int(re.search(r'r3.*Male.*?>(\d.*?)<\/td>', html).group(1).replace(',',''))
-          female = int(re.search(r'r4.*Female.*?>(\d.*?)<\/td>', html).group(1).replace(',',''))
-          median_age = float(re.search(r'r18.*Median age.*?>(\d.*?)<\/td>', html).group(1))
-          under_five = int(re.search(r'r5.*Under 5 years.*?>(\d.*?)<\/td>', html).group(1).replace(',',''))
-          ten_fourteen = int(re.search(r'r6.*5 to 9 years.*?>(\d.*?)<\/td>', html).group(1).replace(',','')) + int(re.search(r'r7.*10 to 14 years.*?>(\d.*?)<\/td>', html).group(1).replace(',',''))
-          fifteen_twentyfour = int(re.search(r'r8.*15 to 19 years.*?>(\d.*?)<\/td>', html).group(1).replace(',','')) + int(re.search(r'r9.*20 to 24 years.*?>(\d.*?)<\/td>', html).group(1).replace(',',''))
-          twentyfive_fortyfour = int(re.search(r'r10.*25 to 34 years.*?>(\d.*?)<\/td>', html).group(1).replace(',','')) + int(re.search(r'r11.*35 to 44 years.*?>(\d.*?)<\/td>', html).group(1).replace(',',''))
-          fortyfive_fiftynine = int(re.search(r'r12.*45 to 54 years.*?>(\d.*?)<\/td>', html).group(1).replace(',','')) + int(re.search(r'r13.*55 to 59 years.*?>(\d.*?)<\/td>', html).group(1).replace(',',''))
-          sixty_seventyfour = int(re.search(r'r14.*60 to 64 years.*?>(\d.*?)<\/td>', html).group(1).replace(',','')) + int(re.search(r'r15.*65 to 74 years.*?>(\d.*?)<\/td>', html).group(1).replace(',',''))
-          total = int(re.search(r'r30.*Total population.*?>(\d.*?)<\/td>', html).group(1).replace(',',''))
-          white = int(re.search(r'r34.*White.*?>(\d.*?)<\/td>', html).group(1).replace(',',''))
-          black = int(re.search(r'r35.*Black or African American.*?>(\d.*?)<\/td>', html).group(1).replace(',',''))
-          asian = int(re.search(r'r41.*Asian.*?>(\d.*?)<\/td>', html).group(1).replace(',',''))
-          native = int(re.search(r'r49.*Native Hawaiian and Other Pacific Islander.*?>(\d.*?)<\/td>', html).group(1).replace(',',''))
-          two_plus = int(re.search(r'r32.*Two or more races.*?>(\d.*?)<\/td>', html).group(1).replace(',',''))
-          ## throwing some weird error - see note below
-          hispanic = 0
-          hispanic = int(re.search(r'r70.*Hispanic or Latino.*?>(\d.*?)<\/td>', html).group(1).replace(',',''))
-          non_hispanic = int(re.search(r'r75.*Not Hispanic or Latino.*?>(\d.*?)<\/td>', html).group(1).replace(',',''))
-
-        ## complaining that hispanic is referenced before assignment
-          final_data.append([zipcode, male, female, total, white, black, asian, native, two_plus, hispanic, non_hispanic,\
-          median_age, under_five, ten_fourteen, fifteen_twentyfour, twentyfive_fortyfour, fortyfive_fiftynine, sixty_seventyfour])
-
-        except:
-          final_data.append([0]*18)          
-      
-      ## progress tracker
-      if len(zipcodes) > 100:
-        if not count % (len(zipcodes) // 10):
-          print('Progress: Iteration ' + str(count) + ' of ' + str(len(zipcodes)))
+url_stem = 'https://api.census.gov/data/2018/acs/acs5'
+get_args = '?get='
+for_args = r'&for=zip%20code%20tabulation%20area:'
+variable_names = ','.join(list(data_key.keys()))
+key = '&key={}'.format(api_key)
 
 
-  out_data = pd.DataFrame(final_data, columns = ['zipcode', 'count_male', 'count_female', 'total', 'white', 'black', 'asian', 'native', 'two_plus', 'hispanic', 'non_hispanic',\
-    'median_age', 'under_five', 'ten_fourteen', 'fifteen_twentyfour', 'twentyfive_fortyfour', 'fortyfive_fiftynine', 'sixty_seventyfour'])
+def compile_zipcode_data(zipcode_list):
+	data, headers = zipcode_iterator(zipcode_list)
+	return data_aggregator(data, headers)
 
-  return out_data
 
-def main():
-  args = sys.argv[1:]
 
-  if not args or len(args) > 1:
-    print('Usage: zips_list.txt')
-    sys.exit()
+def zipcode_iterator(zipcode_list):
+	# takes in zipcodes as a list
 
-  zipcodes = eval(open(args[0], 'r').read())
+	headers = list(data_key.values())
+	headers.append('zipcode')
+	data = []
 
-  out_data = webScrape(zipcodes)
-  out_data.to_csv('../data/demographics_by_zip.csv', index = False)
+	for zipcode in zipcode_list:
+		data.append(call_census_api(zipcode))
+
+	return data, headers
+
+
+def call_census_api(zipcode):
+	#returns a list of data corresponding to the input zipcode
+
+	url = url_stem + get_args + variable_names + for_args + zipcode + key
+	result = requests.get(url_stem + get_args + variable_names + for_args + zipcode + key)
+	
+	return result.json()[1]
+	
+
+
+def data_aggregator(data, headers):
+	## takes in data as a list of lists and headers as a list
+	## returns consolidated data as a df
+	
+	## convert all but zipcode to integer
+	zipcode = data[0].pop(-1)
+	data = [int(float(e)) for e in data[0]]
+	data.append(zipcode)
+	d = pd.DataFrame([data], columns = headers)
+
+	
+
+	## create summary columns
+	d['non_hispanic'] = d['total'] - d['hispanic'] 
+	d['under_five'] = d['male_under_five'] + d['female_under_five']
+	d['ten_fourteen'] = d['male_ten_fourteen'] + d['female_ten_fourteen']
+	d['fifteen_twentyfour'] = d['male_fifteen_twentyfour'] + d['female_fifteen_twentyfour']
+	d['twentyfive_fortyfour'] = d['male_twentyfive_fortyfour'] + d['female_twentyfive_fortyfour']
+	d['fortyfive_fiftynine'] = d['male_fortyfive_fiftynine'] + d['female_fortyfive_fiftynine']
+	d['sixty_seventyfour'] = d['male_sixty_seventyfour'] + d['female_sixty_seventyfour']
+
+	## drop unnecessary columns
+	d.drop(['male_under_five','female_under_five', 'male_ten_fourteen', 'female_ten_fourteen', 'male_fifteen_twentyfour', 'female_fifteen_twentyfour', 'male_twentyfive_fortyfour', 'female_twentyfive_fortyfour', \
+		'male_fortyfive_fiftynine', 'female_fortyfive_fiftynine', 'male_sixty_seventyfour', 'female_sixty_seventyfour'], axis = 1)
+
+	## reorder
+	headers_ordered = ['zipcode', 'count_male', 'count_female', 'total', 'white', 'black', 'asian', 'native', 'two_plus', 'hispanic', 'non_hispanic',\
+    'median_age', 'under_five', 'ten_fourteen', 'fifteen_twentyfour', 'twentyfive_fortyfour', 'fortyfive_fiftynine', 'sixty_seventyfour']
+
+	d = d[headers_ordered]
+
+	return d
+	
 
 if __name__ == '__main__':
-  main()
+
+	args = sys.argv[1:]
+
+	if not args:
+		print("Usage: zipcode")
+		sys.exit(1)
+
+	zipcode = str(args[0])
+
+	out = compile_zipcode_data([zipcode])

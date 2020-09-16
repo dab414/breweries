@@ -1,0 +1,11 @@
+from general_journal.txt
+
+10/10/2019
+  GOT IT
+  it involved setting the pointer in .Rprofile to the same binary python that's being created in the virtual environment
+    Sys.setenv(RETICULATE_PYTHON = "/home/shiny/.virtualenvs/python_environment/bin/python")
+  with this matching code in the app.r script
+    packages <- c('pandas', 'numpy', 'requests', 'bs4')
+    virtualenv_create(envname = 'python_environment', python = 'python3')
+    virtualenv_install('python_environment', packages = packages)
+    reticulate::use_virtualenv('python_environment', required = TRUE)

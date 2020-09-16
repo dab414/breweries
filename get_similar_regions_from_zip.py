@@ -25,7 +25,6 @@ def zip_to_similar(zipcode):
   ## submit user inputted zip code
   ## return data used for matching with centroids (user_data) and data used for presenting summary stats to user (user_summary)
   user_summary, user_data = piz.process_incoming_zip(zipcode)
-
   ## catch bad zip codes
   if type(user_summary) is str:
     return user_summary
@@ -49,8 +48,8 @@ def zip_to_similar(zipcode):
 
   return formatted_results
 
-'''
 
+'''
 if __name__ == '__main__':
   args = sys.argv[1:]
 
