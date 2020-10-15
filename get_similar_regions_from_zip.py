@@ -1,6 +1,7 @@
 import sys
 sys.path.append('Phase1-FindSimilarCompetitionRegions/processIncomingZip/')
 sys.path.append('Phase1-FindSimilarCompetitionRegions/findClosest/')
+sys.path.append('Phase1-FindSimilarCompetitionRegions/findClosestToUser/')
 sys.path.append('Phase1-FindSimilarCompetitionRegions/water/')
 sys.path.append('Phase1-FindSimilarCompetitionRegions/demographics/')
 sys.path.append('Phase1-FindSimilarCompetitionRegions/manipulation_scripts/')
@@ -10,6 +11,7 @@ sys.path.append('private')
 import get_centroid_addresses as gca
 import extract_lat_lon as ell
 import process_incoming_zip as piz
+import find_closest_to_user as fctu
 import find_closest as fc
 import pandas as pd
 import numpy as np
@@ -44,12 +46,20 @@ def zip_to_similar(zipcode):
 
   user_summary['id'] = 'user'
   formatted_results['id'] = ['competition0', 'competition1', 'competition2']
+
+  ## 10-15-2020
+  ## Intervene here to compute the competition area that's closest in physical proximity to user's zip
+  ## append it on to the returned results
+
+  # user_competition_area = 
+
+
   formatted_results = pd.concat([user_summary, formatted_results]).reset_index()
 
   return formatted_results
 
 
-'''
+
 if __name__ == '__main__':
   args = sys.argv[1:]
 
@@ -61,4 +71,3 @@ if __name__ == '__main__':
 
   print(zip_to_similar(zipcode))
 
-'''
