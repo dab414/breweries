@@ -14,8 +14,9 @@ def compute_distance(user_loc, centroid_list):
 		label = centroid[0]
 		centroid_loc = centroid[1]
 
-		distance = sqrt((user_loc[0] - centroid_loc[0])**2 + (user_loc[1] - user_loc[1])**2)
 
+		distance = sqrt((user_loc[0] - centroid_loc[0])**2 + (user_loc[1] - centroid_loc[1])**2)
+		
 		if closest_centroid is None or distance < closest_centroid[1]:
 			closest_centroid = (label, distance)
 		
@@ -54,6 +55,7 @@ if __name__ == '__main__':
 
 	zipcode = sys.argv[1]
 	result = extract_lat_lon(zipcode)
-	centroids = pd.read_csv('../data/aggregated_data.csv')
+	#print(result)
+	centroids = pd.read_csv('../data/centroid_data_with_summary.csv')
 
 	print(find_closest_to_user(result['latitude'], result['longitude'], centroids))

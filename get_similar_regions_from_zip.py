@@ -32,6 +32,7 @@ def zip_to_similar(zipcode):
     return user_summary
 
   user_summary['label'] = np.nan
+  print(user_summary)
   user_summary = gca.get_addresses(user_summary)
 
   print('User Input: \n{}\n'.format(user_summary))
@@ -51,7 +52,10 @@ def zip_to_similar(zipcode):
   ## Intervene here to compute the competition area that's closest in physical proximity to user's zip
   ## append it on to the returned results
 
-  # user_competition_area = 
+  print(user_summary)
+  sys.exit(1)
+
+  #user_summary['label'] = fctu.find_closest_to_user()
 
 
   formatted_results = pd.concat([user_summary, formatted_results]).reset_index()

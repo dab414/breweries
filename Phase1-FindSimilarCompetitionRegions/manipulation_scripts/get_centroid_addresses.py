@@ -27,6 +27,7 @@ def get_addresses(d):
       new_data.append(save_data([None] * 3))
       continue
 
+    print(page.text)
     address = json.loads(page.text)['results'][0]['address_components']
     city = None
     state_abbrv = None
