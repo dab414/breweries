@@ -2,7 +2,7 @@ import json
 import sys
 import pandas as pd
 sys.path.append('../../private/')
-from google_geocoding import *
+from mapquest_geocoding import *
 import requests
 
 
@@ -11,14 +11,16 @@ def get_addresses(d):
   cols = ['zipcode', 'label', 'latitude', 'longitude', 'total_population', 'median_age',\
   'total_water_count']
 
-  base = 'https://maps.googleapis.com/maps/api/geocode/json?'
+  ## update with the mapquest api
+  base = 'http://open.mapquestapi.com/geocoding/v1/reverse?'
   key = 'key={}'.format(api_key)
+  state_abbreviations = eval(open('Phase1-FindSimilarCompetitionRegions/data/state_abbreviations_dict.txt', 'r').read())
 
   new_data = []
 
   for index, row in d.iterrows():
     lat, lon  = row['latitude'], row['longitude']
-    latlng = 'latlng={}'.format(','.join([str(lat), str(lon)]))
+    latlng = 'location={}'.format(','.join([str(lat), str(lon)]))
     query = base + '&'.join([key, latlng])
 
     page = requests.get(query)
@@ -27,19 +29,20 @@ def get_addresses(d):
       new_data.append(save_data([None] * 3))
       continue
 
-    print(page.text)
-    address = json.loads(page.text)['results'][0]['address_components']
+    locations = json.loads(page.text)['results'][0]['locations']
+
     city = None
     state_abbrv = None
     state_long = None
 
-    for entry in address:
+    if locations:
 
-      if 'locality' in entry['types']:
-        city = entry['long_name']
-      elif 'administrative_area_level_1' in entry['types']:
-        state_abbrv = entry['short_name']
-        state_long = entry['long_name']
+      if 'adminArea5' in locations[0] and locations[0]['adminArea5']:
+        city = locations[0]['adminArea5']
+      if 'adminArea3' in locations[0] and locations[0]['adminArea3']:
+        state_abbrv = locations[0]['adminArea3']
+        state_long = state_abbreviations[state_abbrv]
+        
 
     new_data.append(save_data([city, state_abbrv, state_long]))
 
@@ -58,6 +61,9 @@ def save_data(l):
 
   return out
 
+
+
+
 if __name__ == '__main__':
 
   args = sys.argv[1:]
@@ -69,5 +75,6 @@ if __name__ == '__main__':
   d = pd.read_csv(args[0], dtype = {'zipcode': str})
 
   out = get_addresses(d)
+  print(out)
 
-  out.to_csv('../data/centroid_data_with_summary.csv', index = False)
+  #out.to_csv('../data/centroid_data_with_summary.csv', index = False)

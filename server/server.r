@@ -128,7 +128,7 @@ server <- function(input, output){
   observe({
     ## SHOW OR HIDE ALL THE ANALYSIS STUFF
 
-    if (rv$init | rv$is_bad_zip | rv$new_search | rv$user_selected) {
+    if (rv$init | rv$is_bad_zip | rv$new_search) {
       shinyjs::hide(id = 'results_container')
       shinyjs::show(id = 'bad_query')
     } else {
