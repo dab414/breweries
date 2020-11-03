@@ -10,7 +10,7 @@ ui <- dashboardPage(
 
   sidebar,
   
-  dashboardBody(
+  dashboardBody(id = 'main_tabs',
     tags$script(HTML('$("body").addClass("sidebar-mini");')),
     useShinyjs(),
     

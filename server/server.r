@@ -9,7 +9,7 @@ beer_summary_data <- read.csv('summary_data/small_data/beer_summary_data.csv')
 #source('www/use_favicon.R')
 #use_favicon(path = 'www/favicon.ico')
 
-server <- function(input, output){
+server <- function(input, output, session){
   
   ## process incoming zipcode, return appropriate rows from centroid data
 
@@ -64,7 +64,11 @@ server <- function(input, output){
       paste('Population: ', round(population), 'k', sep = ''))
     popup <- paste(paste('<b>', centroid_data$data$city, ', ', 
                         centroid_data$data$state_abbrv, '</b>', sep = ''),
-                  population, sep = '<br/>')
+                  population, 
+                  ## explore button
+                  "<button class=\"btn btn-normal btn-primary\" type = \"button\", onclick = \"Shiny.onInputChange('explore', Math.random())\">Explore</button>",
+                  #actionButton(inputId = 'explore_dummy', label = 'Explore', onclick = 'Shiny.onInputChange(\"explore\", Math.random())'),
+                  sep = '<br/>')
     centroid_data$data$popup <- popup
 
     leafletProxy('mainResult', data = centroid_data$data) %>% 
@@ -73,6 +77,21 @@ server <- function(input, output){
         stroke = FALSE, fillOpacity = .6, popup = ~popup, layerId = ~id)
 
   })
+
+  # observe({
+  #   if (input$explore) {
+  #     showModal(modelDialog(
+  #       title = 'Dicky Horner',
+  #       easyClose = TRUE,
+  #       footer = NULL
+  #     ))
+  #   }
+  # })
+
+  observeEvent(input$explore, {
+    updateTabsetPanel(session, 'main_tabs', selected = 'competitionAnalyzer_value')
+  })
+
 
 
   ## FILTER DATA BASED ON MARKER CLICK
