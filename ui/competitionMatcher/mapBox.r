@@ -6,7 +6,8 @@ mapBox <- box(title = 'Welcome to the competition matcher.',
   fluidRow(
     column(10, 
            #h1('Welcome to the competition matcher.'),
-           h3('To begin analyzing brewery compeition areas that are similar to yours, enter your zip code below.')
+           h3('To begin exploring breweries, enter your zip code below.'),
+           p("You can then explore breweries in your area, or you can explore breweries that are in areas that are similar to your area.")
     )
   ),
   

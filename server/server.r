@@ -78,18 +78,13 @@ server <- function(input, output, session){
 
   })
 
-  # observe({
-  #   if (input$explore) {
-  #     showModal(modelDialog(
-  #       title = 'Dicky Horner',
-  #       easyClose = TRUE,
-  #       footer = NULL
-  #     ))
-  #   }
-  # })
-
   observeEvent(input$explore, {
-    updateTabsetPanel(session, 'main_tabs', selected = 'competitionAnalyzer_value')
+    # showModal(modalDialog(
+    #   title = 'Dicky Horner',
+    #   easyClose = TRUE,
+    #   footer = NULL
+    # ))
+    updateTabsetPanel(session, 'tabs', selected = 'competitionAnalyzer')
   })
 
 
