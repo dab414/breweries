@@ -125,9 +125,9 @@ server <- function(input, output, session){
 
   output$bad_query <- renderText({
     if (rv$init | rv$is_bad_zip) {
-      return('Enter a zipcode and select a competition area before coming to this tab.')
+      return('Enter a zipcode and select an area before coming to this tab.')
     } else if (rv$new_search | rv$user_selected) {
-      return('Select a competition area on the map to view the top beers in that area.')    
+      return('Select an area on the map to view the top beers in that area.')    
     } else return('')
 
   })

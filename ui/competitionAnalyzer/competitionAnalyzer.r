@@ -7,26 +7,6 @@ competitionAnalyzer <- tabItem(
     tabBox(width = 12, id = 'competition_analyzer_results',
       
       tabPanel(
-        title = 'Top Beers',
-
-        fluidRow(
-          h3(textOutput('competition_top_beer_title')),
-          div(tableOutput('competition_top_beer_data'), style = 'font-size: 130%')
-        ),
-
-
-        fluidRow(
-
-          box(width = 12, id = 'review_container',
-              h3(textOutput('winning_beer_name')),
-              p(textOutput('winning_beer_date')),
-              div(textOutput('top_review'), style = 'font-size: 200%')
-            
-          )
-        )
-      ),
-
-      tabPanel(
         title = 'Brewery Analyzer',
         fluidRow(
           h3('See what people are saying about the beers from different breweries.'),
@@ -71,8 +51,28 @@ competitionAnalyzer <- tabItem(
           )
 
         )
-      )
+      ), ## end tab panel 1
 
+
+      tabPanel(
+        title = 'Top Beers',
+
+        fluidRow(
+          h3(textOutput('competition_top_beer_title')),
+          div(tableOutput('competition_top_beer_data'), style = 'font-size: 130%')
+        ),
+
+
+        fluidRow(
+
+          box(width = 12, id = 'review_container',
+              h3(textOutput('winning_beer_name')),
+              p(textOutput('winning_beer_date')),
+              div(textOutput('top_review'), style = 'font-size: 200%')
+            
+          )
+        )
+      ) ## end tab panel 2
 
     )
   )

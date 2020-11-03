@@ -1,4 +1,4 @@
-mapBox <- box(title = 'Welcome to the competition matcher.',
+mapBox <- box(title = 'Welcome to Better Brewery.',
   status = 'primary',
   solidHeader = TRUE,
   width = 12,
