@@ -1,5 +1,6 @@
 competitionAnalyzer <- tabItem(
   tabName = 'competitionAnalyzer',
+  value = 'competitionAnalyzer_value',
 
   h2(textOutput('bad_query')),
   
